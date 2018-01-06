@@ -1,0 +1,17 @@
+table, td, th {
+  border: 2px solid gray;
+  padding: 2px;
+  border-collapse: collapse;
+}
+
+body {
+  background-color: white;
+}
+
+p {
+  font-size: 1.1em;
+}
+
+ul {
+  font-size: 1.1em;
+}
