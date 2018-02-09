@@ -12,6 +12,12 @@ p {
   font-size: 1.1em;
 }
 
+bigP {
+  font-family: "Verdana", Verdana, sans-serif;
+  font-size: 18em;
+}
+
+
 ul {
   font-size: 1.1em;
 }
