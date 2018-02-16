@@ -1,14 +1,25 @@
-table, td, th {
-  border: 2px solid gray;
-  padding: 2px;
-  border-collapse: collapse;
+table{
+  width: 100%;
+  border-collapse:collapse;
+  text-align:left;
+}
+ 
+td, th {
+  border: 0 transparent;
+  height: 30px;
+  padding-left: 2%;
+}
+
+th {
+  background: black;
+  color: white;
+  font-weight: normal;
+  height: 50px;
+
 }
 
 html, body {
-  padding-left: 1%;
-  padding-right: 1%;
-  margin: 0;
-  
+  margin: 0; 
   background-color: white;
   color: black;
 
@@ -16,6 +27,9 @@ html, body {
 }
 
 p {
+  padding-left: 1%;
+  padding-right: 1%;
+ 
   font-size: 1.1em;
 }
 
