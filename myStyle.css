@@ -17,14 +17,16 @@ th {
   height: 50px;
 }
 
-th:last-child{
+/* wasn't really doing waht I wanted, honestly this w/o isnt bad
+th.bookTable:last-child{
    text-align:right;
    padding-right: 2%;
 }
-td:last-child {
+td.bookTable:last-child {
    text-align:right;
    padding-right: 2%;
 }
+*/
 
 html, body {
   margin: 0; 
