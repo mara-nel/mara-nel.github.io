@@ -10,23 +10,12 @@ td, th {
   padding-left: 2%;
 }
 
-th {
+tr.blackRow {
   background: black;
   color: white;
   font-weight: normal;
   height: 50px;
 }
-
-/* wasn't really doing waht I wanted, honestly this w/o isnt bad
-th.bookTable:last-child{
-   text-align:right;
-   padding-right: 2%;
-}
-td.bookTable:last-child {
-   text-align:right;
-   padding-right: 2%;
-}
-*/
 
 html, body {
   margin: 0; 
