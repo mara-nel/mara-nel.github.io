@@ -70,22 +70,49 @@ h1 {
 .preamble {
   font-size: 2em;
   text-align: left;
-
-  padding-top: 300px;
-  padding-bottom: 300px;
   padding-left: 15%;
-
   color: white;
   background-color: black;
 }
-
 .about {
   font-size: 2em;
   text-align: right;
+  padding-right: 15%;
+}
 
+.topbottom-padded {
   padding-top: 300px;
   padding-bottom: 300px;
-  padding-right: 15%;
+}
+
+.black {
+  color: white;
+  background-color: black;
+}
+ 
+#main {
+  max-width: 960px;
+  margin: 0 auto 180px;
+}
+
+#copy {
+  margin: 120px 20px 0;
+  text-align: center;
+}
+
+
+
+.col {
+  margin: 64px 20px 100px;
+  text-align: left;
+  width: 28%;
+  float: left;
+  margin: 0 3% 100px 3%;
+}
+
+.col.last, li.last {
+  margin: 0;
+  padding: 0;
 }
 
 
