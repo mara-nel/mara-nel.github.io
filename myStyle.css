@@ -67,16 +67,32 @@ h1 {
   text-align:center;
 }
 
-.preamble {
+#preambleCard {
   font-size: 2em;
   text-align: left;
   padding-left: 15%;
+  padding-top: 300px;
+  padding-bottom: 300px;
+
+  color: white;
+  background-color: black;
 }
-.about {
+#aboutCard {
   font-size: 2em;
   text-align: right;
   padding-right: 15%;
+  padding-top: 300px;
+  padding-bottom: 300px;
 }
+#tutorInfo {
+  text-align:center;
+  font-size: 1.2em;
+  font-weight: 200;
+  max-width: 960px;
+  margin: 32px auto 32px;
+}
+
+
 
 .topbottom-padded {
   padding-top: 300px;
@@ -90,13 +106,21 @@ h1 {
  
 #main {
   max-width: 960px;
-  margin: 64px auto 32px;
+  margin: 32px auto 32px;
 }
 
-#copy {
-  margin: 120px 20px 0;
+#closing {
   text-align: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  padding-bottom: 64px;
+
+  font-size: .8em;
+  font-weight: 600;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
 }
+
 
 
 
@@ -104,17 +128,51 @@ h1 {
   text-align: left;
   width: 28%;
   float: left;
-  margin: 0px 3% 16px 3%;
+  margin: 16px 3% 0px 3%;
 }
 
-.col.last, li.last {
+.col.last {
   margin: 0;
+  margin-top: 16px;
   padding: 0;
+}
+
+.cat {
+  font-size: .8em;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.desc {
+  font-size: 1em;
 }
 
 
 ul {
+  text-align: left; 
   font-size: 1.1em;
+  list-style-type: square;
+}
+@media only screen and (max-device-width: 720px) {
+ #main {
+   width: 100%;
+ }
+
+ .col {
+   width: 100%;
+   margin: 24px 0 0;
+ }
 }
 
+@media (max-width: 720px) {
+ #main {
+   max-width: 580px;
+ }
+
+ .col {
+   width: 100%;
+   margin: 24px 0 0;
+ }
+}
 
