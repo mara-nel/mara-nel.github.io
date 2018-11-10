@@ -165,14 +165,14 @@ ul {
  }
 
  .cat {
-   font-size: 1em;
+   font-size: .9em;
    font-weight: 600;
    letter-spacing: 1.5px;
    text-transform: uppercase;
  }
 
  .desc {
-   font-size: 1.1em;
+   font-size: 1em;
  }
 }
 
@@ -186,14 +186,14 @@ ul {
    margin: 24px 0 0;
  }
  .cat {
-   font-size: 1em;
+   font-size: .9em;
    font-weight: 600;
    letter-spacing: 1.5px;
    text-transform: uppercase;
  }
 
  .desc {
-   font-size: 1.1em;
+   font-size: 1em;
  }
 }
 
