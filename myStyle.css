@@ -164,16 +164,7 @@ ul {
    margin: 24px 0 0;
  }
 
- .cat {
-   font-size: .9em;
-   font-weight: 600;
-   letter-spacing: 1.5px;
-   text-transform: uppercase;
- }
 
- .desc {
-   font-size: 1em;
- }
 }
 
 @media (max-width: 720px) {
@@ -184,16 +175,6 @@ ul {
  .col {
    width: 100%;
    margin: 24px 0 0;
- }
- .cat {
-   font-size: .9em;
-   font-weight: 600;
-   letter-spacing: 1.5px;
-   text-transform: uppercase;
- }
-
- .desc {
-   font-size: 1em;
  }
 }
 
