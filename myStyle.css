@@ -159,6 +159,10 @@ ul {
    width: 100%;
  }
 
+ #tutorInfo {
+   width: 100%;
+ }
+
  .col {
    width: 100%;
    margin: 24px 0 0;
@@ -172,6 +176,10 @@ ul {
    max-width: 580px;
  }
 
+ #tutorInfo {
+   max-width: 580px;
+ }
+ 
  .col {
    width: 100%;
    margin: 24px 0 0;
