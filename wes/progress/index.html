@@ -1,8 +1,8 @@
 <html>
    <head>
 <style>
-body {background-color: black;
-      color: white;
+body {background-color: white;
+      color: black;
       text-align:center;}
 </style>
 <script>
@@ -35,14 +35,14 @@ function weeksGoneBy() {
 function makeRowFilled( r ) {
    for (var i=0; i<10; i++) {
       var elem = document.createElement("img");
-      elem.setAttribute("src","blue_square.png");
+      elem.setAttribute("src","black_square.png");
       document.getElementById("row-"+r).appendChild(elem);
    }
 }
 function makeRowEmpty( r ) {
    for (var i=0; i<10; i++) {
       var elem = document.createElement("img");
-      elem.setAttribute("src","outlined_black_square.png");
+      elem.setAttribute("src","outlined_white_square.png");
       document.getElementById("row-"+r).appendChild(elem);
    }
 }
@@ -50,11 +50,11 @@ function makeRowMixed( r,n ) {
    for (var i=0; i<10; i++) {
       if (i < n) { 
          var elem = document.createElement("img");
-         elem.setAttribute("src","blue_square.png");
+         elem.setAttribute("src","black_square.png");
       }
       else {
          var elem = document.createElement("img");
-         elem.setAttribute("src","outlined_black_square.png");
+         elem.setAttribute("src","outlined_white_square.png");
       }
       document.getElementById("row-"+r).appendChild(elem);
    }
