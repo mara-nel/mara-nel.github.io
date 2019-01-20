@@ -14,7 +14,7 @@ While the first is very real, the second
 With humility and thanksgiving I can say that I grew up liking math.
 This has so far brought me to major in mathematics at my undergraduate college and to continue to study it at 
 [NCSU](https://math.sciences.ncsu.edu)
-(you can see me [here](https://math.sciences.ncsu.edu/people/wlnelson/).
+(you can see me [here](https://math.sciences.ncsu.edu/people/wlnelson/)).
 
 I am still figuring out what my future involves, but teaching math, and more importantly helping people overcome their fear or distaste for it, is something I want to do.
 

@@ -98,7 +98,8 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: $base-font-weight;
+  font-weight: $base-head-weight;
+  text-transform: uppercase;
 }
 
 
@@ -198,7 +199,8 @@ pre {
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
-  }
+ }
+
 }
 
 
@@ -255,3 +257,9 @@ table {
       padding: ($spacing-unit / 3) ($spacing-unit / 2);
   }
 }
+
+
+
+
+
+

@@ -4,7 +4,7 @@ title: Tetris
 permalink: /tetris/
 ---
 
-Versions to try:
+**Versions to try:**
 <ul>
 <li>Tetris (NES)</li>
 <li>The New Tetris (Nintendo 64)</li>
