@@ -1,5 +1,6 @@
 <header class="site-header">
-
+  <div class="top-image">
+  </div>
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
@@ -18,7 +19,6 @@
         </label>
 
         <div class="trigger">
-            <a class="page-link" href="/">Home</a>
             <a class="page-link" href="/teaching">Teaching</a>
             <a class="page-link" href="/research">Research</a>
             <a class="page-link" href="/tutoring">Tutoring</a>

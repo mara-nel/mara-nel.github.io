@@ -2,13 +2,18 @@
  * Site header
  */
 .site-header {
-  border-top: 15px solid $grey-color-dark;
-  border-bottom: 3px solid $grey-color-light;
+  border-bottom: 2px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
   line-height: $base-line-height * $base-font-size * 2.25;
 
   // Positioning context for the mobile navigation icon
   position: relative;
+}
+
+.top-image {
+   padding-bottom: 100px;
+   background-image: linear-gradient(12deg, white, #99D3DF);
+   border-bottom: 2px solid $grey-color-light;
 }
 
 .site-title {
@@ -36,6 +41,7 @@
   border: 1px solid $grey-color-light;
   border-radius: 5px;
   text-align: right;
+  letter-spacing: 1.3px;
 
   .nav-trigger {
       display: none;
