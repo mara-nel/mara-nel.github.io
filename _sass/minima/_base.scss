@@ -81,6 +81,9 @@ figcaption {
 ul, ol {
   margin-left: $spacing-unit;
 }
+ul {
+   list-style-type: square
+}
 
 li {
   > ul,
@@ -142,6 +145,12 @@ blockquote {
   }
 }
 
+p.blocktext {
+  padding-left: 10%;
+  padding-right: 10%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
 
 
 /**
