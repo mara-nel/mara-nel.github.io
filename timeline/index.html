@@ -1,0 +1,80 @@
+<html>
+   <head>
+<style>
+body {background-color: white;
+      color: black;
+      text-align:center;}
+</style>
+<script>
+var msPerWeek = 604800000;
+
+function fillSquares() {
+   var toFill = weeksGoneBy(); 
+   var fullRows = Math.floor(toFill/10);
+   var mixedRow = toFill - (fullRows*10);
+   for (var i=0; i < 10; i++) {
+      if (i < fullRows) {
+         makeRowFilled(i);
+      } else if (i==fullRows ) {
+         makeRowMixed(i,mixedRow);
+      } else {
+         makeRowEmpty(i);
+      }
+   }
+}
+
+
+function weeksGoneBy() {
+   var current = new Date();
+   var start = new Date('Aug 19,2018');
+   var weeksSince = Math.floor((current - start) / msPerWeek);
+   document.getElementById("weeksSince").innerHTML = weeksSince;
+   return weeksSince; 
+}
+
+function makeRowFilled( r ) {
+   for (var i=0; i<10; i++) {
+      var elem = document.createElement("img");
+      elem.setAttribute("src","black_square.png");
+      document.getElementById("row-"+r).appendChild(elem);
+   }
+}
+function makeRowEmpty( r ) {
+   for (var i=0; i<10; i++) {
+      var elem = document.createElement("img");
+      elem.setAttribute("src","outlined_white_square.png");
+      document.getElementById("row-"+r).appendChild(elem);
+   }
+}
+function makeRowMixed( r,n ) {
+   for (var i=0; i<10; i++) {
+      if (i < n) { 
+         var elem = document.createElement("img");
+         elem.setAttribute("src","black_square.png");
+      }
+      else {
+         var elem = document.createElement("img");
+         elem.setAttribute("src","outlined_white_square.png");
+      }
+      document.getElementById("row-"+r).appendChild(elem);
+   }
+}
+
+</script>
+   </head>
+   <header><title>progress check</title></header>
+   <body onload="fillSquares()">
+      <div id="weeksSince"></div>
+      <br/>
+      <div id="row-0"></div>
+      <div id="row-1"></div>
+      <div id="row-2"></div>
+      <div id="row-3"></div>
+      <div id="row-4"></div>
+      <div id="row-5"></div>
+      <div id="row-6"></div>
+      <div id="row-7"></div>
+      <div id="row-8"></div>
+      <div id="row-9"></div>
+   </body>
+</html>
