@@ -75,11 +75,11 @@ Can you see why?
 
 Now imagine a system of polynomials, maybe something like $f=(f_1,f_2,f_3)$ where
 
-$$\begin{align}
+$$\begin{align*}
 f_1 &= a_{1200}x_1^2 + a_{1111}x_1x_2x_3 + a_{1001}x_3 + a_{1000} \\
 f_2 &= a_{2101}x_1x_3 + a_{2111}x_1x_2x_3 + a_{2010}x_2\\
 f_3 &= a_{3030}x_2^3 + a_{3021}x_2^2x_3 + a_{3100}x_1 + a_{3000}.
-\end{align}$$
+\end{align*}$$
 
 It just got a lot harder.
 This is an example of a system of multivariate polynomials and a statement like Descartes' rule of signs does not exist for these kinds of systems.
