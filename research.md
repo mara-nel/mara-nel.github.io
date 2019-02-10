@@ -31,7 +31,7 @@ It can be useful to know the positive roots of a polynomial.
 Maybe less useful, but still a good thing to know, is how many positive roots a polynomial has.
 
 In general, the coefficients (the $a_i$) of a polynomial determine where and how many roots there are.
-Remarkably though, if all we knew were which $a_i$ where positive and which were negative, we could still make statements about how many positive roots a polynomial has!
+Remarkably though, if all we knew were which $a_i$ were positive and which were negative, we could still make statements about how many positive roots a polynomial has!
 
 What's known as Descartes' rule of signs (named after [Ren&eacute; Descartes](https://en.wikipedia.org/wiki/Rene_Descartes)) does exactly this. 
 
