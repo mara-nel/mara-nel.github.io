@@ -12,7 +12,7 @@
 }
 
 .top-image {
-   padding-bottom: 80px;
+   padding-top: 40px;
 }
 
 .site-title {
@@ -20,16 +20,15 @@
   font-weight: 300;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
+  background-color: inherit;
+  width: 100%;
+  text-align: center;
+  color: $text-color;
 
   @include media-query($on-palm) {
     padding-right: 45px;
   }
 
-  &,
-  &:visited {
-    color: $grey-color-dark;
-  }
 }
 
 .site-nav {
