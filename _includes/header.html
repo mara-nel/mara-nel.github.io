@@ -1,6 +1,8 @@
 <header class="site-header">
   <div class="top-image">
-    <div class="site-title" rel="author">{{ site.title | escape }}</div>
+    <div class="site-title" rel="author">
+       <a class="site-title" href="/">{{ site.title | escape }}</a>
+    </div>
   </div>
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
@@ -19,7 +21,6 @@
         </label>
 
         <div class="trigger">
-            <a class="page-link" href="/">Home</a>
             <a class="page-link" href="/teaching">Teaching</a>
             <a class="page-link" href="/research">Research</a>
             <a class="page-link" href="/tutoring">Tutoring</a>
