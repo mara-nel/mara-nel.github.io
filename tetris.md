@@ -7,7 +7,7 @@ permalink: /tetris/
 Tetris is an incredible game.
 My first serious interactions with it was during my undergraduate studies, where my friends and I played [The New Tetris](https://en.wikipedia.org/wiki/The_New_Tetris) for the Nintendo 64.
 This is one of the few iterations in which 4x4 large squares can be formed and get turned into gold or obsidian blocks.
-This is referred to as square mode in [NullpoMino](https://harddrop.com/wiki/NullpoMino)
+This is referred to as square mode in [NullpoMino](https://harddrop.com/wiki/NullpoMino).
 
 **Recommended Versions:**
 <ul>
@@ -26,7 +26,7 @@ This is referred to as square mode in [NullpoMino](https://harddrop.com/wiki/Nul
 </ul>
 
 
-My current best **sprint** on Jstris can be viewed <a href="https://jstris.jezevec10.com/replay/1854872">here</a> (be sure to click load).
+My current best **sprint** on Jstris can be viewed <a href="https://jstris.jezevec10.com/replay/1927992">here</a> (be sure to click load).
 
 My current best round in **dig** mode on Farter's Dig Mod has the replay:
 
