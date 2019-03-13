@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			html { background: #F7F7F7; }
+			#board {
+				margin: 0 auto;
+				display: block;
+				border: 2px solid black;
+				border-bottom: 5px solid green;
+				background: white;
+			}
+			.scorekeeping {
+            display: inline-block;
+				margin: 0 auto;
+            width: 240px;
+				color: #444;
+				font-size: 1.5em;
+			}
+		</style>
+	</head>
+	<body>
+      <form id="randomizerChoice">
+         <input type="radio" name="randomizer" value="1" checked> 1 bag
+         <input type="radio" name="randomizer" value="2"> 2 bag
+         <input type="radio" name="randomizer" value="7"> 7 bag  
+         <input type="radio" name="randomizer" value="0"> random
+      </form>
+      <span id="testing">test</span>
+      <button type="button" id="newGame">New Game</button></br>
+      <div style="text-align: center;">
+         <div id="combo" class="scorekeeping">0</div>
+         <div id="best-combo" class="scorekeeping">0</div></br>
+      </div>
+      <div style="text-align: center;">
+         <div id="squares" class="scorekeeping">0</div>
+         <div id="lines" class="scorekeeping">Lines: 0</div>
+      </div>
+      <div style="text-align: center;">
+		   <div id="status" class="scorekeeping"></div>
+      </div>
+		<canvas id="board">
+		</canvas>
+		<script src="tetrominoes.js"></script>
+		<script src="ntScoring.js"></script>
+	</body>
+</html>
