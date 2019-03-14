@@ -21,7 +21,9 @@ var pieces = [
 	[T, "yellow"],
 	[Z, "red"]
 ];
+
 var done;
+var gdone;
 
 var piece = null;
 
@@ -31,7 +33,31 @@ var downI;
 var board = [];
 var bag = [];
 var lastReset;
-var testing    = document.getElementById('testing');
+var bagText    = document.getElementById('bagsize');
+
+//--------------------------------------------------
+// For Graphics and colors
+function setColor (color) {
+   ctx.fillStyle = color;
+   if (color != clear ) {
+      ctx.strokeStyle = "black";
+   } else {
+      ctx.strokeStyle = "dimGray";
+   }
+}
+var MayaBlue = "#55cdfc";
+var AmaranthPink = "#f7a8b8";
+// alt colors
+//var pieces = [
+//	[I, "white"],
+//	[J, MayaBlue],
+//	[L, AmaranthPink],
+//	[O, "white"],
+//	[S, MayaBlue],
+//	[T, "white"],
+//	[Z, AmaranthPink]
+//];
+clear = "black";
 //--------------------------------------------------
 // For Piece Statistics (useful for checking square mode)
 var pieceStatistics = [0,0,0,0,0,0,0];
@@ -67,15 +93,14 @@ function updatePreview() {
 }
 
 function drawPreview() {
-	var fs = ctx.fillStyle;
-   ctx.fillStyle = "Black";
+   setColor("Black");
    ctx.fillRect(width*tilesz,0,4*tilesz,(height-5.1)*tilesz);
    ctx.fillRect(0,height*tilesz,(width+extraWidth)*tilesz,extraHeight*tilesz);
    for (previewX = 0; previewX < 3; previewX++) {
       
       var nextToComeNumber = bag[bag.length-(1+previewX)];
       var nextToComePiece = pieces[nextToComeNumber];
-      ctx.fillStyle = nextToComePiece[1];
+      setColor(nextToComePiece[1]);
       var size = nextToComePiece[0][0].length;
 
       var wAdjustment = 1;
@@ -89,7 +114,7 @@ function drawPreview() {
       var scale = .5;
 	   for (var y = 0; y < size; y++) {
 	   	for (var x = 0; x < size; x++) {
-            if (nextToComePiece[0][0][x][y] != 0) {
+            if (nextToComePiece[0][0][y][x] != 0) {
                //draw preview to the right
                drawSquare(x+width+wAdjustment, y+hAdjustment+.5+5*previewX);
                //draw preview on the bottom
@@ -100,7 +125,6 @@ function drawPreview() {
 	   	}
 	   }
    }
-   ctx.fillstyle = fs;
 }
 
 //--------------------------------------------------
@@ -166,7 +190,7 @@ function initRandomizer() {
          bagSize = possibleRandomizer[i].value;
       }
    }
-   testing.textContent = "Current Bag Size: "+bagSize;
+   bagText.textContent = "Current Bag Size: "+bagSize;
 }
 
 
@@ -294,10 +318,10 @@ function drawHold() {
    // on one hand I should check to make sure there is a piece held to draw
    // but I can also try to assume that this function will never be called 
    // if no piece is held
-	var fs = ctx.fillStyle;
-   ctx.fillStyle = "black";
+   setColor("black");
+   //ctx.fillStyle = "black";
    ctx.fillRect(width*tilesz,(height-4.5)*tilesz,4*tilesz,4.5*tilesz);
-   ctx.fillStyle = heldPiece[1];
+   setColor(heldPiece[1]);
    var size = heldPiece[0][0].length;
    var adjustment = 1;
    if (heldPieceNumber ==0 || heldPieceNumber == 3) {
@@ -305,7 +329,7 @@ function drawHold() {
    }
 	for (var y = 0; y < size; y++) {
 		for (var x = 0; x < size; x++) {
-         if (heldPiece[0][0][x][y] != 0) {
+         if (heldPiece[0][0][y][x] != 0) {
 			   drawSquare(x+width+adjustment, height-4.5+y);
          }
 		}
@@ -320,18 +344,12 @@ function drawHold() {
 
 function drawSquare(x, y) {
 	ctx.fillRect(x * tilesz, y * tilesz, tilesz, tilesz);
-	var ss = ctx.strokeStyle;
-	ctx.strokeStyle = "#555";
 	ctx.strokeRect(x * tilesz, y * tilesz, tilesz, tilesz);
-	ctx.strokeStyle = ss;
 }
 function drawMiniSquare(x, y, scale) {
    var scaledSize = tilesz*scale
 	ctx.fillRect(x * tilesz, y * tilesz, scaledSize, scaledSize);
-	var ss = ctx.strokeStyle;
-	ctx.strokeStyle = "#555";
 	ctx.strokeRect(x * tilesz, y * tilesz, scaledSize, scaledSize);
-	ctx.strokeStyle = ss;
 }
 
 
@@ -342,6 +360,7 @@ function Piece(patterns, color, shapeNumber) {
 	this.patterns = patterns;
 	this.patterni = 0;
    this.recentlyHeld = 0;
+   this.number = shapeNumber;
    this.id = ""+pieceStatistics[shapeNumber]+shapeNumber;
 
 	this.color = color;
@@ -367,7 +386,11 @@ Piece.prototype.rotate = function(amount) {
 
 	if (this._collides(0, 0, nextpat)) {
 		// Check kickback
-		nudge = this.x > width / 2 ? -1 : 1;
+      if (this.number !== 0) {
+   		nudge = this.x > width / 2 ? -1 : 1;
+      } else {
+   		nudge = this.x > width / 2 ? -2 : 1;
+      }
 	}
 
 	if (!this._collides(nudge, 0, nextpat)) {
@@ -382,9 +405,9 @@ Piece.prototype.rotate = function(amount) {
 };
 
 Piece.prototype._collides = function(dx, dy, pat) {
-	for (var ix = 0; ix < pat.length; ix++) {
-		for (var iy = 0; iy < pat.length; iy++) {
-			if (!pat[ix][iy]) {
+	for (var ix = 0; ix < this.pattern.length; ix++) {
+		for (var iy = 0; iy < this.pattern.length; iy++) {
+			if (!pat[iy][ix]) {
 				continue;
 			}
 
@@ -448,16 +471,14 @@ Piece.prototype.moveLeft = function() {
 Piece.prototype.lock = function() {
 	for (var ix = 0; ix < this.pattern.length; ix++) {
 		for (var iy = 0; iy < this.pattern.length; iy++) {
-			if (!this.pattern[ix][iy]) {
+			if (!this.pattern[iy][ix]) {
 				continue;
 			}
 
 			if (this.y + iy < 0) {
 				// Game ends!
-            gameStatus.textContent= "Game Over";
-            
-            done = true;
-				return;
+            gameOver();
+            return;
 			}
 			board[this.y + iy][this.x + ix] = [this.color,this.id];
 		}
@@ -488,7 +509,7 @@ Piece.prototype.lock = function() {
             }
 			   line = line && board[y][x][0] !== "";
 		   }
-			for (var y2 = y; y2 > 1; y2--) {
+			for (var y2 = y; y2 > 0; y2--) {
 				for (var x = 0; x < width; x++) {
 					board[y2][x] = board[y2-1][x];
 				}
@@ -510,7 +531,7 @@ Piece.prototype.lock = function() {
       combo += 1;
       if (combo > bcombo) {
          bcombo = combo;
-         bestcombo.textContent = "Best Combo: " + bcombo;
+         bestcombo.textContent = "Best: " + bcombo;
       }
       combocount.textContent = "Combo: " + combo;
 		drawBoard();
@@ -538,48 +559,47 @@ Piece.prototype.updateGhost = function() {
 };
 
 Piece.prototype.drawGhost = function() {
-   var fs = ctx.fillStyle;
-   ctx.fillStyle = "black";
+   setColor(this.color);
+   ctx.globalAlpha = 0.5;
    var x = this.x;
    var y = this.ghosty;
-   for (var ix = 0; ix < this.pattern.length; ix++) {
-      for (var iy = 0; iy < this.pattern.length; iy++) {
-         if (this.pattern[ix][iy]) {
+   var patlength = this.pattern.length;
+   for (var ix = 0; ix < patlength; ix++) {
+      for (var iy = 0; iy < patlength; iy++) {
+         if (this.pattern[iy][ix]) {
             drawSquare(x + ix, y + iy);
          }
       }
    }
-   ctx.fillStyle = fs;
+   ctx.globalAlpha = 1.0;
 };
 Piece.prototype.undrawGhost = function() {
-   var fs = ctx.fillStyle;
-   ctx.fillStyle = clear;
+   setColor(clear); //ctx.fillStyle = clear;
    var x = this.x;
    var y = this.ghosty;
-   for (var ix = 0; ix < this.pattern.length; ix++) {
-      for (var iy = 0; iy < this.pattern.length; iy++) {
-         if (this.pattern[ix][iy]) {
+   var patlength = this.pattern.length;
+   for (var ix = 0; ix < patlength; ix++) {
+      for (var iy = 0; iy < patlength; iy++) {
+         if (this.pattern[iy][ix]) {
             drawSquare(x + ix, y + iy);
          }
       }
    }
-   ctx.fillStyle = fs;
 };
 
 
 Piece.prototype._fill = function(color) {
-	var fs = ctx.fillStyle;
-	ctx.fillStyle = color;
+	setColor(color);//ctx.fillStyle = color;
 	var x = this.x;
 	var y = this.y;
-	for (var ix = 0; ix < this.pattern.length; ix++) {
-		for (var iy = 0; iy < this.pattern.length; iy++) {
-			if (this.pattern[ix][iy]) {
-				drawSquare(x + ix, y + iy);
-			}
-		}
-	}
-	ctx.fillStyle = fs;
+   var patlength = this.pattern.length;
+   for (var ix = 0; ix < patlength; ix++) {
+      for (var iy = 0; iy < patlength; iy++) {
+         if (this.pattern[iy][ix]) {
+            drawSquare(x + ix, y + iy);
+         }
+      }
+   }
 };
 
 Piece.prototype.undraw = function(ctx) {
@@ -607,11 +627,14 @@ document.body.addEventListener("keyup", function (e) {
 }, false);
 
 function key(k) {
-	if (done) {
+   if (k == 82) { // Player pressed r
+      reset();
+   }
+	if (gdone) {
 		return;
 	}
 	if (k == 38) { // Player pressed up
-		piece.rotate(1);
+		piece.rotate(3);
 		dropStart = Date.now();
 	}
    else if (k == 40) { // Player holding down
@@ -624,11 +647,11 @@ function key(k) {
 		piece.moveRight();
 	}
    else if (k == 83) { // Player pressed s
-      piece.rotate(1);
+      piece.rotate(3);
       dropStart = Date.now();
    }
    else if (k == 68) { // Player pressed d
-      piece.rotate(3);
+      piece.rotate(1);
       dropStart = Date.now();
    }
    else if (k == 70) { // Player pressed f
@@ -637,9 +660,6 @@ function key(k) {
    }
    else if (k == 65) { // Player pressed a
       holdPiece();
-   }
-   else if (k == 82) { // Player pressed r
-      reset();
    }
    else if (k == 32) { // Player pressed space
       while (piece.down() == 0) {
@@ -651,34 +671,36 @@ function key(k) {
 }
 
 function drawBoard() {
-	var fs = ctx.fillStyle;
 	for (var y = 0; y < height; y++) {
 		for (var x = 0; x < width; x++) {
-			ctx.fillStyle = board[y][x][0] || clear;
+			//ctx.fillStyle = board[y][x][0] || clear;
+         //
+         setColor(board[y][x][0] || clear);
 			drawSquare(x, y);
 		}
 	}
-	ctx.fillStyle = fs;
 }
 
 function initSideBoard() {
-	var fs = ctx.fillStyle;
-   ctx.fillStyle = "black";
+   //ctx.fillStyle = "black";
+   setColor("black");
    ctx.fillRect(width*tilesz,0,extraWidth*tilesz,(height+extraHeight)*tilesz);
    ctx.fillRect(0,height*tilesz,(width+extraWidth)*tilesz,extraHeight*tilesz);
-   ctx.fillStyle = "white";
+   setColor(clear); //ctx.fillStyle = "white";
    ctx.fillRect((width+.2)*tilesz,(height-5.1)*tilesz,(4-.4)*tilesz,.1*tilesz);
 }
 function main() {
-	var now = Date.now();
-	var delta = now - dropStart;
-   if (piece === null) {
-      piece = nextPiece();
+   if (!gdone) {
+	   var now = Date.now();
+      var delta = now - dropStart;
+      if (piece === null) {
+          piece = nextPiece();
+      }
+	   if (delta > 400) {
+	   	piece.down();
+		   dropStart = now;
+	   }
    }
-	if (delta > 400) {
-		piece.down();
-		dropStart = now;
-	}
 
 	if (!done) {
 		requestAnimationFrame(main);
@@ -698,6 +720,12 @@ function reset() {
 }
 
 function initGame() {
+   // in case window size changed
+   wHeight       = window.innerHeight;
+   tilesz            = wHeight*.7 / 20;
+   canvas.width      = ( width + extraWidth)  * tilesz;
+   canvas.height     = ( height+ extraHeight) * tilesz;
+
    initBoard();
    initStats();
    initSideBoard();
@@ -705,7 +733,8 @@ function initGame() {
    isPieceHeld = 0;
    isHoldLocked = 0;
    //heldPieceNumber = -1;
-   done = false;
+   done  = false;
+   gdone = false;
    dropStart = Date.now();
    downI = {};
    piece = null;
@@ -719,9 +748,16 @@ function clearScores() {
    squares                 =  0;
    linecount.textContent   = "Lines: "       +lines;
    combocount.textContent  = "Combo: "       +combo;
-   bestcombo.textContent   = "Best Combo: "  +combo;
-   squarecount.textContent = "Squares: "     +combo;
+   bestcombo.textContent   = "Best: "  +bcombo;
+   squarecount.textContent = "Squares: "     +squares;
    gameStatus.textContent  = "";
+}
+
+function gameOver() {
+   gameStatus.textContent= "Game Over";
+   //done = true;
+   gdone = true;
+	return;
 }
 
 lastReset = Date.now()
