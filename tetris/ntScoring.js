@@ -1,13 +1,3 @@
-var canvas = document.getElementById('board');
-var ctx = canvas.getContext("2d");
-var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
-var width         = 10;
-var height        = 20;
-var extraWidth    = 4;
-var extraHeight   = 2.5;
-var tilesz        = 28;
-canvas.width      = ( width + extraWidth)  * tilesz;
-canvas.height     = ( height+ extraHeight) * tilesz;
 var WALL = 1;
 var BLOCK = 2;
 var SILVER = 7;
@@ -27,13 +17,37 @@ var gdone;
 
 var piece = null;
 
-var dropStart;
+
 var downI;
 
 var board = [];
 var bag = [];
 var lastReset;
 var bagText    = document.getElementById('bagsize');
+
+//--------------------------------------------------
+// For sizing
+var canvas = document.getElementById('board');
+var ctx = canvas.getContext("2d");
+var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
+var BOARDWIDTH    = 10;
+var BOARDHEIGHT   = 20;
+var SIDEWIDTH     = 5;
+var extraHeight   = 2.5;
+var sideBarX;
+var tilesz;
+
+function initCanvas() {
+   wHeight           = window.innerHeight;
+   tilesz            = wHeight*.7 / BOARDHEIGHT;
+   sideBarX          = BOARDWIDTH + .1 
+   canvas.width      = ( sideBarX + SIDEWIDTH )  * tilesz;
+   canvas.height     = ( BOARDHEIGHT+ extraHeight) * tilesz;
+}
+
+
+
+
 
 //--------------------------------------------------
 // For Graphics and colors
@@ -59,7 +73,7 @@ var AmaranthPink = "#f7a8b8";
 //];
 clear = "black";
 //--------------------------------------------------
-// For Piece Statistics (useful for checking square mode)
+// For Piece Statistics (needed for checking square mode)
 var pieceStatistics = [0,0,0,0,0,0,0];
 var pieceLetters = ['I','J','L','O','S','T','Z'];
 //--------------------------------------------------
@@ -72,21 +86,46 @@ var isHoldLocked;
 //--------------------------------------------------
 // For New Games
 document.getElementById('newGame').onclick = reset;
+
+function reset() {
+	var now = Date.now();
+	var delta = now - lastReset;
+   if (delta > 100) {
+      lastReset = Date.now()
+      initGame();
+      drawBoard();
+      main();
+   }
+}
 //--------------------------------------------------
 // For Scoring
 var lines         = 0;
 var combo         = 0;
 var bcombo        = 0;
 var squares       = 0;
+var numpieces     = 0;
 var linecount     = document.getElementById('lines');
 var combocount    = document.getElementById('combo');
 var bestcombo     = document.getElementById('best-combo');
-var squarecount   = document.getElementById('squares');
+var piececount    = document.getElementById('pieces');
 var gameStatus    = document.getElementById('status');
+
+function clearScores() {
+   lines                   =  0;
+   combo                   =  0;
+   bcombo                  =  0;
+   squares                 =  0;
+   numpieces               =  125;
+   linecount.textContent   = "Lines: "    + lines;
+   combocount.textContent  = "Combo: "    + combo;
+   bestcombo.textContent   = "Best: "     + bcombo;
+   piececount.textContent  = "Pieces: "   + numpieces;
+   gameStatus.textContent  = "";
+}
 //--------------------------------------------------
 // For Piece Preview
 function updatePreview() {
-   if (bag.length < 3) {
+   if (bag.length < 5) {
       makeAndShuffleBag();
    }
    drawPreview();
@@ -94,9 +133,10 @@ function updatePreview() {
 
 function drawPreview() {
    setColor("Black");
-   ctx.fillRect(width*tilesz,0,4*tilesz,(height-5.1)*tilesz);
-   ctx.fillRect(0,height*tilesz,(width+extraWidth)*tilesz,extraHeight*tilesz);
-   for (previewX = 0; previewX < 3; previewX++) {
+   ctx.fillRect(sideBarX*tilesz,0,SIDEWIDTH*tilesz,(BOARDHEIGHT-5.1)*tilesz);
+   //for a bottom preview
+   //ctx.fillRect(0,BOARDHEIGHT*tilesz,canvas.width,extraHeight*tilesz);
+   for (previewX = 0; previewX < 5; previewX++) {
       
       var nextToComeNumber = bag[bag.length-(1+previewX)];
       var nextToComePiece = pieces[nextToComeNumber];
@@ -104,23 +144,24 @@ function drawPreview() {
       var size = nextToComePiece[0][0].length;
 
       var wAdjustment = 1;
-      var hAdjustment = 0;
+      var hAdjustment = .5;
       if (nextToComeNumber ==0) {
-        wAdjustment = 0;
+         wAdjustment = 0.5;
+         hAdjustment = -1;
       } else if (nextToComeNumber === 3) {
-        wAdjustment = 0;
-        hAdjustment = -1;
+        wAdjustment = 0.5;
+        hAdjustment = -.5;
       }
       var scale = .5;
 	   for (var y = 0; y < size; y++) {
 	   	for (var x = 0; x < size; x++) {
             if (nextToComePiece[0][0][y][x] != 0) {
                //draw preview to the right
-               drawSquare(x+width+wAdjustment, y+hAdjustment+.5+5*previewX);
+               drawSquare(sideBarX+x+wAdjustment, y+hAdjustment+3*previewX);
                //draw preview on the bottom
-	   		   drawMiniSquare((x+wAdjustment+.5+5*previewX)*scale,
-                              (y+hAdjustment+.5)*scale + height,
-                              scale);
+	   		   //drawMiniSquare((x+wAdjustment+.5+5*previewX)*scale,
+               //               (y+hAdjustment+.5)*scale + BOARDHEIGHT,
+               //               scale);
            }
 	   	}
 	   }
@@ -174,6 +215,9 @@ function newPieceDet( blockNumber ) {
 	return new Piece(p[0], p[1],blockNumber);
 }
 function nextPiece() {
+   numpieces++;
+   piececount.textContent = "Pieces: "+numpieces;
+   speedUp();
    if (bag.length == 0) { //with preview, I don't think this is ever called
       makeAndShuffleBag();
       return newPieceDet(bag.pop());
@@ -193,7 +237,24 @@ function initRandomizer() {
    bagText.textContent = "Current Bag Size: "+bagSize;
 }
 
+//--------------------------------------------------
+// For speeding up blocks falling
+var dropStart;
+var GRAVITY          = 400;
+var SPEEDCHANGE      = 50;
+var TRANSITION       = 25;
+var TRANSITIONSTART  = 125
+var speed            = 0;
+var numspeedchanges  = 0;
 
+function speedUp() {
+   if (numpieces - TRANSITION*numspeedchanges > TRANSITIONSTART && speed+SPEEDCHANGE < GRAVITY) {
+      // after TRANSITIONSTART many pieces, every additonal TRANSITION
+      // number of pieces triggers speed up of SPEEDCHANGE
+      numspeedchanges += 1;
+      speed = numspeedchanges*SPEEDCHANGE;
+   }
+}
 
 
 //--------------------------------------------------
@@ -252,8 +313,8 @@ function transformSquare(row,col,type) {
 function checkForSquares() {
    var outcome    = 0;
    var nsquares   = 0;
-   for (var r=0; r<height-3; r++) {
-      for (var c=0; c<width-3; c++) {
+   for (var r=0; r<BOARDHEIGHT-3; r++) {
+      for (var c=0; c<BOARDWIDTH-3; c++) {
          outcome = checkSquare(r,c);
          if (outcome == SILVER) {
             nsquares += outcome-6;
@@ -264,7 +325,6 @@ function checkForSquares() {
    }
    if (nsquares > 0) {
       squares += nsquares;
-      squarecount.textContent = "Squares: "+squares;
    }
 }
 //--------------------------------------------------
@@ -272,23 +332,14 @@ function checkForSquares() {
 
 
 function initBoard() {
-   for (var r = 0; r < height; r++) {
+   for (var r = 0; r < BOARDHEIGHT; r++) {
 	   board[r] = [];
-	   for (var c = 0; c < width; c++) {
+	   for (var c = 0; c < BOARDWIDTH; c++) {
 	   	board[r][c] = ["",-1];
 	   }
    }
 }
 
-function initStats() {
-   pieceStatistics = [0,0,0,0,0,0,0];
-}
-
-
-
-function updateStats( blockNumber ) {
-   pieceStatistics[blockNumber] += 1;
-}
 
 function holdPiece() {
    if (!piece.recentlyHeld) {
@@ -319,18 +370,22 @@ function drawHold() {
    // but I can also try to assume that this function will never be called 
    // if no piece is held
    setColor("black");
-   //ctx.fillStyle = "black";
-   ctx.fillRect(width*tilesz,(height-4.5)*tilesz,4*tilesz,4.5*tilesz);
+   ctx.fillRect(BOARDWIDTH*tilesz,(BOARDHEIGHT-4.5)*tilesz,SIDEWIDTH*tilesz,4.5*tilesz);
    setColor(heldPiece[1]);
    var size = heldPiece[0][0].length;
-   var adjustment = 1;
-   if (heldPieceNumber ==0 || heldPieceNumber == 3) {
-      adjustment = 0;
+   var hAdjustment = 1 - 4.5;
+   var wAdjustment = 1;
+   if (heldPieceNumber == 0 ) {
+      hAdjustment = -.5 - 4.5;
+      wAdjustment = .5;
+   } else if ( heldPieceNumber == 3) {
+      hAdjustment = 0 - 4.5;
+      wAdjustment = .5;
    }
 	for (var y = 0; y < size; y++) {
 		for (var x = 0; x < size; x++) {
          if (heldPiece[0][0][y][x] != 0) {
-			   drawSquare(x+width+adjustment, height-4.5+y);
+			   drawSquare(sideBarX + x+ wAdjustment, y + BOARDHEIGHT + hAdjustment);
          }
 		}
 	}
@@ -365,7 +420,7 @@ function Piece(patterns, color, shapeNumber) {
 
 	this.color = color;
 
-	this.x = width/2-parseInt(Math.ceil(this.pattern.length/2), 10);
+	this.x = BOARDWIDTH/2-parseInt(Math.ceil(this.pattern.length/2), 10);
 	this.y = -4;
    this.ghosty;
 }
@@ -387,9 +442,9 @@ Piece.prototype.rotate = function(amount) {
 	if (this._collides(0, 0, nextpat)) {
 		// Check kickback
       if (this.number !== 0) {
-   		nudge = this.x > width / 2 ? -1 : 1;
+   		nudge = this.x > BOARDWIDTH / 2 ? -1 : 1;
       } else {
-   		nudge = this.x > width / 2 ? -2 : 1;
+   		nudge = this.x > BOARDWIDTH / 2 ? -2 : 1;
       }
 	}
 
@@ -413,7 +468,7 @@ Piece.prototype._collides = function(dx, dy, pat) {
 
 			var x = this.x + ix + dx;
 			var y = this.y + iy + dy;
-			if (y >= height || x < 0 || x >= width) {
+			if (y >= BOARDHEIGHT || x < 0 || x >= BOARDWIDTH) {
 				return WALL;
 			}
 			if (y < 0) {
@@ -487,15 +542,15 @@ Piece.prototype.lock = function() {
    checkForSquares();
 	var nlines  = 0;
    var gsBonus = 0;
-	for (var y = 0; y < height; y++) {
+	for (var y = 0; y < BOARDHEIGHT; y++) {
 		var line = true;
       var golds = [];
       var silvers = [];
-		for (var x = 0; x < width; x++) {
+		for (var x = 0; x < BOARDWIDTH; x++) {
 			line = line && board[y][x][0] !== "";
 		}
 		if (line) {
-		   for (var x = 0; x < width; x++) {
+		   for (var x = 0; x < BOARDWIDTH; x++) {
             var currentId = board[y][x][1];
             var pieceType = currentId % 10;
             if (pieceType == GOLD) {
@@ -510,11 +565,11 @@ Piece.prototype.lock = function() {
 			   line = line && board[y][x][0] !== "";
 		   }
 			for (var y2 = y; y2 > 0; y2--) {
-				for (var x = 0; x < width; x++) {
+				for (var x = 0; x < BOARDWIDTH; x++) {
 					board[y2][x] = board[y2-1][x];
 				}
 			}
-			for (var x = 0; x < width; x++) {
+			for (var x = 0; x < BOARDWIDTH; x++) {
 				board[0][x] = ["",-1];
 			}
 			nlines++;
@@ -548,7 +603,7 @@ Piece.prototype.updateGhost = function() {
    // this should not be a permanent solution
    // also theres another while somewhere else, be vewy careful
    var emergencyescape = 0;
-   while (!this._collides(0, 1, this.pattern) && emergencyescape < height+3) {
+   while (!this._collides(0, 1, this.pattern) && emergencyescape < BOARDHEIGHT+3) {
       emergencyescape++;
       this.y++;
    }
@@ -574,7 +629,7 @@ Piece.prototype.drawGhost = function() {
    ctx.globalAlpha = 1.0;
 };
 Piece.prototype.undrawGhost = function() {
-   setColor(clear); //ctx.fillStyle = clear;
+   setColor(clear);
    var x = this.x;
    var y = this.ghosty;
    var patlength = this.pattern.length;
@@ -589,7 +644,7 @@ Piece.prototype.undrawGhost = function() {
 
 
 Piece.prototype._fill = function(color) {
-	setColor(color);//ctx.fillStyle = color;
+	setColor(color);
 	var x = this.x;
 	var y = this.y;
    var patlength = this.pattern.length;
@@ -671,10 +726,8 @@ function key(k) {
 }
 
 function drawBoard() {
-	for (var y = 0; y < height; y++) {
-		for (var x = 0; x < width; x++) {
-			//ctx.fillStyle = board[y][x][0] || clear;
-         //
+	for (var y = 0; y < BOARDHEIGHT; y++) {
+		for (var x = 0; x < BOARDWIDTH; x++) {
          setColor(board[y][x][0] || clear);
 			drawSquare(x, y);
 		}
@@ -684,19 +737,19 @@ function drawBoard() {
 function initSideBoard() {
    //ctx.fillStyle = "black";
    setColor("black");
-   ctx.fillRect(width*tilesz,0,extraWidth*tilesz,(height+extraHeight)*tilesz);
-   ctx.fillRect(0,height*tilesz,(width+extraWidth)*tilesz,extraHeight*tilesz);
-   setColor(clear); //ctx.fillStyle = "white";
-   ctx.fillRect((width+.2)*tilesz,(height-5.1)*tilesz,(4-.4)*tilesz,.1*tilesz);
+   ctx.fillRect(BOARDWIDTH*tilesz,0,(SIDEWIDTH+.1)*tilesz,(BOARDHEIGHT+extraHeight)*tilesz);
+   ctx.fillRect(0,BOARDHEIGHT*tilesz,(sideBarX)*tilesz,extraHeight*tilesz);
+   setColor("white");
+   ctx.fillRect((sideBarX+.5)*tilesz,(BOARDHEIGHT-4.7)*tilesz,(SIDEWIDTH-1)*tilesz,.2*tilesz);
 }
 function main() {
    if (!gdone) {
-	   var now = Date.now();
+      var now = Date.now();
       var delta = now - dropStart;
       if (piece === null) {
-          piece = nextPiece();
+         piece = nextPiece();
       }
-	   if (delta > 400) {
+	   if (delta > GRAVITY - speed) {
 	   	piece.down();
 		   dropStart = now;
 	   }
@@ -707,25 +760,9 @@ function main() {
 	}
 }
 
-function reset() {
-   // a future function for just resetting everythin
-	var now = Date.now();
-	var delta = now - lastReset;
-   if (delta > 100) {
-      lastReset = Date.now()
-      initGame();
-      drawBoard();
-      main();
-   }
-}
 
 function initGame() {
-   // in case window size changed
-   wHeight       = window.innerHeight;
-   tilesz            = wHeight*.7 / 20;
-   canvas.width      = ( width + extraWidth)  * tilesz;
-   canvas.height     = ( height+ extraHeight) * tilesz;
-
+   initCanvas();
    initBoard();
    initStats();
    initSideBoard();
@@ -735,23 +772,13 @@ function initGame() {
    //heldPieceNumber = -1;
    done  = false;
    gdone = false;
+   speed = 0;
    dropStart = Date.now();
    downI = {};
    piece = null;
    clearScores();
 }
 
-function clearScores() {
-   lines                   =  0;
-   combo                   =  0;
-   bcombo                  =  0;
-   squares                 =  0;
-   linecount.textContent   = "Lines: "       +lines;
-   combocount.textContent  = "Combo: "       +combo;
-   bestcombo.textContent   = "Best: "  +bcombo;
-   squarecount.textContent = "Squares: "     +squares;
-   gameStatus.textContent  = "";
-}
 
 function gameOver() {
    gameStatus.textContent= "Game Over";
