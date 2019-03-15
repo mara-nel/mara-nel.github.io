@@ -38,7 +38,7 @@ var sideBarX;
 var tilesz;
 
 function initCanvas() {
-   wHeight           = window.innerHeight;
+   var wHeight       = window.innerHeight;
    tilesz            = wHeight*.7 / BOARDHEIGHT;
    sideBarX          = BOARDWIDTH + .1 
    canvas.width      = ( sideBarX + SIDEWIDTH )  * tilesz;
@@ -115,7 +115,7 @@ function clearScores() {
    combo                   =  0;
    bcombo                  =  0;
    squares                 =  0;
-   numpieces               =  125;
+   numpieces               =  0;
    linecount.textContent   = "Lines: "    + lines;
    combocount.textContent  = "Combo: "    + combo;
    bestcombo.textContent   = "Best: "     + bcombo;
@@ -340,6 +340,15 @@ function initBoard() {
    }
 }
 
+function initStats() {
+   pieceStatistics = [0,0,0,0,0,0,0];
+}
+
+
+
+function updateStats( blockNumber ) {
+   pieceStatistics[blockNumber] += 1;
+}
 
 function holdPiece() {
    if (!piece.recentlyHeld) {
