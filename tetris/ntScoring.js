@@ -4,7 +4,7 @@ var SILVER = 7;
 var GOLD = 8;
 var pieces = [
 	[I, "cyan"],
-	[J, "blue"],
+	[J, "purple"],
 	[L, "PaleVioletRed"],
 	[O, "gray"],
 	[S, "green"],
@@ -26,37 +26,63 @@ var lastReset;
 var bagText    = document.getElementById('bagsize');
 
 //--------------------------------------------------
-// For sizing
+// For sizing and graphics
 var canvas = document.getElementById('board');
-var ctx = canvas.getContext("2d");
+var context = canvas.getContext("2d");
 var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
+var gridChoice = document.getElementsByName('grids');
+var gridsOn = 1;
 var BOARDWIDTH    = 10;
 var BOARDHEIGHT   = 20;
-var SIDEWIDTH     = 5;
-var extraHeight   = 2.5;
+var LEFTSPACE     = 2;
+var RIGHTSPACE    = 5;
+var BOARDPERCENT  = .7;
+var extraHeight   = 1;
 var sideBarX;
+var boardX;
 var tilesz;
+var wHeight;
+var wWidth;
+var thinLine;
+var thickLine;
 
-function initCanvas() {
-   var wHeight       = window.innerHeight;
-   tilesz            = wHeight*.7 / BOARDHEIGHT;
-   sideBarX          = BOARDWIDTH + .1 
-   canvas.width      = ( sideBarX + SIDEWIDTH )  * tilesz;
-   canvas.height     = ( BOARDHEIGHT+ extraHeight) * tilesz;
+context.lineWidth = 1;
+context.sRect=function(x,y,w,h,l){
+   l=parseInt(l);
+   x=parseInt(x+l/2);
+   y=parseInt(y+l/2);
+   context.strokeRect(x,y,w-l,h-l);
+}
+context.fRect=function(x,y,w,h){
+  x=parseInt(x);
+  y=parseInt(y);
+  context.fillRect(x,y,w,h);
 }
 
+function initCanvas() {
+   wHeight       = window.innerHeight;
+   wWidth        = window.innerWidth;
+   tilesz        = parseInt(wHeight*BOARDPERCENT / BOARDHEIGHT);
+   thinLine      = .0125;
+   thickLine     = .25;
+   boardX        = LEFTSPACE + 1*thickLine;
+   sideBarX      = LEFTSPACE + BOARDWIDTH + 2*thickLine;
+   canvas.width  = ( sideBarX + RIGHTSPACE )  * tilesz;
+   canvas.height = ( BOARDHEIGHT+ extraHeight) * tilesz;
+   for ( var i =0; i < gridChoice.length; i++) {
+      if (gridChoice[i].checked) {
+         gridsOn = gridChoice[i].value;
+      }
+   }
 
+}
 
-
-
-//--------------------------------------------------
-// For Graphics and colors
 function setColor (color) {
-   ctx.fillStyle = color;
+   context.fillStyle = color;
    if (color != clear ) {
-      ctx.strokeStyle = "black";
+      context.strokeStyle = "black";
    } else {
-      ctx.strokeStyle = "dimGray";
+      context.strokeStyle = "dimGray";
    }
 }
 var MayaBlue = "#55cdfc";
@@ -72,10 +98,6 @@ var AmaranthPink = "#f7a8b8";
 //	[Z, AmaranthPink]
 //];
 clear = "black";
-//--------------------------------------------------
-// For Piece Statistics (needed for checking square mode)
-var pieceStatistics = [0,0,0,0,0,0,0];
-var pieceLetters = ['I','J','L','O','S','T','Z'];
 //--------------------------------------------------
 // For Piece Hold
 var heldPiece;
@@ -133,9 +155,7 @@ function updatePreview() {
 
 function drawPreview() {
    setColor("Black");
-   ctx.fillRect(sideBarX*tilesz,0,SIDEWIDTH*tilesz,(BOARDHEIGHT-5.1)*tilesz);
-   //for a bottom preview
-   //ctx.fillRect(0,BOARDHEIGHT*tilesz,canvas.width,extraHeight*tilesz);
+   context.fRect((sideBarX)*tilesz+1,0,RIGHTSPACE*tilesz,(BOARDHEIGHT-5.1)*tilesz);
    for (previewX = 0; previewX < 5; previewX++) {
       
       var nextToComeNumber = bag[bag.length-(1+previewX)];
@@ -152,16 +172,11 @@ function drawPreview() {
         wAdjustment = 0.5;
         hAdjustment = -.5;
       }
-      var scale = .5;
 	   for (var y = 0; y < size; y++) {
 	   	for (var x = 0; x < size; x++) {
             if (nextToComePiece[0][0][y][x] != 0) {
                //draw preview to the right
                drawSquare(sideBarX+x+wAdjustment, y+hAdjustment+3*previewX);
-               //draw preview on the bottom
-	   		   //drawMiniSquare((x+wAdjustment+.5+5*previewX)*scale,
-               //               (y+hAdjustment+.5)*scale + BOARDHEIGHT,
-               //               scale);
            }
 	   	}
 	   }
@@ -256,14 +271,26 @@ function speedUp() {
    }
 }
 
+//--------------------------------------------------
+// For Piece Statistics (needed for checking square mode)
+var pieceStatistics = [0,0,0,0,0,0,0];
+var pieceLetters = ['I','J','L','O','S','T','Z'];
 
+function initStats() {
+   pieceStatistics = [0,0,0,0,0,0,0];
+}
+
+function updateStats( blockNumber ) {
+   pieceStatistics[blockNumber] += 1;
+}
 //--------------------------------------------------
 // For square mode
-function checkSquare(row,col) {
+function checkSquare(row,col,type) {
    var piecesPresent = [];
    var shapesPresent = [];
    var currentId;
    var currentShape;
+   var transform = false;
    for (var r=0; r<4; r++) {
       for (var c=0; c<4; c++) {
          currentId = board[row+r][col+c][1];
@@ -286,15 +313,18 @@ function checkSquare(row,col) {
    }
    if (piecesPresent.length != 4) {
       return 0; //a perfect square uses exactly 4 pieces
-   } else if (shapesPresent.length > 1) {
-      transformSquare(row,col,SILVER);
-      return SILVER; //a silver block
+   } else if (shapesPresent.length > 1 && type==SILVER) {
+      transform = true;
+   } else if (shapesPresent.length == 1 && type==GOLD) {
+      transform = true;
    } else {
-      transformSquare(row,col,GOLD);
-      return GOLD; //a gold block
+      return 0;
+   }
+   if(transform) {
+      transformSquare(row,col,type);
+      return type;
    }
 }
-
 
 function transformSquare(row,col,type) {
    var newId = ""+squares+type;
@@ -313,12 +343,18 @@ function transformSquare(row,col,type) {
 function checkForSquares() {
    var outcome    = 0;
    var nsquares   = 0;
+   // to make sure gold squares have priority, 
+   // check for golds then for silvers
    for (var r=0; r<BOARDHEIGHT-3; r++) {
       for (var c=0; c<BOARDWIDTH-3; c++) {
-         outcome = checkSquare(r,c);
-         if (outcome == SILVER) {
-            nsquares += outcome-6;
-         } else if (outcome == GOLD) {
+         outcome = checkSquare(r,c,GOLD);
+         nsquares += outcome-6;
+      }
+   }
+   for (var r=0; r<BOARDHEIGHT-3; r++) {
+      for (var c=0; c<BOARDWIDTH-3; c++) {
+         outcome = checkSquare(r,c,SILVER);
+         if (outcome) {
             nsquares += outcome-6;
          }
       }
@@ -340,15 +376,6 @@ function initBoard() {
    }
 }
 
-function initStats() {
-   pieceStatistics = [0,0,0,0,0,0,0];
-}
-
-
-
-function updateStats( blockNumber ) {
-   pieceStatistics[blockNumber] += 1;
-}
 
 function holdPiece() {
    if (!piece.recentlyHeld) {
@@ -379,10 +406,10 @@ function drawHold() {
    // but I can also try to assume that this function will never be called 
    // if no piece is held
    setColor("black");
-   ctx.fillRect(BOARDWIDTH*tilesz,(BOARDHEIGHT-4.5)*tilesz,SIDEWIDTH*tilesz,4.5*tilesz);
+   context.fRect(sideBarX*tilesz+1,(BOARDHEIGHT-4)*tilesz,RIGHTSPACE*tilesz,4.5*tilesz);
    setColor(heldPiece[1]);
    var size = heldPiece[0][0].length;
-   var hAdjustment = 1 - 4.5;
+   var hAdjustment = 1 - 4;
    var wAdjustment = 1;
    if (heldPieceNumber == 0 ) {
       hAdjustment = -.5 - 4.5;
@@ -407,13 +434,11 @@ function drawHold() {
 
 
 function drawSquare(x, y) {
-	ctx.fillRect(x * tilesz, y * tilesz, tilesz, tilesz);
-	ctx.strokeRect(x * tilesz, y * tilesz, tilesz, tilesz);
-}
-function drawMiniSquare(x, y, scale) {
-   var scaledSize = tilesz*scale
-	ctx.fillRect(x * tilesz, y * tilesz, scaledSize, scaledSize);
-	ctx.strokeRect(x * tilesz, y * tilesz, scaledSize, scaledSize);
+	context.fRect(x * tilesz, y * tilesz, tilesz, tilesz);
+   
+   if (gridsOn == 1) {
+	   context.sRect(x * tilesz, y * tilesz, tilesz, tilesz, thinLine*tilesz);
+   }
 }
 
 
@@ -624,18 +649,18 @@ Piece.prototype.updateGhost = function() {
 
 Piece.prototype.drawGhost = function() {
    setColor(this.color);
-   ctx.globalAlpha = 0.5;
+   context.globalAlpha = 0.5;
    var x = this.x;
    var y = this.ghosty;
    var patlength = this.pattern.length;
    for (var ix = 0; ix < patlength; ix++) {
       for (var iy = 0; iy < patlength; iy++) {
          if (this.pattern[iy][ix]) {
-            drawSquare(x + ix, y + iy);
+            drawSquare(boardX + x + ix, y + iy);
          }
       }
    }
-   ctx.globalAlpha = 1.0;
+   context.globalAlpha = 1.0;
 };
 Piece.prototype.undrawGhost = function() {
    setColor(clear);
@@ -645,7 +670,7 @@ Piece.prototype.undrawGhost = function() {
    for (var ix = 0; ix < patlength; ix++) {
       for (var iy = 0; iy < patlength; iy++) {
          if (this.pattern[iy][ix]) {
-            drawSquare(x + ix, y + iy);
+            drawSquare(boardX + x + ix, y + iy);
          }
       }
    }
@@ -660,17 +685,17 @@ Piece.prototype._fill = function(color) {
    for (var ix = 0; ix < patlength; ix++) {
       for (var iy = 0; iy < patlength; iy++) {
          if (this.pattern[iy][ix]) {
-            drawSquare(x + ix, y + iy);
+            drawSquare(boardX + x + ix, y + iy);
          }
       }
    }
 };
 
-Piece.prototype.undraw = function(ctx) {
+Piece.prototype.undraw = function(context) {
 	this._fill(clear);
 };
 
-Piece.prototype.draw = function(ctx) {
+Piece.prototype.draw = function(context) {
 	this._fill(this.color);
 };
 //--------------------------------------------------
@@ -737,19 +762,49 @@ function key(k) {
 function drawBoard() {
 	for (var y = 0; y < BOARDHEIGHT; y++) {
 		for (var x = 0; x < BOARDWIDTH; x++) {
-         setColor(board[y][x][0] || clear);
-			drawSquare(x, y);
+        if (!board[y][x][0]) {
+         setColor(clear);
+			drawSquare(boardX + x, y);
+        }
+		}
+	}
+	for (var y = 0; y < BOARDHEIGHT; y++) {
+		for (var x = 0; x < BOARDWIDTH; x++) {
+        if (board[y][x][0]) {
+         setColor(board[y][x][0]);
+			drawSquare(boardX + x, y);
+        }
 		}
 	}
 }
 
 function initSideBoard() {
-   //ctx.fillStyle = "black";
+   //context.fillStyle = "black";
    setColor("black");
-   ctx.fillRect(BOARDWIDTH*tilesz,0,(SIDEWIDTH+.1)*tilesz,(BOARDHEIGHT+extraHeight)*tilesz);
-   ctx.fillRect(0,BOARDHEIGHT*tilesz,(sideBarX)*tilesz,extraHeight*tilesz);
-   setColor("white");
-   ctx.fillRect((sideBarX+.5)*tilesz,(BOARDHEIGHT-4.7)*tilesz,(SIDEWIDTH-1)*tilesz,.2*tilesz);
+   //left side
+   context.fRect(0,0,
+      canvas.width,
+      canvas.height);
+   context.strokeStyle = "white";
+   context.fillStyle = "#99D3DF";
+   context.fRect((sideBarX+.5)*tilesz,
+                  (BOARDHEIGHT-4.5)*tilesz,
+                  (RIGHTSPACE-1)*tilesz,
+                  thickLine*tilesz);
+   //make boundary around game board
+   context.fRect( LEFTSPACE*tilesz-1,
+                  0,
+                  thickLine*tilesz,
+                  (BOARDHEIGHT+thickLine)*tilesz-1);
+   context.fRect( (sideBarX-thickLine)*tilesz+1,
+                  0,
+                  thickLine*tilesz,
+                  (BOARDHEIGHT+thickLine)*tilesz-1);
+   context.fRect( LEFTSPACE*tilesz,
+                  (BOARDHEIGHT)*tilesz,
+                  (sideBarX-LEFTSPACE)*tilesz,
+                  (thickLine)*tilesz);
+
 }
 function main() {
    if (!gdone) {
