@@ -2,7 +2,7 @@ var WALL = 1;
 var BLOCK = 2;
 var pieces = [
 	[I, "cyan"],
-	[J, "blue"],
+	[J, "purple"],
 	[L, "PaleVioletRed"],
 	[O, "gray"],
 	[S, "green"],
@@ -32,19 +32,20 @@ var BOARDWIDTH    = 4;
 var BOARDHEIGHT   = 20;
 var LEFTSPACE     = 1;
 var SIDEWIDTH     = 5;
-var extraHeight   = 0;
+var BOARDPERCENT  = .75;
+var extraHeight   = 1;
 var sideBarX;
 var tilesz;
 var wHeight;
 var wWidth;
 
 function initCanvas() {
-   wHeight        = window.innerHeight;
-   wWidth         = window.innerWidth;
-   tilesz         = wHeight*.8 / BOARDHEIGHT;
-   sideBarX       = LEFTSPACE + BOARDWIDTH + .1 
-   canvas.width   = ( sideBarX + SIDEWIDTH )  * tilesz;
-   canvas.height  = ( BOARDHEIGHT+ extraHeight) * tilesz;
+   wHeight       = window.innerHeight;
+   wWidth        = window.innerWidth;
+   tilesz        = wHeight*BOARDPERCENT / BOARDHEIGHT;
+   sideBarX      = LEFTSPACE + BOARDWIDTH + .1 
+   canvas.width  = ( sideBarX + SIDEWIDTH )  * tilesz;
+   canvas.height = ( BOARDHEIGHT+ extraHeight) * tilesz;
 }
 
 
@@ -435,8 +436,15 @@ Piece.prototype.lock = function() {
       if (combo >0) {
          gameOver();
       }
-      combo = 0;
-      combocount.textContent = "Combo: " + combo;
+      //If this isn't commented, then after gameover,
+      //you can't see how you just did
+      //
+      //If you display what there combo was in some 
+      //other way, resetting combo to zero should be 
+      //fine
+      //
+      //combo = 0;
+      //combocount.textContent = "Combo: " + combo;
    }
 };
 
@@ -643,7 +651,7 @@ function drawBoard() {
 	for (var y = 0; y < BOARDHEIGHT; y++) {
 		for (var x = 0; x < BOARDWIDTH; x++) {
          setColor(board[y][x][0] || clear);
-			drawSquare(x+LEFTSPACE, y);
+			drawSquare(LEFTSPACE + x, y);
 		}
 	}
 }
@@ -652,9 +660,19 @@ function initSideBoard() {
    //ctx.fillStyle = "black";
    setColor("black");
    //left side
-   ctx.fillRect(0,0,tilesz,(BOARDHEIGHT+extraHeight)*tilesz);
+   ctx.fillRect(0,0,
+      LEFTSPACE*tilesz,
+      (BOARDHEIGHT+extraHeight)*tilesz);
    //right side
-   ctx.fillRect((LEFTSPACE+BOARDWIDTH)*tilesz,0,(SIDEWIDTH+.1)*tilesz,(BOARDHEIGHT+extraHeight)*tilesz);
+   ctx.fillRect(
+      (LEFTSPACE+BOARDWIDTH)*tilesz,
+      0,
+      (SIDEWIDTH+.1)*tilesz,
+      (BOARDHEIGHT+extraHeight)*tilesz);
+   ctx.fillRect(0,
+      BOARDHEIGHT*tilesz,
+      (sideBarX)*tilesz,
+      extraHeight*tilesz);
    setColor("white");
    ctx.fillRect((sideBarX+.5)*tilesz,(BOARDHEIGHT-4.7)*tilesz,(SIDEWIDTH-1)*tilesz,.2*tilesz);
 }
