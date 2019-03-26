@@ -132,16 +132,16 @@ var bestcombo     = document.getElementById('best-combo');
 var piececount    = document.getElementById('pieces');
 var gameStatus    = document.getElementById('status');
 
-function clearScores() {
+function initScores() {
    lines                   =  0;
    combo                   =  0;
    bcombo                  =  0;
    squares                 =  0;
    numpieces               =  0;
-   linecount.textContent   = "Lines: "    + lines;
-   combocount.textContent  = "Combo: "    + combo;
-   bestcombo.textContent   = "Best: "     + bcombo;
-   piececount.textContent  = "Pieces: "   + numpieces;
+   linecount.textContent   = "Lines: " + lines;
+   piececount.textContent  = "Pieces: "+ numpieces;
+   combocount.textContent  = "Combo: " + combo;
+   bestcombo.textContent   = "Best: "  + bcombo;
    gameStatus.textContent  = "";
 }
 //--------------------------------------------------
@@ -230,9 +230,7 @@ function newPieceDet( blockNumber ) {
 	return new Piece(p[0], p[1],blockNumber);
 }
 function nextPiece() {
-   numpieces++;
-   piececount.textContent = "Pieces: "+numpieces;
-   speedUp();
+   updatePieceCount();
    if (bag.length == 0) { //with preview, I don't think this is ever called
       makeAndShuffleBag();
       return newPieceDet(bag.pop());
@@ -240,6 +238,13 @@ function nextPiece() {
       return newPieceDet(bag.pop());
    }
 }
+
+function updatePieceCount() {
+   numpieces++;
+   piececount.textContent = "Pieces: "+numpieces;
+   speedUp();
+}
+
 var possibleRandomizer = document.getElementsByName("randomizer");
 bagSize = 0
 function initRandomizer() {
@@ -435,7 +440,6 @@ function drawHold() {
 
 function drawSquare(x, y) {
 	context.fRect(x * tilesz, y * tilesz, tilesz, tilesz);
-   
    if (gridsOn == 1) {
 	   context.sRect(x * tilesz, y * tilesz, tilesz, tilesz, thinLine*tilesz);
    }
@@ -470,27 +474,38 @@ Piece.prototype.wasHeldRecenty = function() { // this does not seem to work prop
 };
 
 Piece.prototype.rotate = function(amount) {
-	var nudge = 0;
 	var nextpat = this.patterns[(this.patterni + amount) % this.patterns.length];
-
-	if (this._collides(0, 0, nextpat)) {
-		// Check kickback
-      if (this.number !== 0) {
-   		nudge = this.x > BOARDWIDTH / 2 ? -1 : 1;
-      } else {
-   		nudge = this.x > BOARDWIDTH / 2 ? -2 : 1;
+   var kicks = [[0,0],[-1,0],[0,1],[1,0],[0,-1]];
+   var wk = [0,0];
+   if (this.number === 0) {
+      kicks = [[0,0],[-1,0],[-2,0],[0,1],[1,0],[2,0],[0,-1]];
+   }
+   if (amount == 1) { // clockwise
+      for (var i = 0; i < kicks.length; i++) { 
+         if (!this._collides(kicks[i][0], kicks[i][1], nextpat)) {
+            wk = kicks[i];
+            break;
+         }
       }
-	}
-
-	if (!this._collides(nudge, 0, nextpat)) {
-		this.undraw();
-		this.undrawGhost();
-		this.x += nudge;
-		this.patterni = (this.patterni + amount) % this.patterns.length;
-		this.pattern = this.patterns[this.patterni];
+   } else if (amount == 3) { // counter clockwise
+      for (var i = 0; i < kicks.length; i++) { 
+         if (!this._collides(-kicks[i][0], kicks[i][1], nextpat)) {
+            wk = kicks[i];
+            wk[0] = -kicks[i][0];
+            break;
+         }
+      };
+   }
+   if (!this._collides(wk[0],wk[1], nextpat)) {
+      this.undraw();
+      this.undrawGhost();
+      this.x += wk[0];
+      this.y += wk[1];
+      this.patterni = (this.patterni + amount) % this.patterns.length;
+      this.pattern = this.patterns[this.patterni];
       this.updateGhost();
-		this.draw();
-	}
+      this.draw();
+   }
 };
 
 Piece.prototype._collides = function(dx, dy, pat) {
@@ -574,8 +589,8 @@ Piece.prototype.lock = function() {
 	}
 
    checkForSquares();
-	var nlines  = 0;
    var gsBonus = 0;
+	var nlines  = 0;
 	for (var y = 0; y < BOARDHEIGHT; y++) {
 		var line = true;
       var golds = [];
@@ -634,12 +649,11 @@ Piece.prototype.lock = function() {
 
 Piece.prototype.updateGhost = function() {
    var oldy = this.y;
-   // this should not be a permanent solution
-   // also theres another while somewhere else, be vewy careful
-   var emergencyescape = 0;
-   while (!this._collides(0, 1, this.pattern) && emergencyescape < BOARDHEIGHT+3) {
-      emergencyescape++;
-      this.y++;
+   for(var i=1; i < BOARDHEIGHT+3; i++) {
+      if (this._collides(0,1, this.pattern)) {
+         break;
+      }
+      this.y++
    }
 
    this.ghosty = this.y;
@@ -779,13 +793,13 @@ function drawBoard() {
 }
 
 function initSideBoard() {
-   //context.fillStyle = "black";
+   // draw all canvas black 
    setColor("black");
-   //left side
    context.fRect(0,0,
       canvas.width,
       canvas.height);
-   context.strokeStyle = "white";
+
+   //line seperating preview from hold
    context.fillStyle = "#99D3DF";
    context.fRect((sideBarX+.5)*tilesz,
                   (BOARDHEIGHT-4.5)*tilesz,
@@ -804,7 +818,6 @@ function initSideBoard() {
                   (BOARDHEIGHT)*tilesz,
                   (sideBarX-LEFTSPACE)*tilesz,
                   (thickLine)*tilesz);
-
 }
 function main() {
    if (!gdone) {
@@ -813,10 +826,10 @@ function main() {
       if (piece === null) {
          piece = nextPiece();
       }
-	   if (delta > GRAVITY - speed) {
-	   	piece.down();
-		   dropStart = now;
-	   }
+      if (delta > GRAVITY - speed) {
+         piece.down();
+         dropStart = now;
+      }
    }
 
 	if (!done) {
@@ -840,7 +853,7 @@ function initGame() {
    dropStart = Date.now();
    downI = {};
    piece = null;
-   clearScores();
+   initScores();
 }
 
 

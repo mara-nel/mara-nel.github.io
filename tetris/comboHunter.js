@@ -24,39 +24,63 @@ var lastReset;
 var bagText    = document.getElementById('bagsize');
 
 //--------------------------------------------------
-// For sizing
+// For sizing and graphics
 var canvas = document.getElementById('board');
-var ctx = canvas.getContext("2d");
+var context = canvas.getContext("2d");
 var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
+var gridChoice = document.getElementsByName('grids');
+var gridsOn = 1;
 var BOARDWIDTH    = 4;
 var BOARDHEIGHT   = 20;
 var LEFTSPACE     = 1;
-var SIDEWIDTH     = 5;
+var RIGHTSPACE    = 5;
 var BOARDPERCENT  = .75;
 var extraHeight   = 1;
 var sideBarX;
+var boardX;
 var tilesz;
 var wHeight;
 var wWidth;
+var thinLine;
+var thickLine;
+
+context.lineWidth = 1;
+context.sRect=function(x,y,w,h,l){
+   l=parseInt(l);
+   x=parseInt(x+l/2);
+   y=parseInt(y+l/2);
+   context.strokeRect(x,y,w-l,h-l);
+}
+context.fRect=function(x,y,w,h){
+  x=parseInt(x);
+  y=parseInt(y);
+  context.fillRect(x,y,w,h);
+}
 
 function initCanvas() {
    wHeight       = window.innerHeight;
    wWidth        = window.innerWidth;
-   tilesz        = wHeight*BOARDPERCENT / BOARDHEIGHT;
-   sideBarX      = LEFTSPACE + BOARDWIDTH + .1 
-   canvas.width  = ( sideBarX + SIDEWIDTH )  * tilesz;
+   tilesz        = parseInt(wHeight*BOARDPERCENT / BOARDHEIGHT);
+   thinLine      = .0125;
+   thickLine     = .25;
+   boardX        = LEFTSPACE + 1*thickLine;
+   sideBarX      = LEFTSPACE + BOARDWIDTH + 2*thickLine;
+   canvas.width  = ( sideBarX + RIGHTSPACE )  * tilesz;
    canvas.height = ( BOARDHEIGHT+ extraHeight) * tilesz;
+   for ( var i =0; i < gridChoice.length; i++) {
+      if (gridChoice[i].checked) {
+         gridsOn = gridChoice[i].value;
+      }
+   }
+
 }
 
-
-//--------------------------------------------------
-// For Graphics and colors
 function setColor (color) {
-   ctx.fillStyle = color;
+   context.fillStyle = color;
    if (color != clear ) {
-      ctx.strokeStyle = "black";
+      context.strokeStyle = "black";
    } else {
-      ctx.strokeStyle = "dimGray";
+      context.strokeStyle = "dimGray";
    }
 }
 clear = "black";
@@ -89,7 +113,7 @@ var combocount    = document.getElementById('combo');
 var bestcombo     = document.getElementById('best-combo');
 var gameStatus    = document.getElementById('status');
 
-function clearScores() {
+function initScores() {
    combo                   =  0;
    combocount.textContent  = "Combo: " + combo;
    bestcombo.textContent   = "Best: "  + bcombo;
@@ -106,7 +130,7 @@ function updatePreview() {
 
 function drawPreview() {
    setColor("Black");
-   ctx.fillRect(sideBarX*tilesz,0,SIDEWIDTH*tilesz,(BOARDHEIGHT-5.1)*tilesz);
+   context.fRect((sideBarX)*tilesz+1,0,RIGHTSPACE*tilesz,(BOARDHEIGHT-5.1)*tilesz);
    for (previewX = 0; previewX < 5; previewX++) {
       
       var nextToComeNumber = bag[bag.length-(1+previewX)];
@@ -241,10 +265,10 @@ function drawHold() {
    // but I can also try to assume that this function will never be called 
    // if no piece is held
    setColor("black");
-   ctx.fillRect((LEFTSPACE+BOARDWIDTH)*tilesz,(BOARDHEIGHT-4.5)*tilesz,SIDEWIDTH*tilesz,4.5*tilesz);
+   context.fRect(sideBarX*tilesz+1,(BOARDHEIGHT-4)*tilesz,RIGHTSPACE*tilesz,4.5*tilesz);
    setColor(heldPiece[1]);
    var size = heldPiece[0][0].length;
-   var hAdjustment = 1 - 4.5;
+   var hAdjustment = 1 - 4;
    var wAdjustment = 1;
    if (heldPieceNumber == 0 ) {
       hAdjustment = -.5 - 4.5;
@@ -269,8 +293,10 @@ function drawHold() {
 
 
 function drawSquare(x, y) {
-	ctx.fillRect(x * tilesz, y * tilesz, tilesz, tilesz);
-	ctx.strokeRect(x * tilesz, y * tilesz, tilesz, tilesz);
+	context.fRect(x * tilesz, y * tilesz, tilesz, tilesz);
+   if (gridsOn == 1) {
+	   context.sRect(x * tilesz, y * tilesz, tilesz, tilesz, thinLine*tilesz);
+   }
 }
 
 
@@ -301,27 +327,38 @@ Piece.prototype.wasHeldRecenty = function() { // this does not seem to work prop
 };
 
 Piece.prototype.rotate = function(amount) {
-	var nudge = 0;
 	var nextpat = this.patterns[(this.patterni + amount) % this.patterns.length];
-
-	if (this._collides(0, 0, nextpat)) {
-		// Check kickback
-      if (this.number !== 0) {
-   		nudge = this.x > BOARDWIDTH / 2 ? -1 : 1;
-      } else {
-   		nudge = this.x > BOARDWIDTH / 2 ? -2 : 1;
+   var kicks = [[0,0],[-1,0],[0,1],[1,0],[0,-1]];
+   var wk = [0,0];
+   if (this.number === 0) {
+      kicks = [[0,0],[-1,0],[-2,0],[0,1],[1,0],[2,0],[0,-1]];
+   }
+   if (amount == 1) { // clockwise
+      for (var i = 0; i < kicks.length; i++) { 
+         if (!this._collides(kicks[i][0], kicks[i][1], nextpat)) {
+            wk = kicks[i];
+            break;
+         }
       }
-	}
-
-	if (!this._collides(nudge, 0, nextpat)) {
-		this.undraw();
-		this.undrawGhost();
-		this.x += nudge;
-		this.patterni = (this.patterni + amount) % this.patterns.length;
-		this.pattern = this.patterns[this.patterni];
+   } else if (amount == 3) { // counter clockwise
+      for (var i = 0; i < kicks.length; i++) { 
+         if (!this._collides(-kicks[i][0], kicks[i][1], nextpat)) {
+            wk = kicks[i];
+            wk[0] = -kicks[i][0];
+            break;
+         }
+      };
+   }
+   if (!this._collides(wk[0],wk[1], nextpat)) {
+      this.undraw();
+      this.undrawGhost();
+      this.x += wk[0];
+      this.y += wk[1];
+      this.patterni = (this.patterni + amount) % this.patterns.length;
+      this.pattern = this.patterns[this.patterni];
       this.updateGhost();
-		this.draw();
-	}
+      this.draw();
+   }
 };
 
 Piece.prototype._collides = function(dx, dy, pat) {
@@ -404,7 +441,7 @@ Piece.prototype.lock = function() {
 		}
 	}
 
-	var nlines = 0;
+	var nlines  = 0;
 	for (var y = 0; y < BOARDHEIGHT; y++) {
 		var line = true;
 		for (var x = 0; x < BOARDWIDTH; x++) {
@@ -432,8 +469,8 @@ Piece.prototype.lock = function() {
       combocount.textContent = "Combo: " + combo;
 		drawBoard();
 	}
-   else {
-      if (combo >0) {
+   else { // no lines were cleared
+      if (combo >0) { //but we were in the middle of combo
          gameOver();
       }
       //If this isn't commented, then after gameover,
@@ -450,12 +487,11 @@ Piece.prototype.lock = function() {
 
 Piece.prototype.updateGhost = function() {
    var oldy = this.y;
-   // this should not be a permanent solution
-   // also theres another while somewhere else, be vewy careful
-   var emergencyescape = 0;
-   while (!this._collides(0, 1, this.pattern) && emergencyescape < BOARDHEIGHT+3) {
-      emergencyescape++;
-      this.y++;
+   for(var i=1; i < BOARDHEIGHT+3; i++) {
+      if (this._collides(0,1, this.pattern)) {
+         break;
+      }
+      this.y++
    }
 
    this.ghosty = this.y;
@@ -465,18 +501,18 @@ Piece.prototype.updateGhost = function() {
 
 Piece.prototype.drawGhost = function() {
    setColor(this.color);
-   ctx.globalAlpha = 0.5;
+   context.globalAlpha = 0.5;
    var x = this.x;
    var y = this.ghosty;
    var patlength = this.pattern.length;
    for (var ix = 0; ix < patlength; ix++) {
       for (var iy = 0; iy < patlength; iy++) {
          if (this.pattern[iy][ix]) {
-            drawSquare(LEFTSPACE + x + ix, y + iy);
+            drawSquare(boardX + x + ix, y + iy);
          }
       }
    }
-   ctx.globalAlpha = 1.0;
+   context.globalAlpha = 1.0;
 };
 Piece.prototype.undrawGhost = function() {
    setColor(clear);
@@ -486,7 +522,7 @@ Piece.prototype.undrawGhost = function() {
    for (var ix = 0; ix < patlength; ix++) {
       for (var iy = 0; iy < patlength; iy++) {
          if (this.pattern[iy][ix]) {
-            drawSquare(LEFTSPACE + x + ix, y + iy);
+            drawSquare(boardX + x + ix, y + iy);
          }
       }
    }
@@ -501,17 +537,17 @@ Piece.prototype._fill = function(color) {
    for (var ix = 0; ix < patlength; ix++) {
       for (var iy = 0; iy < patlength; iy++) {
          if (this.pattern[iy][ix]) {
-            drawSquare(LEFTSPACE + x + ix, y + iy);
+            drawSquare(boardX + x + ix, y + iy);
          }
       }
    }
 };
 
-Piece.prototype.undraw = function(ctx) {
+Piece.prototype.undraw = function(context) {
 	this._fill(clear);
 };
 
-Piece.prototype.draw = function(ctx) {
+Piece.prototype.draw = function(context) {
 	this._fill(this.color);
 };
 //--------------------------------------------------
@@ -650,31 +686,48 @@ function key(k) {
 function drawBoard() {
 	for (var y = 0; y < BOARDHEIGHT; y++) {
 		for (var x = 0; x < BOARDWIDTH; x++) {
-         setColor(board[y][x][0] || clear);
-			drawSquare(LEFTSPACE + x, y);
+        if (!board[y][x][0]) {
+         setColor(clear);
+			drawSquare(boardX + x, y);
+        }
+		}
+	}
+	for (var y = 0; y < BOARDHEIGHT; y++) {
+		for (var x = 0; x < BOARDWIDTH; x++) {
+        if (board[y][x][0]) {
+         setColor(board[y][x][0]);
+			drawSquare(boardX + x, y);
+        }
 		}
 	}
 }
 
 function initSideBoard() {
-   //ctx.fillStyle = "black";
+   // draw all canvas black 
    setColor("black");
-   //left side
-   ctx.fillRect(0,0,
-      LEFTSPACE*tilesz,
-      (BOARDHEIGHT+extraHeight)*tilesz);
-   //right side
-   ctx.fillRect(
-      (LEFTSPACE+BOARDWIDTH)*tilesz,
-      0,
-      (SIDEWIDTH+.1)*tilesz,
-      (BOARDHEIGHT+extraHeight)*tilesz);
-   ctx.fillRect(0,
-      BOARDHEIGHT*tilesz,
-      (sideBarX)*tilesz,
-      extraHeight*tilesz);
-   setColor("white");
-   ctx.fillRect((sideBarX+.5)*tilesz,(BOARDHEIGHT-4.7)*tilesz,(SIDEWIDTH-1)*tilesz,.2*tilesz);
+   context.fRect(0,0,
+      canvas.width,
+      canvas.height);
+
+   //line seperating preview from hold
+   context.fillStyle = "#99D3DF";
+   context.fRect((sideBarX+.5)*tilesz,
+                  (BOARDHEIGHT-4.5)*tilesz,
+                  (RIGHTSPACE-1)*tilesz,
+                  thickLine*tilesz);
+   //make boundary around game board
+   context.fRect( LEFTSPACE*tilesz-1,
+                  0,
+                  thickLine*tilesz,
+                  (BOARDHEIGHT+thickLine)*tilesz-1);
+   context.fRect( (sideBarX-thickLine)*tilesz+1,
+                  0,
+                  thickLine*tilesz,
+                  (BOARDHEIGHT+thickLine)*tilesz-1);
+   context.fRect( LEFTSPACE*tilesz,
+                  (BOARDHEIGHT)*tilesz,
+                  (sideBarX-LEFTSPACE)*tilesz,
+                  (thickLine)*tilesz);
 }
 function main() {
    if (!gdone) {
@@ -683,10 +736,10 @@ function main() {
       if (piece === null) {
          piece = nextPiece();
       }
-   	if (delta > 400) {
-   		piece.down();
-   		dropStart = now;
-   	}
+      if (delta > 400) {
+         piece.down();
+         dropStart = now;
+      }
    }
 
 	if (!done) {
@@ -708,7 +761,7 @@ function initGame() {
    dropStart = Date.now();
    downI = {};
    piece = null;
-   clearScores();
+   initScores();
 }
 
 
