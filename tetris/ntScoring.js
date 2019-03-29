@@ -165,11 +165,13 @@ function drawPreview() {
 
       var wAdjustment = 1;
       var hAdjustment = .5;
-      if (nextToComeNumber ==0) {
+      if (nextToComeNumber === 0) {
          wAdjustment = 0.5;
          hAdjustment = -1;
       } else if (nextToComeNumber === 3) {
         wAdjustment = 0.5;
+        hAdjustment = -.5;
+      } else if (nextToComeNumber === 4 || nextToComeNumber === 6) {
         hAdjustment = -.5;
       }
 	   for (var y = 0; y < size; y++) {
@@ -416,12 +418,14 @@ function drawHold() {
    var size = heldPiece[0][0].length;
    var hAdjustment = 1 - 4;
    var wAdjustment = 1;
-   if (heldPieceNumber == 0 ) {
+   if (heldPieceNumber === 0 ) {
       hAdjustment = -.5 - 4.5;
       wAdjustment = .5;
-   } else if ( heldPieceNumber == 3) {
-      hAdjustment = 0 - 4.5;
+   } else if ( heldPieceNumber === 3) {
+      hAdjustment -= 1;
       wAdjustment = .5;
+   } else if ( heldPieceNumber === 4 || heldPieceNumber === 6) {
+      hAdjustment -= 1;
    }
 	for (var y = 0; y < size; y++) {
 		for (var x = 0; x < size; x++) {
@@ -475,10 +479,10 @@ Piece.prototype.wasHeldRecenty = function() { // this does not seem to work prop
 
 Piece.prototype.rotate = function(amount) {
 	var nextpat = this.patterns[(this.patterni + amount) % this.patterns.length];
-   var kicks = [[0,0],[-1,0],[0,1],[1,0],[0,-1]];
+   var kicks = [[0,0],[1,0],[0,1],[-1,0],[0,-1]];
    var wk = [0,0];
    if (this.number === 0) {
-      kicks = [[0,0],[-1,0],[-2,0],[0,1],[1,0],[2,0],[0,-1]];
+      kicks = [[0,0],[1,0],[2,0],[0,1],[-1,0],[-2,0],[0,-1]];
    }
    if (amount == 1) { // clockwise
       for (var i = 0; i < kicks.length; i++) { 

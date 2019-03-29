@@ -31,10 +31,11 @@ var clear = window.getComputedStyle(canvas).getPropertyValue('background-color')
 var gridChoice = document.getElementsByName('grids');
 var gridsOn = 1;
 var BOARDWIDTH    = 4;
-var BOARDHEIGHT   = 20;
+var BOARDHEIGHT   = 16;
 var LEFTSPACE     = 1;
 var RIGHTSPACE    = 5;
 var BOARDPERCENT  = .75;
+var PREVIEW       = 4;
 var extraHeight   = 1;
 var sideBarX;
 var boardX;
@@ -58,8 +59,8 @@ context.fRect=function(x,y,w,h){
 }
 
 function initCanvas() {
-   wHeight       = window.innerHeight;
-   wWidth        = window.innerWidth;
+   wHeight       = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+   wWidth        = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
    tilesz        = parseInt(wHeight*BOARDPERCENT / BOARDHEIGHT);
    thinLine      = .0125;
    thickLine     = .25;
@@ -130,8 +131,8 @@ function updatePreview() {
 
 function drawPreview() {
    setColor("Black");
-   context.fRect((sideBarX)*tilesz+1,0,RIGHTSPACE*tilesz,(BOARDHEIGHT-5.1)*tilesz);
-   for (previewX = 0; previewX < 5; previewX++) {
+   context.fRect((sideBarX)*tilesz+1,0,RIGHTSPACE*tilesz,(BOARDHEIGHT-4.1)*tilesz);
+   for (previewX = 0; previewX < PREVIEW; previewX++) {
       
       var nextToComeNumber = bag[bag.length-(1+previewX)];
       var nextToComePiece = pieces[nextToComeNumber];
@@ -140,11 +141,13 @@ function drawPreview() {
 
       var wAdjustment = 1;
       var hAdjustment = .5;
-      if (nextToComeNumber ==0) {
+      if (nextToComeNumber === 0) {
          wAdjustment = 0.5;
          hAdjustment = -1;
       } else if (nextToComeNumber === 3) {
         wAdjustment = 0.5;
+        hAdjustment = -.5;
+      } else if (nextToComeNumber === 4 || nextToComeNumber === 6) {
         hAdjustment = -.5;
       }
 	   for (var y = 0; y < size; y++) {
@@ -265,17 +268,19 @@ function drawHold() {
    // but I can also try to assume that this function will never be called 
    // if no piece is held
    setColor("black");
-   context.fRect(sideBarX*tilesz+1,(BOARDHEIGHT-4)*tilesz,RIGHTSPACE*tilesz,4.5*tilesz);
+   context.fRect(sideBarX*tilesz+1,(BOARDHEIGHT-3)*tilesz,RIGHTSPACE*tilesz,4.5*tilesz);
    setColor(heldPiece[1]);
    var size = heldPiece[0][0].length;
-   var hAdjustment = 1 - 4;
+   var hAdjustment = 1 - 3;
    var wAdjustment = 1;
-   if (heldPieceNumber == 0 ) {
-      hAdjustment = -.5 - 4.5;
+   if (heldPieceNumber === 0 ) {
+      hAdjustment = -.5 - 3.5;
       wAdjustment = .5;
-   } else if ( heldPieceNumber == 3) {
-      hAdjustment = 0 - 4.5;
+   } else if ( heldPieceNumber === 3) {
+      hAdjustment -= 1;
       wAdjustment = .5;
+   } else if ( heldPieceNumber === 4 || heldPieceNumber === 6) {
+      hAdjustment -= 1;
    }
 	for (var y = 0; y < size; y++) {
 		for (var x = 0; x < size; x++) {
@@ -328,10 +333,10 @@ Piece.prototype.wasHeldRecenty = function() { // this does not seem to work prop
 
 Piece.prototype.rotate = function(amount) {
 	var nextpat = this.patterns[(this.patterni + amount) % this.patterns.length];
-   var kicks = [[0,0],[-1,0],[0,1],[1,0],[0,-1]];
+   var kicks = [[0,0],[1,0],[0,1],[-1,0],[0,-1]];
    var wk = [0,0];
    if (this.number === 0) {
-      kicks = [[0,0],[-1,0],[-2,0],[0,1],[1,0],[2,0],[0,-1]];
+      kicks = [[0,0],[1,0],[2,0],[0,1],[-1,0],[-2,0],[0,-1]];
    }
    if (amount == 1) { // clockwise
       for (var i = 0; i < kicks.length; i++) { 
@@ -712,7 +717,7 @@ function initSideBoard() {
    //line seperating preview from hold
    context.fillStyle = "#99D3DF";
    context.fRect((sideBarX+.5)*tilesz,
-                  (BOARDHEIGHT-4.5)*tilesz,
+                  (BOARDHEIGHT-3.5)*tilesz,
                   (RIGHTSPACE-1)*tilesz,
                   thickLine*tilesz);
    //make boundary around game board
