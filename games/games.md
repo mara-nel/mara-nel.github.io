@@ -1,14 +1,13 @@
 ---
 title: About my games
-permalink: "tetris/about"
+permalink: "games/"
 ---
 
 There are currently two games being tested and tweaked currently (and they are far from perfect).
 
-The first is mobile friendly [Combo Hunter](/tetris/comboHunter.html).
+The first is mobile friendly [Combo Hunter](/games/comboHunter.html).
 
-The second is for desktop [(need a name)](/tetris/ntScoring.html).
-
+The second is for desktop [(need a name)](/games/ntScoring.html).
 
 
 
@@ -52,7 +51,6 @@ harddrop: space
 
 reset: r
 
-Warning, holding down reset does baaaaad things right now.
 
 
 

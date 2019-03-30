@@ -22,7 +22,7 @@ This is referred to as square mode in [NullpoMino](https://harddrop.com/wiki/Nul
 
 </li>
 <li><a href="http://jstris.jezevec10.com/">Jstris</a> (Browser, very good multiplayer along with everything else)</li>
-<li><a href="/tetris/about">one of my own, be warned, they are very early in development</a></li>
+<li><a href="/games/">one of my own, be warned, they are very early in development</a></li>
 </ul>
 
 
