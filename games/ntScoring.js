@@ -2,6 +2,8 @@ var WALL = 1;
 var BLOCK = 2;
 var SILVER = 7;
 var GOLD = 8;
+
+menuColor = '#CCCCFF';
 var pieces = [
   [I, 'cyan'],
   [J, 'purple'],
@@ -31,13 +33,15 @@ var context = canvas.getContext('2d');
 var clear = window.getComputedStyle(canvas).getPropertyValue('background-color');
 var gridChoice = document.getElementsByName('grids');
 var gridsOn = 1;
+
 var BOARDWIDTH = 10;
 var BOARDHEIGHT = 20;
 var LEFTSPACE = 2;
 var RIGHTSPACE = 5;
+var TOPSPACE = 4;
 var BOARDPERCENT = 0.7;
 var PREVIEW = 5;
-var extraHeight = 1;
+var BOTTOMSPACE = 1;
 var sideBarX;
 var boardX;
 var tilesz;
@@ -67,7 +71,7 @@ function initCanvas() {
   boardX = LEFTSPACE + 1 * thickLine;
   sideBarX = LEFTSPACE + BOARDWIDTH + 2 * thickLine;
   canvas.width = (sideBarX + RIGHTSPACE) * tilesz;
-  canvas.height = (BOARDHEIGHT + extraHeight) * tilesz;
+  canvas.height = (TOPSPACE + BOARDHEIGHT + BOTTOMSPACE) * tilesz;
   for (let i = 0; i < gridChoice.length; i++) {
     if (gridChoice[i].checked) {
       gridsOn = parseInt(gridChoice[i].value);
@@ -128,11 +132,6 @@ var combo = 0;
 var bcombo = 0;
 var squares = 0;
 var numpieces = 0;
-var linecount = document.getElementById('lines');
-var combocount = document.getElementById('combo');
-var bestcombo = document.getElementById('best-combo');
-var piececount = document.getElementById('pieces');
-var gameStatus = document.getElementById('status');
 
 function initScores() {
   lines = 0;
@@ -140,11 +139,28 @@ function initScores() {
   bcombo = 0;
   squares = 0;
   numpieces = 0;
-  linecount.textContent = 'Lines: ' + lines;
-  piececount.textContent = 'Pieces: ' + numpieces;
-  combocount.textContent = 'Combo: ' + combo;
-  bestcombo.textContent = 'Best: ' + bcombo;
-  gameStatus.textContent = '';
+}
+
+function drawScoreBar() {
+  setColor(menuColor);
+  context.fRect(0, 0,
+    canvas.width,
+    TOPSPACE*tilesz-1);
+  //ctx.font = '' + tilesz + 'px Arial';
+  setColor('black');
+  context.font = '' + 1.25 * tilesz + 'px Arial';
+  context.fillText('Lines: ' + lines,
+            tilesz,
+            1.5 * tilesz);
+  context.fillText(' Pieces: ' + numpieces,
+            canvas.width/2 + tilesz,
+            1.5 * tilesz);
+  context.fillText('Combo: ' + combo,
+            tilesz,
+            3.5 * tilesz);
+  context.fillText(' Best: ' + bcombo,
+            canvas.width/2 + tilesz,
+            3.5 * tilesz);
 }
 
 // --------------------------------------------------
@@ -160,7 +176,7 @@ function updatePreview() {
 function drawPreview() {
   setColor('Black');
   context.fRect((sideBarX) * tilesz + 1,
-    0,
+    TOPSPACE * tilesz,
     RIGHTSPACE * tilesz,
     (BOARDHEIGHT - 5.1) * tilesz);
   for (let previewX = 0; previewX < PREVIEW; previewX++) {
@@ -185,7 +201,8 @@ function drawPreview() {
       for (let x = 0; x < size; x++) {
         if (nextToComePiece[0][0][y][x] !== 0) {
           // draw preview to the right
-          drawSquare(sideBarX + x + wAdjustment, y + hAdjustment + 3 * previewX);
+          drawSquare(sideBarX + x + wAdjustment,
+            TOPSPACE + y + hAdjustment + 3 * previewX);
         }
       }
     }
@@ -246,6 +263,7 @@ function newPieceDet(blockNumber) {
   currentPieceNumber = blockNumber;
   updateStats(blockNumber);
   updatePreview();
+  drawScoreBar();
   return new Piece(p[0], p[1], blockNumber);
 }
 
@@ -261,7 +279,6 @@ function nextPiece() {
 
 function updatePieceCount() {
   numpieces++;
-  piececount.textContent = 'Pieces: ' + numpieces;
   speedUp();
 }
 
@@ -440,7 +457,7 @@ function drawHold() {
   // if no piece is held
   setColor('black');
   context.fRect(sideBarX * tilesz + 1,
-    (BOARDHEIGHT - 4) * tilesz,
+    (TOPSPACE + BOARDHEIGHT - 4) * tilesz,
     RIGHTSPACE * tilesz,
     4.5 * tilesz);
   setColor(heldPiece[1]);
@@ -460,7 +477,8 @@ function drawHold() {
   for (let y = 0; y < size; y++) {
     for (let x = 0; x < size; x++) {
       if (heldPiece[0][0][y][x] !== 0) {
-        drawSquare(sideBarX + x + wAdjustment, y + BOARDHEIGHT + hAdjustment);
+        drawSquare(sideBarX + x + wAdjustment,
+          TOPSPACE + y + BOARDHEIGHT + hAdjustment);
       }
     }
   }
@@ -575,7 +593,9 @@ Piece.prototype.down = function () {
 
   if (this._collides(0, 1, this.pattern)) {
     this.lock();
-    piece = nextPiece();
+    if(!gdone) {
+      piece = nextPiece();
+    }
     return 1;
   } else {
     this.undraw();
@@ -675,15 +695,11 @@ Piece.prototype.lock = function () {
     combo += 1;
     if (combo > bcombo) {
       bcombo = combo;
-      bestcombo.textContent = 'Best: ' + bcombo;
     }
 
-    combocount.textContent = 'Combo: ' + combo;
     drawBoard();
-    linecount.textContent = 'Lines: ' + lines;
   } else {
     combo = 0;
-    combocount.textContent = 'Combo: ' + combo;
   }
 };
 
@@ -702,37 +718,6 @@ Piece.prototype.updateGhost = function () {
   this.drawGhost();
 };
 
-Piece.prototype.drawGhost = function () {
-  setColor(this.color);
-  context.globalAlpha = 0.5;
-  var x = this.x;
-  var y = this.ghosty;
-  var patlength = this.pattern.length;
-  for (let ix = 0; ix < patlength; ix++) {
-    for (let iy = 0; iy < patlength; iy++) {
-      if (this.pattern[iy][ix]) {
-        drawSquare(boardX + x + ix, y + iy);
-      }
-    }
-  }
-
-  context.globalAlpha = 1.0;
-};
-
-Piece.prototype.undrawGhost = function () {
-  setColor(clear);
-  var x = this.x;
-  var y = this.ghosty;
-  var patlength = this.pattern.length;
-  for (let ix = 0; ix < patlength; ix++) {
-    for (let iy = 0; iy < patlength; iy++) {
-      if (this.pattern[iy][ix]) {
-        drawSquare(boardX + x + ix, y + iy);
-      }
-    }
-  }
-};
-
 Piece.prototype._fill = function (color) {
   setColor(color);
   var x = this.x;
@@ -740,8 +725,22 @@ Piece.prototype._fill = function (color) {
   var patlength = this.pattern.length;
   for (let ix = 0; ix < patlength; ix++) {
     for (let iy = 0; iy < patlength; iy++) {
-      if (this.pattern[iy][ix]) {
-        drawSquare(boardX + x + ix, y + iy);
+      if (this.pattern[iy][ix] && y + iy >= 0) {
+        drawSquare(boardX + x + ix, TOPSPACE + y + iy);
+      }
+    }
+  }
+};
+
+Piece.prototype._fillGhost = function (color) {
+  setColor(color);
+  var x = this.x;
+  var y = this.ghosty;
+  var patlength = this.pattern.length;
+  for (let ix = 0; ix < patlength; ix++) {
+    for (let iy = 0; iy < patlength; iy++) {
+      if (this.pattern[iy][ix] && y + iy >= 0) {
+        drawSquare(boardX + x + ix, TOPSPACE + y + iy);
       }
     }
   }
@@ -753,6 +752,16 @@ Piece.prototype.undraw = function (context) {
 
 Piece.prototype.draw = function (context) {
   this._fill(this.color);
+};
+
+Piece.prototype.drawGhost = function () {
+  context.globalAlpha = 0.5;
+  this._fillGhost(this.color);
+  context.globalAlpha = 1.0;
+};
+
+Piece.prototype.undrawGhost = function () {
+  this._fillGhost(clear);
 };
 
 // --------------------------------------------------
@@ -818,7 +827,7 @@ function drawBoard() {
     for (let x = 0; x < BOARDWIDTH; x++) {
       if (!board[y][x][0]) {
         setColor(clear);
-        drawSquare(boardX + x, y);
+        drawSquare(boardX + x, TOPSPACE + y);
       }
     }
   }
@@ -827,11 +836,33 @@ function drawBoard() {
     for (let x = 0; x < BOARDWIDTH; x++) {
       if (board[y][x][0]) {
         setColor(board[y][x][0]);
-        drawSquare(boardX + x, y);
+        drawSquare(boardX + x, TOPSPACE + y);
       }
     }
   }
 }
+
+function drawBorders() {
+  context.fillStyle = menuColor;
+  context.fRect((sideBarX + 0.5) * tilesz,
+    (TOPSPACE + BOARDHEIGHT - 4.5) * tilesz,
+    (RIGHTSPACE - 1) * tilesz,
+    thickLine * tilesz);
+
+  // make boundry around game board
+  context.fRect(LEFTSPACE * tilesz - 1,
+    TOPSPACE * tilesz,
+    thickLine * tilesz,
+    (BOARDHEIGHT + thickLine) * tilesz - 1);
+  context.fRect((sideBarX - thickLine) * tilesz + 1,
+    TOPSPACE * tilesz,
+    thickLine * tilesz,
+    (BOARDHEIGHT + thickLine) * tilesz - 1);
+  context.fRect(LEFTSPACE * tilesz,
+    (TOPSPACE + BOARDHEIGHT) * tilesz,
+    (sideBarX - LEFTSPACE) * tilesz,
+    (thickLine) * tilesz);
+};
 
 function initSideBoard() {
   // draw all canvas black
@@ -839,27 +870,11 @@ function initSideBoard() {
   context.fRect(0, 0,
     canvas.width,
     canvas.height);
-
+  
+  drawBorders( '#99D3DF' );
+  drawScoreBar();
   // line seperating preview from hold
-  context.fillStyle = '#99D3DF';
-  context.fRect((sideBarX + 0.5) * tilesz,
-    (BOARDHEIGHT - 4.5) * tilesz,
-    (RIGHTSPACE - 1) * tilesz,
-    thickLine * tilesz);
-
-  // make boundary around game board
-  context.fRect(LEFTSPACE * tilesz - 1,
-    0,
-    thickLine * tilesz,
-    (BOARDHEIGHT + thickLine) * tilesz - 1);
-  context.fRect((sideBarX - thickLine) * tilesz + 1,
-    0,
-    thickLine * tilesz,
-    (BOARDHEIGHT + thickLine) * tilesz - 1);
-  context.fRect(LEFTSPACE * tilesz,
-    (BOARDHEIGHT) * tilesz,
-    (sideBarX - LEFTSPACE) * tilesz,
-    (thickLine) * tilesz);
+  //context.fillStyle = '#99D3DF';
 }
 
 function main() {
@@ -883,6 +898,7 @@ function main() {
 
 function initGame() {
   initCanvas();
+  initScores();
   initBoard();
   initStats();
   initSideBoard();
@@ -893,12 +909,31 @@ function initGame() {
   speed = 0;
   dropStart = Date.now();
   piece = null;
-  initScores();
 }
 
 function gameOver() {
-  gameStatus.textContent = 'Game Over';
-
+  context.globalAlpha = 0.4;
+  setColor('black');
+  context.fRect(0,
+          TOPSPACE * tilesz,
+          canvas.width,
+          canvas.height-TOPSPACE * tilesz);
+  setColor(menuColor);
+  context.globalAlpha = 1;
+  context.fRect(0.5 * tilesz,
+          canvas.height / 2.5 - 2*tilesz,
+          canvas.width - (tilesz),
+          5.5 * tilesz);
+  context.font = '' + 1.25 * tilesz + 'px Arial';
+  setColor('black');
+  context.textAlign = 'center';
+  context.fillText('GAME OVER',
+            canvas.width / 2,
+            canvas.height / 2.5);
+  context.fillText('(press r to play again)',
+            canvas.width/2,
+            canvas.height / 2.5 + 2 * tilesz);
+//
   // done = true;
   gdone = true;
 }
