@@ -9,12 +9,17 @@ permalink: /teaching/
    <th colspan="3">Current Courses</th>
 </tr>
 <tr>
-   <td>Spring 2019</td>
-   <td><a href="2019/SP/114">MA 114 Introduction to Finite Mathematics with Applications</a></td>
+   <td>Summer 2019</td>
+   <td><a href="2019/SU/114">MA 114 Introduction to Finite Mathematics with Applications</a></td>
    <td>Instructor</td>
 </tr>
 <tr>
    <th colspan="3">Past Courses</th>
+</tr>
+<tr>
+   <td>Spring 2019</td>
+   <td><a href="2019/SP/114">MA 114 Introduction to Finite Mathematics with Applications</a></td>
+   <td>Instructor</td>
 </tr>
 <tr>
    <td>Fall 2018</td>

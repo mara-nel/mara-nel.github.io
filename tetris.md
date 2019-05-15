@@ -26,7 +26,7 @@ This is referred to as square mode in [NullpoMino](https://harddrop.com/wiki/Nul
 </ul>
 
 
-My current best **sprint** on Jstris can be viewed <a href="https://jstris.jezevec10.com/replay/1927992">here</a> (be sure to click load).
+My current best **sprint** on Jstris can be viewed <a href="https://jstris.jezevec10.com/replay/2787297">here</a> (be sure to click load).
 
 My current best round in **dig** mode on Farter's Dig Mod has the replay:
 

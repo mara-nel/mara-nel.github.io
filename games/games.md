@@ -5,14 +5,21 @@ permalink: "games/"
 
 There are currently two games being tested and tweaked currently (and they are far from perfect).
 
-The first is mobile friendly [Combo Hunter](/games/comboHunter.html).
+The first is mobile friendly [Combo Hunter](https://wesln.com/dbm/comboHunter.html).
 
-The second is for desktop [(need a name)](/games/ntScoring.html).
+The second is for desktop [(need a name)](https://wesln.com/dbm/everythingBagel.html).
 
-
+[(see all options)](https://wesln.com/dbm)
 
 ## Combo Hunter
-Once you clear a line, the next piece that locks without clearing anything is game over.
+A combo is formed by clearing a line and then with the next piece, clearing a line again.
+A combo is broken when a piece locks into place without clearing any lines.
+In this version, when a combo ends, the game does too.
+
+A tutorial/missions version is in works and can be played
+[here](https://wesln.com/dbm/comboHunterMissions.html).
+If playing on desktop pressing "m" toggles between mission mode and main mode.
+
 
 ### Controls:
 To move one can swipe left or right
@@ -32,12 +39,13 @@ On desktop, desktop controls will work as well.
 ## Desktop
 Pieces fall, a full row clears everything away.
 
-What's special here is if you form a 4 by 4 square (ie a square using 4 pieces) it will transform into gold (if only one colored piece was used) or silver (if multiple colors were used).
-Line clears that contained gold or silver in it awarded bonus points.
+What's special here is if you form a 4 by 4 square with 4 pieces it transforms into something worth extra points.
+If the square is formed with only one type of piece, it becomes gold, otherwise it becomes silver.
+
 
 ### Controls:
 
-move left and right: arrow keys, tap or hold
+move left and right: arrow keys (tap or hold)
 
 rotate clockwise: d
 

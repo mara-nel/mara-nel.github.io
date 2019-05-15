@@ -11,11 +11,11 @@ layout: home
 </tr>
 <tr>
    <th>Office Hours:</th>
-   <td>TW 1-2pm, Th 11am-12noon</td>
+   <td>MW 2-3pm, F 10-11am</td>
 </tr>
 <tr>
    <th>Currently Teaching:</th>
-   <td><a href="teaching/2019/SP/114/">MA 114</a></td>
+   <td><a href="teaching/2019/SU/114/">MA 114</a></td>
 </tr>
 <tr>
    <th>Advisor:</th>
