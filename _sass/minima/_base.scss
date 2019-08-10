@@ -242,22 +242,55 @@ pre {
  */
 table {
   margin-bottom: $spacing-unit;
-  width: 100%;
   text-align: $table-text-align;
   border-collapse: collapse;
-  tr.blackRow {
-     background: black;
-     color: white;
-     font-weight: normal;
-    }
   
   td, th {
       border: 0 transparent;
       padding: ($spacing-unit / 3);
+      vertical-align: top;
+   }
+   th {
+      font-variant: small-caps;
+   }
+}
+
+table.landing {
+   margin: 0 auto;
+   th:nth-child(1), td:nth-child(1) {
+     width: 10em;
+   }
+
+}
+
+table.teaching {
+   th:nth-child(1), td:nth-child(1) {
+     text-align: right;
    }
 }
 
 
+table.books-read {
+  table-layout: fixed;
+  margin-bottom: $spacing-unit;
+  
+  td, th {
+      border: 0 transparent;
+      padding: ($spacing-unit / 3);
+      vertical-align: top;
+   }
+   th:nth-child(1), td:nth-child(1) {
+     width: 6ch;
+     white-space: nowrap;
+     padding-left: 1em;
+   }
+   th:nth-child(2) {
+     width: 14em;
+   }
+   th:nth-child(3) {
+     width: 12em;
+   }
+}
 
 
 
