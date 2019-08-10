@@ -4,21 +4,21 @@ layout: home
 
 
 <div class="bio">
-<table>
+<table class="landing">
 <tr>
-   <th>Office:</th>
+   <th>office</th>
    <td>SAS 4117</td>
 </tr>
 <tr>
-   <th>Office Hours:</th>
-   <td>MW 2-3pm, F 10-11am</td>
+   <th>office hours</th>
+   <td>TBD</td>
 </tr>
 <tr>
-   <th>Currently Teaching:</th>
-   <td><a href="teaching/2019/SU/114/">MA 114</a></td>
+   <th>currently teaching</th>
+   <td>TBD</td>
 </tr>
 <tr>
-   <th>Advisor:</th>
+   <th>advisor</th>
    <td><a href="https://hong.math.ncsu.edu/">Hoon Hong</a></td>
 </tr>
 </table>
