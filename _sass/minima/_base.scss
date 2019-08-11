@@ -274,15 +274,11 @@ table.books-read {
   table-layout: fixed;
   margin-bottom: $spacing-unit;
   
-  td, th {
-      border: 0 transparent;
-      padding: ($spacing-unit / 3);
-      vertical-align: top;
-   }
    th:nth-child(1), td:nth-child(1) {
      width: 6ch;
      white-space: nowrap;
      padding-left: 1em;
+     text-align: right;
    }
    th:nth-child(2) {
      width: 14em;
