@@ -12,7 +12,7 @@
 }
 
 .top-image {
-   padding-top: 40px;
+   padding-top: $spacing-unit;
 }
 
 .site-title {
@@ -21,8 +21,6 @@
   letter-spacing: -1px;
   margin-bottom: 0;
   background-color: inherit;
-  width: 100%;
-  text-align: center;
   color: $text-color;
 
   @include media-query($on-palm) {
@@ -38,7 +36,7 @@
 .site-nav {
   float: none;
   position: absolute;
-  top: 9px;
+  top: $spacing-unit+9px;
   right: $spacing-unit / 2;
   background-color: $background-color;
   border: 1px solid $grey-color-light;
@@ -101,7 +99,7 @@
   @media screen and (min-width: $on-medium) {
     position: static;
     border: none;
-    text-align: center;
+    text-align: left;
     background-color: inherit;
     margin-bottom: 25px;
 

@@ -252,11 +252,11 @@ table {
    }
    th {
       font-variant: small-caps;
+      font-weight: normal;
    }
 }
 
 table.landing {
-   margin: 0 auto;
    th:nth-child(1), td:nth-child(1) {
      width: 10em;
    }
