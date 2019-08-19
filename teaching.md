@@ -9,6 +9,11 @@ permalink: /teaching/
    <th>current</th>
 </tr>
 <tr>
+   <td>Fall 2019</td>
+   <td><a href="2019/FA/242">MA 242 Calculus III</a>
+   / Recitation Leader</td>
+</tr>
+<tr>
    <th>past</th>
 </tr>
 <tr>
