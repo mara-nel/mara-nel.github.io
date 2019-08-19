@@ -3,17 +3,17 @@ layout: page
 permalink: /tutoring/
 ---
 
-<h3>Favorite Courses to Tutor:</h3>
+<h1>Favorite Courses to Tutor:</h1>
 <ul>
    <li>Finite Math</li>
    <li>Any Calculus I</li>
 </ul>
-<h3>Flexible Scheduling Available:</h3>
+<h1>Flexible Scheduling Available:</h1>
  <ul>
    <li>Mornings or Evenings</li>
    <li>Weekdays or Weekends</li>
 </ul>
-<h3>Recurring and One-off Welcome</h3>
+<h1>Recurring and One-off Welcome</h1>
      
      
 For the past 6 years I have been tutoring students in college mathematics. 
