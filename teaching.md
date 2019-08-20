@@ -6,7 +6,7 @@ permalink: /teaching/
 
 <table class="teaching">
 <tr>
-   <th>current</th>
+   <th>crnt</th>
 </tr>
 <tr>
    <td>Fall 2019</td>
