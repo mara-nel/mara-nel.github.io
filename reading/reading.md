@@ -5,7 +5,7 @@ permalink: /reading/
 ---
 
 <div id="main">
-  <p>A way to keep track of the books I've read</p>
+  <h2>A way to keep track of the books I've read</h2>
   <ul>
     <li><a href="/reading/2018">2018</a></li>
     <li><a href="/reading/2019">2019</a></li>

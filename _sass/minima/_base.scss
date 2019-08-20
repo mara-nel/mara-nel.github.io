@@ -294,19 +294,21 @@ table {
   
   td, th {
       border: 0 transparent;
-      padding: ($spacing-unit / 4);
+      padding: 6px;
       vertical-align: top;
    }
    th {
       font-variant: small-caps;
       font-weight: normal;
-      padding: ($spacing-unit / 2);
+      padding: 16px 6px 16px 6px;
    }
 }
 
 table.landing {
-   th:nth-child(1), td:nth-child(1) {
+   td:nth-child(1) {
      width: 10em;
+     font-variant: small-caps;
+     font-weight: normal;
    }
 
 }
