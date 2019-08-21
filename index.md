@@ -12,7 +12,7 @@ layout: home
 </tr>
 <tr>
    <td>office hours</td>
-   <td>TBD</td>
+   <td>Tu 13-14 / Th 11-12</td>
 </tr>
 <tr>
    <td>currently teaching</td>
