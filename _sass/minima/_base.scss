@@ -251,6 +251,23 @@ pre {
   border-top: 2px solid $grey-color-light;
 }
 
+.wrapper-book {
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+  margin-right: auto;
+  margin-left: auto;
+  //padding-right: 1px;
+  //padding-left: 1px;
+  @extend %clearfix;
+
+  @media screen and (min-width: $on-large) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+ }
+
+}
 /**
  * Clearfix
  */
@@ -325,9 +342,9 @@ table.books-read {
   margin-bottom: $spacing-unit;
   
    th:nth-child(1), td:nth-child(1) {
-     width: 6ch;
+//     width: 6ch;
      white-space: nowrap;
-     padding-left: 1em;
+//     padding-left: 2px;
      text-align: right;
    }
    th:nth-child(2) {
@@ -335,6 +352,10 @@ table.books-read {
    }
    th:nth-child(3) {
      width: 12em;
+   }
+   tr:last-child th:nth-child(1){
+     padding-left: 2em;
+     text-align: left;
    }
 }
 
