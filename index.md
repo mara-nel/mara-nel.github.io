@@ -16,7 +16,7 @@ layout: home
 </tr>
 <tr>
    <td>currently teaching</td>
-   <td><a href="/teaching/2019/FA/242/">MA 242</a></td>
+   <td>N/A</td>
 </tr>
 <tr>
    <td>advisor</td>
