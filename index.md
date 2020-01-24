@@ -11,8 +11,8 @@ layout: home
    <td>SAS 4117</td>
 </tr>
 <tr>
-   <td>office hours</td>
-   <td>Tu 13-14 / Th 11-12</td>
+   <td>mmc hours</td>
+   <td>MTWThF 12-13</td>
 </tr>
 <tr>
    <td>currently teaching</td>
