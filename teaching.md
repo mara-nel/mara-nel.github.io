@@ -10,7 +10,7 @@ permalink: /teaching/
 </tr>
 <tr>
    <td>Spring 2020</td>
-   <td><a href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NCSU Tutoring Center)</a>
+   <td><a href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/" target="_blank">MMC (NCSU Tutoring Center)</a>
    / Tutor</td>
 </tr>
 <tr>
@@ -22,7 +22,7 @@ permalink: /teaching/
 </tr>
 <tr>
    <td>Fall 2019</td>
-   <td><a href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NCSU Tutoring Center)</a>
+   <td><a href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/" target="_blank">MMC (NCSU Tutoring Center)</a>
    / Tutor</td>
 </tr>
 <tr>
