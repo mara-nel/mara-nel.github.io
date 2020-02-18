@@ -20,7 +20,7 @@ layout: home
 </tr>
 <tr>
    <td>advisor</td>
-   <td><a href="https://hong.math.ncsu.edu/">Hoon Hong</a></td>
+   <td><a href="https://hong.math.ncsu.edu/" target="_blank">Hoon Hong</a></td>
 </tr>
 </table>
 </div>
