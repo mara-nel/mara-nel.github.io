@@ -20,6 +20,6 @@ permalink: /tutoring/
 
 For the past 7 years I have been tutoring students in college mathematics. 
 As a tutor I value patience, flexibility, and respect for every background.
-I charge a flat rate of 15 dollars per half hour.
+I charge a flat rate of 30 dollars per hour.
 If interested contact Wyn at wlnelson@ncsu.edu.
 
