@@ -5,11 +5,11 @@ permalink: "games/"
 
 There are currently two games being tested and tweaked currently (and they are far from perfect).
 
-The first is mobile friendly [Combo Hunter](https://wesln.com/dbm/comboHunter.html).
+The first is mobile friendly [Combo Hunter](https://wynnelson.com/dbm/comboHunter.html).
 
-The second is for desktop [(need a name)](https://wesln.com/dbm/everythingBagel.html).
+The second is for desktop [(need a name)](https://wynnelson.com/dbm/everythingBagel.html).
 
-[(see all options)](https://wesln.com/dbm)
+[(see all options)](https://wynnelson.com/dbm)
 
 ## Combo Hunter
 A combo is formed by clearing a line and then with the next piece, clearing a line again.
@@ -17,7 +17,7 @@ A combo is broken when a piece locks into place without clearing any lines.
 In this version, when a combo ends, the game does too.
 
 A tutorial/missions version is in works and can be played
-[here](https://wesln.com/dbm/comboHunterMissions.html).
+[here](https://wynnelson.com/dbm/comboHunterMissions.html).
 If playing on desktop pressing "m" toggles between mission mode and main mode.
 
 
