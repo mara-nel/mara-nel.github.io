@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Reading Lists
+title: Reading Logs
 permalink: /reading/
 ---
 

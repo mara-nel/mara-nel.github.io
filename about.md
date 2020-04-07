@@ -7,7 +7,7 @@ permalink: /about/
 
 <p>
 With humility and thanksgiving I can say that I grew up liking math.
-This has brought me to major in mathematics at my undergraduate college and to pursue a PhD in it at
+This led me to major in mathematics at my undergraduate college and to pursue a PhD in it at
 <a class="external" href="https://math.sciences.ncsu.edu">NC State University</a>.
 </p>
 
