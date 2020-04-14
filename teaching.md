@@ -5,7 +5,7 @@ permalink: /teaching/
 ---
 
 <h2>
-<a href="/Portfolio/#teaching">
+<a href="/portfolio/#teaching">
 Teaching Statement
 </a>
 </h2>

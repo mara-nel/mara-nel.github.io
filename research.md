@@ -6,7 +6,7 @@ permalink: /research/
 ---
 
 <h2>
-<a href="/Portfolio/#research">Research Statement</a>
+<a href="/portfolio/#research">Research Statement</a>
 </h2>
 
 <h2>
