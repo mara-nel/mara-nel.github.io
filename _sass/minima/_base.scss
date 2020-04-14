@@ -108,8 +108,15 @@ h1 {
 }
 
 h2 {
-  font-size: $base-font-size;
+/**  font-size: $base-font-size;
   font-style: italic;
+  letter-spacing: 1.5px;
+  margin-top: 2em;*/
+
+  font-size: $base-font-size;
+  letter-spacing: 1px;
+  margin-top: 2em;
+  font-weight: 500;
 
 }
 
@@ -151,8 +158,8 @@ blockquote {
   color: $grey-color;
   border-left: 4px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
-  @include relative-font-size(1.125);
-  letter-spacing: -1px;
+  /**@include relative-font-size(1.125);*/
+  letter-spacing: 0px;
   font-style: italic;
 
   > :last-child {
@@ -335,8 +342,10 @@ table.landing {
 }
 
 table.teaching {
+  table-layout: fixed;
    th:nth-child(1), td:nth-child(1) {
      text-align: right;
+     width: 6.5em;
    }
 }
 
