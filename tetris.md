@@ -5,24 +5,28 @@ permalink: /tetris/
 ---
 
 Tetris is an incredible game.
-My first serious interactions with it was during my undergraduate studies, where my friends and I played [The New Tetris](https://en.wikipedia.org/wiki/The_New_Tetris) for the Nintendo 64.
+My first serious interactions with it was during my undergraduate studies, where my friends and I played 
+<a class="external" href="https://en.wikipedia.org/wiki/The_New_Tetris">
+The New Tetris</a>
+for the Nintendo 64.
 This is one of the few iterations in which 4x4 large squares can be formed and get turned into gold or obsidian blocks.
-This is referred to as square mode in [NullpoMino](https://harddrop.com/wiki/NullpoMino).
+This is referred to as square mode in 
+<a class="external" href="https://harddrop.com/wiki/NullpoMino">
+NullpoMino</a>.
 
-**Recommended Versions:**
+<h2>Recommended Versions</h2>
 <ul>
 <li>Tetris (NES)</li>
 <li>The New Tetris (Nintendo 64)</li>
-<li><a href="https://play.google.com/store/apps/details?id=de.golfgl.lightblocks">Falling Lightblocks</a> (Android)</li>
-<li><a href="https://simon.lc/tetr.js/">Tetr.js</a> (Browser)</li>
-<li><a href="http://farter.tk/tetr.js/">Farter's Dig Mod</a> (Browser, a mod of the above)
+<li><a class="external" href="https://play.google.com/store/apps/details?id=de.golfgl.lightblocks">Falling Lightblocks</a> (Android)</li>
+<li><a class="external" href="https://simon.lc/tetr.js/">Tetr.js</a> (Browser)</li>
+<li><a class="external" href="http://farter.tk/tetr.js/">Farter's Dig Mod</a> (Browser, a mod of the above)
    <ul>
       <li>This site is currently down, but the tetris mod can be cloned from github</li>
    </ul>
-
 </li>
-<li><a href="http://jstris.jezevec10.com/">Jstris</a> (Browser, very good multiplayer along with everything else)</li>
-<li><a href="/games/">one of my own, be warned, they are very early in development</a></li>
+<li><a class="external" href="http://jstris.jezevec10.com/">Jstris</a> (Browser, very good multiplayer along with everything else)</li>
+<li><a href="http://wynnelson.com/dbm/">one of my own, be warned, they are very early in development</a></li>
 </ul>
 
 

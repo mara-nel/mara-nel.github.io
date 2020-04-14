@@ -5,8 +5,13 @@ mathjax: true
 permalink: /research/
 ---
 
+<h2>
+<a href="/Portfolio/#research">Research Statement</a>
+</h2>
 
-
+<h2>
+Friendly Introduction
+</h2>
 
 A polynomial $p$ has the following form:
 
@@ -33,7 +38,10 @@ Maybe less useful, but still a good thing to know, is how many positive roots a 
 In general, the coefficients (the $a_i$) of a polynomial determine where and how many roots there are.
 Remarkably though, if all we knew were which $a_i$ were positive and which were negative, we could still make statements about how many positive roots a polynomial has!
 
-What's known as Descartes' rule of signs (named after [Ren&eacute; Descartes](https://en.wikipedia.org/wiki/Rene_Descartes)) does exactly this. 
+What's known as Descartes' rule of signs (named after 
+<a class="external" href="https://en.wikipedia.org/wiki/Rene_Descartes">
+Ren&eacute; Descartes</a>
+) does exactly this. 
 
 First though we need to define the notion of counting sign changes.
 

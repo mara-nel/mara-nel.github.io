@@ -4,25 +4,34 @@ title: Teaching
 permalink: /teaching/
 ---
 
+<h2>
+<a href="/Portfolio/#teaching">
+Teaching Statement
+</a>
+</h2>
+
+
+<h2>
+Currently Teaching
+</h2>
+
 <table class="teaching">
 <tr>
-   <th>current</th>
-</tr>
-<tr>
-   <td>Spring 2020</td>
-   <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NCSU Tutoring Center)</a>
+   <td>Fall 2019</td>
+  <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Tutoring Center)</a>
    / Tutor</td>
 </tr>
-<tr>
-   <td></td>
-   <td></td>
-</tr>
-<tr>
-   <th>past</th>
-</tr>
+</table>
+
+
+<h2>
+Previously Taught
+</h2>
+
+<table class="teaching">
 <tr>
    <td>Fall 2019</td>
-   <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NCSU Tutoring Center)</a>
+   <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Tutoring Center)</a>
    / Tutor</td>
 </tr>
 <tr>
