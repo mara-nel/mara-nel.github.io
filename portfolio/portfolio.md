@@ -21,7 +21,7 @@ Incorporating classroom mindfulness, universal design for learning, and technolo
 
 <blockquote>
 My dissertation is on generalizations of Descartes’ Rule of Signs to multivariate polynomial systems.
-It focuses on identifying conditions on the signs of negatively coupled Pham systems that gurantee that a positive real solution exists.
+It focuses on identifying conditions on the signs of negatively coupled Pham systems that guarantee that a positive real solution exists.
 Future work will be in contributing to the growing body of knowledge about sums of nonnegative circuit (SONC) polynomials.
 What follows is an introduction to Descartes’ Rule of Signs, my contributions in extending one aspect of this, and an introdution to SONC polynomials.
 </blockquote>
