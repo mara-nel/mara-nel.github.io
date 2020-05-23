@@ -17,9 +17,9 @@ Currently Teaching
 
 <table class="teaching">
 <tr>
-   <td>Fall 2019</td>
-  <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Tutoring Center)</a>
-   / Tutor</td>
+   <td>Summer 2020</td>
+   <td><a href="2020/SU/114">MA 114 Introduction to Finite Mathematics with Applications</a>
+   / Instructor</td>
 </tr>
 </table>
 
@@ -30,8 +30,13 @@ Previously Taught
 
 <table class="teaching">
 <tr>
+   <td>Spring 2020</td>
+  <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Math Tutoring Center)</a>
+   / Tutor</td>
+</tr>
+<tr>
    <td>Fall 2019</td>
-   <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Tutoring Center)</a>
+   <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Math Tutoring Center)</a>
    / Tutor</td>
 </tr>
 <tr>

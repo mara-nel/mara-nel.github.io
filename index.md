@@ -11,12 +11,14 @@ layout: home
    <td>SAS 4117</td>
 </tr>
 <tr>
-   <td>mmc hours</td>
-   <td>MTWThF 12-13</td>
+   <td>zoom hours</td>
+   <td>Tu 1pm, Th 5pm, Fr 1pm</td>
 </tr>
 <tr>
    <td>currently teaching</td>
-   <td>N/A</td>
+   <td>
+   <a href="/teaching/2020/SU/114/">MA 114 Finite Math</a>
+   </td>
 </tr>
 <tr>
    <td>advisor</td>
