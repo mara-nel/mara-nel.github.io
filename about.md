@@ -5,6 +5,7 @@ permalink: /about/
 ---
 
 
+
 <p>
 With humility and thanksgiving I can say that I grew up liking math.
 This has brought me to major in mathematics at my undergraduate college and to pursue a PhD in it at 
@@ -37,3 +38,8 @@ What I've read can be viewed through my
 </p>
 
 
+<h2 id="cv">Curriculum Vitae</h2>
+
+<a href="/assets/NelsonCV.pdf">Wyn Nelson CV (PDF)</a>
+
+<p>Last updated Spring 2020<p> 

@@ -4,15 +4,48 @@ title: Teaching
 permalink: /teaching/
 ---
 
-<h2>
+<!--h2>
+<a href="/OCW">
+OpenCourseWare Material
+</a>
+</h2-->
+<!--ul>
+  <li>Equalities and Matrices</li>
+  <li>Inequalities</li>
+  <li>Sets and Introduction to Probability</li>
+  <li>Counting and Probability</li>
+</ul-->
+
+<!--h2>
 <a href="/portfolio/#teaching">
 Teaching Statement
 </a>
+</h2-->
+
+<h2 id="teaching">Teaching Statement</h2>
+
+<blockquote>
+People love watching buildings get demolished;
+I love watching learning barriers get demolished.
+Math is a subject rife with barriers.
+The fixed mindset of 'not being a math person', math anxiety, inaccessible material, long monotonous lectures, large impersonal classes&mdash;these all plague the math classroom and are barriers to learning.
+Incorporating classroom mindfulness, universal design for learning, and technology that brings the class together help bring these barriers down.
+</blockquote>
+
+<a href="/assets/NelsonTeachingStatement.pdf">Full Teaching Statement (PDF)</a>    
+
+
+
+<!--h2>
+Currently Teaching
 </h2>
+
+<table class="teaching">
+</table!-->
 
 
 <h2>
-Currently Teaching
+Teaching History
 </h2>
 
 <table class="teaching">
@@ -21,14 +54,6 @@ Currently Teaching
    <td><a href="2020/SU/114">MA 114 Introduction to Finite Mathematics with Applications</a>
    / Instructor</td>
 </tr>
-</table>
-
-
-<h2>
-Previously Taught
-</h2>
-
-<table class="teaching">
 <tr>
    <td>Spring 2020</td>
   <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Math Tutoring Center)</a>

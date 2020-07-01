@@ -5,9 +5,22 @@ mathjax: true
 permalink: /research/
 ---
 
-<h2>
+<!--h2>
 <a href="/portfolio/#research">Research Statement</a>
-</h2>
+</h2-->
+<h2 id="research">Research Statement</h2>
+
+<blockquote>
+My dissertation is on generalizations of Descartes’ Rule of Signs to multivariate polynomial systems.
+It focuses on identifying conditions on the signs of negatively coupled Pham systems that guarantee that a positive real solution exists.
+Future work will be in contributing to the growing body of knowledge about sums of nonnegative circuit (SONC) polynomials.
+What follows is an introduction to Descartes’ Rule of Signs, my contributions in extending one aspect of this, and an introdution to SONC polynomials.
+</blockquote>
+
+<a href="/assets/NelsonResearchStatement.pdf">Full Research Statement (PDF)</a>
+
+
+
 
 <h2>
 Friendly Introduction
