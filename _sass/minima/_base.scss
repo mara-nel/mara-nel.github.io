@@ -102,24 +102,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: $medium-font-size;
-  text-transform:lowercase;
-  font-variant: small-caps;
+
+  font-size: $large-font-size;
+  font-weight: 500;
 }
 
 h2 {
-/**  font-size: $base-font-size;
-  font-style: italic;
-  letter-spacing: 1.5px;
-  margin-top: 2em;*/
 
-  font-size: $base-font-size;
-  letter-spacing: 1px;
+  font-size: $medium-font-size;
   margin-top: 2em;
-  font-weight: 500;
+  letter-spacing: 1px;
+  font-weight: 450;
 
 }
 
+div.subtitle {
+  font-size: $medium-font-size;
+}
 
 /**
  * Links

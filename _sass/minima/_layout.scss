@@ -18,7 +18,7 @@
 }
 
 .site-title {
-  font-size: $big-font-size;
+  font-size: $huge-font-size;
   font-weight: 400;
   letter-spacing: -1px;
   background-color: inherit;
@@ -88,7 +88,7 @@
     line-height: $base-line-height;
     display: block;
     padding: 5px 10px;
-    font-size: $medium-font-size;
+    font-size: $large-font-size;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
