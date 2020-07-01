@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Equalities and Matrices 
-permalink: /oer/eqma
+permalink: /oer/eqma/
 ---
 
 

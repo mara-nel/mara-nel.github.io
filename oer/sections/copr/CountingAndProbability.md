@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Counting and Probability 
-permalink: /oer/copr
+permalink: /oer/copr/
 ---
 
 

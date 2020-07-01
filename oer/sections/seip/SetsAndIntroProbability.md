@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Sets and Intro Probability
-permalink: /oer/seip
+permalink: /oer/seip/
 ---
 
 
