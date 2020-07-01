@@ -28,7 +28,7 @@ Return to Sections
 Lessons
 </h2>
 <ul>
-  <li><a href="1">Graphing Linear Inequalities</a></li>
+  <li><a href="./1">Graphing Linear Inequalities</a></li>
   <li><a href="2">Solving Linear Programming Problems Graphically</a></li>
   <li><a href="3">The Simplex Method</a></li>
 </ul>
