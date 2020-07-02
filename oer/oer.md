@@ -11,7 +11,7 @@ About OER
 <p>
 Open educational resources (OER) are freely accesible resources that can be used for teaching and learning.
 
-As an instructor and recitation leader I have created countless course materials, much of which I have been able to repackaged as OER.
+As an instructor and recitation leader I have created countless course materials, much of which I have been able to repackage as OER.
 </p>
 
 <h2 id="sections">
