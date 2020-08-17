@@ -257,7 +257,6 @@
 
 .social-media-list {
   display: table;
-  margin: 0 auto;
   li {
     float: left;
     margin: 0 5px;
@@ -266,7 +265,6 @@
     a {
       display: block;
       padding: $spacing-unit / 4;
-      border: 1px solid $grey-color-light
     }
     &:hover .svg-icon { fill: currentColor; }
   }

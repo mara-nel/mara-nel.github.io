@@ -5,41 +5,40 @@ permalink: /about/
 ---
 
 
-
-<p>
-With humility and thanksgiving I can say that I grew up liking math.
-This has brought me to major in mathematics at my undergraduate college and to pursue a PhD in it at 
-<a class="external" href="https://math.sciences.ncsu.edu">NC State University</a>.
+<p> 
+As a teaching graduate student at 
+<a class="external" href="https://math.sciences.ncsu.edu">NC State University</a>
+I have spent the last four years becoming a better communicator.
+I must ask myself the question
+"How can I better communicate this information to my audience?"
+when creating course materials or research presentations.
+When this question is directed at the products I create, it becomes a question about good design.
 </p>
 
 <p>
-Math is a very useful thing and a very helpful tool.
-Unfortunately, a lot of people suffer from 
-<a class="external" href="https://en.wikipedia.org/wiki/Mathematical_anxiety">math anxiety</a>
-or view math as inaccesible to them.
-Helping people overcome their fear or distaste for it is important to me.
-By increasing the ways to interact with materials, working personally with students in an inviting and patient environment, and by using open (free to use and distribute) content this is made more possible.
+I recently realized that user experience (UX) design's creative, collaborative, and impactful nature makes it a career that I wish to pursue.
+The principles of 
+<a class="external" href="https://en.wikipedia.org/wiki/User_experience_design">
+UX design</a>
+were first introduced to me during my undergraduate studies in computer science and I have since further explored it through books, personal projects, and a design bootcamp.
 </p>
 
 <p>
-After the completion of my PhD I plan to pursue the development of any of the following:
-<ul>
-  <li>Interactive digital assets for teaching</li>
-  <li>Open courseware and open textbooks</li>
-  <li>University tutoring centers</li>
-</ul>
+I am currently looking for a position that pairs my experience with web development and expertise in problem solving with UX design.
+In the meantime, I apply elements from the UX design process&mdash;cognitive empathy, iterative design, use of user feedback&mdash;to be a better educator.
 </p>
+
+
 
 <p><br /></p>
 <p>
-Outside of math, I've been reading a lot.
-What I've read can be viewed through my 
+Outside of that, I've been reading a lot.
+You can see what I've read by viewing my 
 <a href="/reading/">reading logs</a>.
 </p>
 
 
-<h2 id="cv">Curriculum Vitae</h2>
+<h2 id="resume">Resume</h2>
 
-<a href="/assets/NelsonCV.pdf">Wyn Nelson CV (PDF)</a>
+<a href="/assets/NelsonResume.pdf">Wyn Nelson Resume (PDF)</a>
 
-<p>Last updated Spring 2020<p> 
