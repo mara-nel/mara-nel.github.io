@@ -265,19 +265,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-
   font-size: $large-font-size;
-  font-weight: 500;
+  font-family: $fancy-font-family;
 }
 
 h2 {
-
+  font-family: $base-font-family;
   font-size: $medium-font-size;
   margin-top: 2em;
-  letter-spacing: 1px;
-  font-weight: 450;
-
 }
+
+h3 {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+}
+
 
 div.subtitle {
   font-size: $medium-font-size;

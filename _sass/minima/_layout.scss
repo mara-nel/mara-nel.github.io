@@ -18,7 +18,8 @@
 }
 
 .site-title {
-  font-size: $huge-font-size;
+  font-size: $title-font-size;
+  font-family: $fancy-font-family;
   font-weight: 400;
   letter-spacing: -1px;
   background-color: inherit;
@@ -88,7 +89,8 @@
     line-height: $base-line-height;
     display: block;
     padding: 5px 10px;
-    font-size: $large-font-size;
+    font-size: 24px;
+    font-family: $fancy-font-family;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
