@@ -291,3 +291,47 @@
 }
 
 
+/**
+ * Reading logs
+ */
+
+.log-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.log-title {
+}
+
+.log-nav {
+  padding: 0 $spacing-unit/2 0 $spacing-unit/2;
+  font-size: $large-font-size;
+}
+.books-read {
+  table-layout: fixed;
+  margin-bottom: $spacing-unit;
+  
+   th:nth-child(1), td:nth-child(1) {
+//     width: 6ch;
+     white-space: nowrap;
+//     padding-left: 2px;
+     text-align: right;
+   }   
+   th:nth-child(2) {
+     width: 14em;
+   }   
+   th:nth-child(3) {                                                                               
+     width: 12em;
+   }   
+   tr:last-child th:nth-child(1){
+     padding-left: 2em;
+     text-align: left;
+   }   
+}
+
+
+
+
+
+
