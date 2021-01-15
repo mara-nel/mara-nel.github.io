@@ -6,34 +6,22 @@ permalink: /about/
 
 
 <p> 
-As a teaching graduate student at 
-<a class="external" href="https://math.sciences.ncsu.edu">NC State University</a>
-I have spent the last four years becoming a better communicator.
-I must ask myself the question
-"How can I better communicate this information to my audience?"
-when creating course materials or research presentations.
-When this question is directed at the products I create, it becomes a question about good design.
-</p>
+During my graduate studies in mathematics I spent a lot of extracurricular time developing web projects and reading books.
+Through this I realized two things:
+that I was deeply interested in the fields of UX design and urban planning
+and that my web development experience could help make a career in these possible.
+<p>
 
 <p>
-I recently realized that user experience (UX) design's creative, collaborative, and impactful nature makes it a career that I wish to pursue.
-The principles of 
-<a class="external" href="https://en.wikipedia.org/wiki/User_experience_design">
-UX design</a>
-were first introduced to me during my undergraduate studies in computer science and I have since further explored it through books, personal projects, and a design bootcamp.
-</p>
+My current position at <a href="https://itre.ncsu.edu/">ITRE</a> allows me to work on transportation related projects in a web developer role.
 
-<p>
-I am currently looking for a position that pairs my experience with web development and expertise in problem solving with UX design.
-In the meantime, I apply elements from the UX design process&mdash;cognitive empathy, iterative design, use of user feedback&mdash;to be a better educator.
-</p>
+
 
 
 
 <p><br /></p>
 <p>
-Outside of that, I've been reading a lot.
-You can see what I've read by viewing my 
+You can see what I've been reading through my 
 <a href="/reading/">reading logs</a>.
 </p>
 
