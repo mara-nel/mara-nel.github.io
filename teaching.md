@@ -50,23 +50,18 @@ Teaching History
 
 <table class="teaching">
 <tr>
-   <td>Summer 2020</td>
-   <td><a href="2020/SU/114">MA 114 Introduction to Finite Mathematics with Applications</a>
+   <td>Fall 2020</td>
+   <td>MA 111 Precalculus Algebra and Trigonometry
    / Instructor</td>
 </tr>
 <tr>
-   <td>Spring 2020</td>
-  <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Math Tutoring Center)</a>
-   / Tutor</td>
+  <td>Summer 2020</td>
+  <td>MA 114 Introduction to Finite Mathematics with Applications
+   / Instructor</td>
 </tr>
 <tr>
-   <td>Fall 2019</td>
-   <td><a class="external" href="https://math.sciences.ncsu.edu/undergraduate/courses-faq/math-multimedia-center/">MMC (NC State Math Tutoring Center)</a>
-   / Tutor</td>
-</tr>
-<tr>
-   <td>Summer 2019</td>
-   <td><a href="2019/SU/114">MA 114 Introduction to Finite Mathematics with Applications</a>
+  <td>Summer 2019</td>
+  <td>MA 114 Introduction to Finite Mathematics with Applications
    / Instructor</td>
 </tr>
 <tr>
