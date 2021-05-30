@@ -1,5 +1,4 @@
 <header class="site-header">
-  <div class="top-image">
   </div>
   <div class="wrapper-header">
     {%- assign default_paths = site.pages | map: "path" -%}
@@ -19,11 +18,13 @@
         </label>
 
         <div class="trigger">
-            <a class="page-link" href="/teaching">Teaching</a>
+            <a id="home-link" class="page-link" href="/">Home</a>
+            <a id="projects-link" class="page-link" href="/projects">Projects</a>
+            <!--a class="page-link" href="/teaching">Teaching</a-->
             <!--a class="page-link" href="/research">Research</a-->
             <!--a class="page-link" href="/tutoring">Tutoring</a-->
-            <a class="page-link" href="/oer">OpenEdu</a>
-            <a class="page-link" href="/about">About</a>
+            <!--a class="page-link" href="/oer">OpenEdu</a-->
+            <a id="about-link" class="page-link" href="/about">About</a>
         </div>
       </nav>
     {%- endif -%}

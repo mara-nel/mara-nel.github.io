@@ -4,33 +4,42 @@
 .site-header {
   min-height: $spacing-unit * 1.865;
   //line-height: $base-line-height * $base-font-size * 2.25;
-  padding-bottom: 8px;
+  padding: $spacing-unit 0;
   // Positioning context for the mobile navigation icon
   position: relative;
   
   //border-bottom-style: solid;
   //border-width: 2px;
   //background-image: linear-gradient(12deg, $background-color, #99D3DF);
-}
-
-.top-image {
-   padding-top: $spacing-unit;
+  background: $dark-ink;
 }
 
 .site-title {
   font-size: $title-font-size;
+  font-size: 52px;
   font-family: $fancy-font-family;
   font-weight: 400;
-  letter-spacing: -1px;
+  font-weight: 600;
+  //letter-spacing: -1px;
   background-color: inherit;
-  color: $text-color;
+  //color: $text-color;
+  color: $page-white;
+  padding: 8px 12px;
+  background: $lot-pink;
+  border: 2px solid $lot-pink;
 
   @include media-query($on-palm) {
   }
 
   &,
   &:visited {
-     color: $text-color;
+     //color: $text-color;
+    color: $page-white;
+  }
+
+  &:hover {
+    text-decoration: none; 
+    border: 2px solid $page-white;
   }
 
 }
@@ -38,13 +47,13 @@
 .site-nav {
   float: none;
   position: absolute;
-  top: $spacing-unit+9px;
+  top: $spacing-unit;
   right: $spacing-unit / 2;
-  background-color: $background-color;
-  border: 1px solid $grey-color-light;
+  background-color: $dark-ink;
   border-radius: 5px;
   text-align: right;
-  letter-spacing: 1.5px;
+  border: 2px solid $sea-grey;
+  color: $page-white;
 
   .nav-trigger {
       display: none;
@@ -60,7 +69,7 @@
     text-align: center;
 
     > svg path {
-      fill: $grey-color-dark;
+      fill: $page-white;
     }
   }
 
@@ -85,18 +94,28 @@
   }
 
   .page-link {
-    color: $text-color;
+    color: $page-white;
+    border: 2px solid $dark-ink;
     line-height: $base-line-height;
     display: block;
-    padding: 5px 10px;
-    font-size: 24px;
+    padding: 8px 12px;
+    font-size: $large-font-size;
+    font-weight: 500;
     font-family: $fancy-font-family;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 0;
     }
-    margin-left: 20px;
+  }
+  a.page-link:hover, a.page-link:active {
+    text-decoration: none; 
+    border: 2px solid $page-white;
+
+  }
+  .active-tab {
+    background: $sea-grey;
+    border: 2px solid $sea-grey;
   }
 
   @media screen and (min-width: $on-medium) {
@@ -104,7 +123,8 @@
     border: none;
     text-align: left;
     background-color: inherit;
-    margin-bottom: 14px;
+    //margin-bottom: 14px;
+    padding-top: $spacing-unit;
 
     label[for="nav-trigger"] {
       display: none;
@@ -120,13 +140,14 @@
 
     .page-link {
       display: inline;
-      padding: 0;
 
       &:not(:last-child) {
-        margin-right: 20px;
+        margin-right: $spacing-unit;
       }
       margin-left: auto;
+      color: $page-white;
     }
+    
   }
 }
 
@@ -136,8 +157,8 @@
  * Site footer
  */
 .site-footer {
+  margin-bottom: $spacing-unit;
 }
-
 
 .contact-list,
 .social-media-list {
@@ -146,57 +167,21 @@
 }
 
 .footer-col-wrapper {
+  border-top: 2px solid $sea-grey;
   font-size: $small-font-size;
-  color: $grey-color;
-  margin-left: -$spacing-unit / 2;
-  margin-top: 10px;
+  color: $sea-grey;
+  padding-top: $spacing-unit / 2;
   @extend %clearfix;
-
-  //border-top: 1px solid $grey-color-light;
-  //padding: $spacing-unit 0;
 }
-
-.footer-col {
-  width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-  width:         calc(100% - (#{$spacing-unit} / 2));
-  margin-bottom: $spacing-unit / 2;
-  padding-left: $spacing-unit / 2;
+.footer-col-wrapper div:first-child {
+  padding-right: 100px;
+  margin-right: auto;
 }
-
-.footer-col-1,
-.footer-col-2 {
-  width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-  width:         calc(50% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-  width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-  width:         calc(100% - (#{$spacing-unit} / 2));
-}
-
-@media screen and (min-width: $on-large) {
-  .footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-  }
-
-  .footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-  }
-
-  .footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
+.footer-col-wrapper div:last-child {
+  @media screen and (min-width: $on-medium) {
+    max-width: 300px;
   }
 }
-
-@media screen and (min-width: $on-medium) {
-  .footer-col {
-    float: left;
-  }
-}
-
 
 
 /**
@@ -331,7 +316,18 @@
 }
 
 
+.flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+#home-p {
+  max-width: 400px;
+  margin-right: auto;
+}
+#home-profile-pic{
+}
 
-
-
+ul.big-list {
+  font-size: 20px;
+}

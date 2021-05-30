@@ -8,17 +8,23 @@ $fancy-font-family: "Raleway", sans-serif;
 $small-font-size:  14px !default;
 $base-font-size:   18px !default;
 $medium-font-size: 22px !default;
-$large-font-size:  30px !default;
+$large-font-size:  32px !default;
 $title-font-size:  36px !default;
 $base-font-weight: 400 !default;
 $base-head-weight: 600 !default;
 $base-line-height: 1.5 !default;
 
-$spacing-unit:     24px !default;
+$spacing-unit:     20px !default;
 
-$text-color:       #111 !default;
-$background-color: #fafbfc !default;
-$brand-color:      #2a7ae2 !default;
+$lot-pink:         #AA5090 !default;
+$page-white:       #FCFEFC !default;
+$sea-grey:         #60757B !default;
+$dark-ink:         #0C0804 !default;
+
+
+$text-color:       $dark-ink !default;
+$background-color: $page-white !default;
+$brand-color:      $lot-pink !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
@@ -27,7 +33,7 @@ $orange-color:     #f66a0a !default;
 $table-text-align: left !default;
 
 // Width of the content area
-$content-width:    800px !default;
+$content-width:    880px !default;
 
 $on-palm:          600px !default;
 $on-laptop:        800px !default;
