@@ -13,6 +13,8 @@ description: >- # this means to ignore newlines until "baseurl:"
    Wyn Nelson is a web developer with interests in urban planning and UX design. She received her bachelor's degree in math with a minor in computer science in 2016 and her master's in math in 2018.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+collections:
+  - projects
 
 minima:
 # generate social links in footer
@@ -29,6 +31,8 @@ plugins:
 
 # Google Analytics
 google_analytics: UA-164343861-1
+
+
 
 
 # Exclude from processing.
