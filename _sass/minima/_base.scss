@@ -179,6 +179,7 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  //font: $base-font-weight #{$base-font-size} $base-font-family;
   color: $text-color;
   background-color: $page-white;
   -webkit-text-size-adjust: 100%;
@@ -411,12 +412,13 @@ pre {
 }
 
 .book-wrapper {
+  //background: $page-white;
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
   max-width:         calc(#{$content-width} - (#{$spacing-unit}));
   margin-right: auto;
   margin-left: auto;
-  padding-right: $spacing-unit / 2;
-  padding-left: 2;
+  padding-right: $spacing-unit / 4;
+  padding-left: $spacing-unit / 4;
   @extend %clearfix;
 
   @media screen and (min-width: $on-large) {
@@ -492,13 +494,13 @@ table {
   
   td, th {
       border: 0 transparent;
-      padding: 6px;
+      padding: $spacing-unit/4;
       vertical-align: top;
    }
    th {
-      font-variant: small-caps;
-      font-weight: normal;
-      padding: 16px 6px 16px 6px;
+      text-transform: capitalize;
+      font-weight: 500;
+      padding: $spacing-unit $spacing-unit/4;
    }
 }
 

@@ -157,7 +157,8 @@
  * Site footer
  */
 .site-footer {
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit / 2;
+  margin-top: $spacing-unit;
 }
 
 .contact-list,
@@ -169,7 +170,7 @@
 .footer-col-wrapper {
   border-top: 2px solid $sea-grey;
   font-size: $small-font-size;
-  color: $sea-grey;
+  color: $dark-ink;
   padding-top: $spacing-unit / 2;
   @extend %clearfix;
 }
@@ -281,12 +282,17 @@
  */
 
 .log-header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  //display: flex;
+  //flex-wrap: wrap;
+  //justify-content: center;
+  margin: $spacing-unit/2 auto;
+  background: $page-white;
 }
-
+.ghost {
+  visibility: hidden;
+}
 .log-title {
+  display: inline;
 }
 
 .log-nav {
@@ -296,23 +302,38 @@
 .books-read {
   table-layout: fixed;
   margin-bottom: $spacing-unit;
+  font-size: $book-font-size;
+  //border-collapse: separate;
+  //border-spacing: 0 $spacing-unit/4;
+  
+   tr {
+     background: $page-white;
+   }
   
    th:nth-child(1), td:nth-child(1) {
-//     width: 6ch;
      white-space: nowrap;
-//     padding-left: 2px;
      text-align: right;
    }   
    th:nth-child(2) {
      width: 14em;
    }   
-   th:nth-child(3) {                                                                               
+   th:nth-child(3) {
      width: 12em;
    }   
    tr:last-child th:nth-child(1){
      padding-left: 2em;
      text-align: left;
    }   
+
+  @media screen and (min-width: $on-medium) {
+    font-size: $base-font-size;
+    td, th {
+        border: 0 transparent;
+        padding: $spacing-unit/2;
+        vertical-align: top;
+     }
+
+    }
 }
 
 
@@ -328,6 +349,4 @@
 #home-profile-pic{
 }
 
-ul.big-list {
-  font-size: 20px;
-}
+
