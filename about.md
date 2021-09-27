@@ -28,5 +28,5 @@ You can see what I've been reading through my
 
 <h2 id="resume">Resume</h2>
 
-<a href="/assets/NelsonResume.pdf">Wyn Nelson Resume (PDF)</a>
+<a href="/assets/NelsonResume2021.pdf">Wyn Nelson Resume (PDF)</a>
 
