@@ -349,4 +349,13 @@
 #home-profile-pic{
 }
 
+ul.imgContainer {
+  display: flex; 
+  list-style: none;
+}
+ul.imgContainer li {
+  flex-grow: 1;
+  margin: 2px;
+}
+
 
