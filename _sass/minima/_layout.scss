@@ -348,12 +348,47 @@
 }
 
 ul.imgContainer {
+  @media screen and (min-width: $on-medium) {
+    margin-left: 1em;
+  }
   display: flex; 
   list-style: none;
+  margin-left: 0;
 }
 ul.imgContainer li {
   flex-grow: 1;
   margin: 2px;
 }
 
+.projectOverview details {
+  @media screen and (min-width: $on-medium) {
+    margin-left: 1em;
+  }
+  max-width: 720px;
+  margin-bottom: 1em;
+}
+
+.projectOverview summary {
+  padding: .5em;
+  border: 2px solid #000;
+}
+
+.projectOverview details > p {
+  margin: 0;
+  padding: 1em;
+  border: 2px solid #000;
+  border-top: none;
+}
+
+.projectOverview details[open] summary {
+  text-decoration: none; 
+  background: #aa5090;
+  color: #fff;
+}
+
+.projectOverview summary:hover, .projectOverview summary:active {
+  text-decoration: none; 
+  background: #aa5090;
+  color: #fff;
+}
 
