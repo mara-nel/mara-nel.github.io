@@ -55,13 +55,16 @@ svg#waves {
 .site-nav {
   float: none;
   position: absolute;
+  z-index: 1;
   top: $spacing-unit;
   right: $spacing-unit / 2;
-  background-color: $dark-ink;
+  //background-color: $page-white-2;
+  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
   border-radius: 5px;
   text-align: right;
-  border: 2px solid $sea-grey;
+  border: 2px solid $light-white;
   color: $page-white;
+  background: #AE6A7F;
 
   .nav-trigger {
       display: none;
@@ -99,6 +102,7 @@ svg#waves {
     display: block;
     margin: auto;
     padding-bottom: 5px;
+    padding: 0 .5rem .5rem .5rem;
   }
 
   .page-link {
@@ -107,11 +111,9 @@ svg#waves {
     line-height: $base-line-height;
     display: block;
     //padding: 8px 12px;
-    padding: .5rem 1rem;
     font-size: $large-font-size;
     font-weight: 500;
     font-family: $fancy-font-family;
-    text-shadow: 2px 2px 4px rgba(.3, .3, .3, .3);
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -125,17 +127,28 @@ svg#waves {
   }
   .active-tab {
     //background: $sea-grey;
-    border-bottom: 2px solid $light-white;
-    box-shadow: 0px 2px 2px -1px rgba(.3,.3, .3,.3);
+    //border-bottom: 2px solid $light-white;
+    //box-shadow: 0px 2px 2px -1px rgba(.3,.3, .3,.3);
+    //background: $page-white-2;
+    text-decoration: underline;
+  }
+  a.active-tab:hover, .active-tab:active {
+    text-decoration:underline;
   }
 
   @media screen and (min-width: $on-medium) {
+    box-shadow: none;
     position: static;
     border: none;
     text-align: left;
     background-color: inherit;
     //margin-bottom: 14px;
     padding-top: $spacing-unit;
+
+    .page-link {
+      padding: .5rem 1rem;
+      text-shadow: 2px 2px 4px rgba(.3, .3, .3, .3);
+    }
 
     label[for="nav-trigger"] {
       display: none;
@@ -157,6 +170,13 @@ svg#waves {
       }
       margin-left: auto;
       color: $page-white;
+    }
+
+    .active-tab {
+      //background: $sea-grey;
+      background: none;
+      //border-bottom: 2px solid $light-white;
+      //box-shadow: 0px 2px 2px -1px rgba(.3,.3, .3,.3);
     }
     
   }
