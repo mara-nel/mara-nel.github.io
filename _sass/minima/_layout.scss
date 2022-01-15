@@ -2,7 +2,8 @@
  * Site header
  */
 .site-header {
-  min-height: $spacing-unit * 1.865;
+  //min-height: $spacing-unit * 1.865;
+  min-height: min(15vw, 240px);
   //line-height: $base-line-height * $base-font-size * 2.25;
   padding: $spacing-unit 0;
   // Positioning context for the mobile navigation icon
@@ -11,7 +12,12 @@
   //border-bottom-style: solid;
   //border-width: 2px;
   //background-image: linear-gradient(12deg, $background-color, #99D3DF);
-  background: $dark-ink;
+  //background: $dark-ink;
+}
+
+svg#waves {
+  position: absolute;
+  top: 0;
 }
 
 .site-title {
@@ -21,12 +27,13 @@
   font-weight: 400;
   font-weight: 600;
   //letter-spacing: -1px;
-  background-color: inherit;
+  //background-color: inherit;
   //color: $text-color;
-  color: $page-white;
+  color: $light-white;
   padding: 8px 12px;
-  background: $lot-pink;
-  border: 2px solid $lot-pink;
+  //background: $lot-pink;
+  border: 2px solid rgba(0,0,0,0);
+  text-shadow: 1px 1px 5px rgba(.3, .3, .3, .3);
 
   @include media-query($on-palm) {
   }
@@ -34,12 +41,13 @@
   &,
   &:visited {
      //color: $text-color;
-    color: $page-white;
+    color: $light-white;
   }
 
   &:hover {
     text-decoration: none; 
-    border: 2px solid $page-white;
+    border: 2px solid $light-white;
+    //box-shadow: 2px 2px 2px;
   }
 
 }
@@ -95,13 +103,15 @@
 
   .page-link {
     color: $page-white;
-    border: 2px solid $dark-ink;
+    border: 2px solid rgba(0,0,0,0);
     line-height: $base-line-height;
     display: block;
-    padding: 8px 12px;
+    //padding: 8px 12px;
+    padding: .5rem 1rem;
     font-size: $large-font-size;
     font-weight: 500;
     font-family: $fancy-font-family;
+    text-shadow: 2px 2px 4px rgba(.3, .3, .3, .3);
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -110,12 +120,13 @@
   }
   a.page-link:hover, a.page-link:active {
     text-decoration: none; 
-    border: 2px solid $page-white;
+    border: 2px solid $light-white;
 
   }
   .active-tab {
-    background: $sea-grey;
-    border: 2px solid $sea-grey;
+    //background: $sea-grey;
+    border-bottom: 2px solid $light-white;
+    box-shadow: 0px 2px 2px -1px rgba(.3,.3, .3,.3);
   }
 
   @media screen and (min-width: $on-medium) {
@@ -158,7 +169,6 @@
  */
 .site-footer {
   margin-bottom: $spacing-unit / 2;
-  margin-top: $spacing-unit;
 }
 
 .contact-list,
@@ -191,6 +201,7 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1 0 auto;
+  position: relative;
 }
 
 .page-heading {
@@ -345,6 +356,9 @@
 .leftText {
   max-width: 600px;
   margin-right: auto;
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: rgba(204, 204, 204, .7);
 }
 
 ul.imgContainer {
