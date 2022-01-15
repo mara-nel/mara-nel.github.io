@@ -4,7 +4,7 @@ title: Reading Logs
 permalink: /reading/
 ---
 
-<div id="main">
+<div class="leftText">
   <ul>
     <li><a href="/reading/2018">2018</a></li>
     <li><a href="/reading/2019">2019</a></li>

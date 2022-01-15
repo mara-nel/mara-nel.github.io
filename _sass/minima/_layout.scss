@@ -2,7 +2,8 @@
  * Site header
  */
 .site-header {
-  min-height: $spacing-unit * 1.865;
+  //min-height: $spacing-unit * 1.865;
+  min-height: min(15vw, 200px);
   //line-height: $base-line-height * $base-font-size * 2.25;
   padding: $spacing-unit 0;
   // Positioning context for the mobile navigation icon
@@ -11,7 +12,12 @@
   //border-bottom-style: solid;
   //border-width: 2px;
   //background-image: linear-gradient(12deg, $background-color, #99D3DF);
-  background: $dark-ink;
+  //background: $dark-ink;
+}
+
+svg#waves {
+  position: absolute;
+  top: 0;
 }
 
 .site-title {
@@ -21,12 +27,13 @@
   font-weight: 400;
   font-weight: 600;
   //letter-spacing: -1px;
-  background-color: inherit;
+  //background-color: inherit;
   //color: $text-color;
-  color: $page-white;
+  color: $light-white;
   padding: 8px 12px;
-  background: $lot-pink;
-  border: 2px solid $lot-pink;
+  border: 2px solid rgba(0,0,0,0);
+  text-shadow: 1px 1px 5px rgba(.3, .3, .3, .3);
+  border-radius: 1rem;
 
   @include media-query($on-palm) {
   }
@@ -34,12 +41,13 @@
   &,
   &:visited {
      //color: $text-color;
-    color: $page-white;
+    color: $light-white;
   }
 
   &:hover {
     text-decoration: none; 
-    border: 2px solid $page-white;
+    border: 2px solid $light-white;
+    //box-shadow: 2px 2px 2px;
   }
 
 }
@@ -47,13 +55,15 @@
 .site-nav {
   float: none;
   position: absolute;
+  z-index: 1;
   top: $spacing-unit;
   right: $spacing-unit / 2;
-  background-color: $dark-ink;
+  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
   border-radius: 5px;
   text-align: right;
-  border: 2px solid $sea-grey;
-  color: $page-white;
+  border: 2px solid $light-white;
+  color: $light-white;
+  background: $peach;
 
   .nav-trigger {
       display: none;
@@ -69,7 +79,7 @@
     text-align: center;
 
     > svg path {
-      fill: $page-white;
+      fill: $light-white;
     }
   }
 
@@ -91,17 +101,19 @@
     display: block;
     margin: auto;
     padding-bottom: 5px;
+    padding: 0 .5rem .5rem .5rem;
   }
 
   .page-link {
-    color: $page-white;
-    border: 2px solid $dark-ink;
+    color: $light-white;
+    border: 2px solid rgba(0,0,0,0);
     line-height: $base-line-height;
     display: block;
-    padding: 8px 12px;
+    //padding: 8px 12px;
     font-size: $large-font-size;
     font-weight: 500;
     font-family: $fancy-font-family;
+    border-radius: 1rem;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -110,21 +122,29 @@
   }
   a.page-link:hover, a.page-link:active {
     text-decoration: none; 
-    border: 2px solid $page-white;
+    border: 2px solid $light-white;
 
   }
   .active-tab {
-    background: $sea-grey;
-    border: 2px solid $sea-grey;
+    text-decoration: underline;
+  }
+  a.active-tab:hover, .active-tab:active {
+    text-decoration:underline;
   }
 
   @media screen and (min-width: $on-medium) {
+    box-shadow: none;
     position: static;
     border: none;
     text-align: left;
     background-color: inherit;
     //margin-bottom: 14px;
     padding-top: $spacing-unit;
+
+    .page-link {
+      padding: .5rem 1rem;
+      text-shadow: 2px 2px 4px rgba(.3, .3, .3, .3);
+    }
 
     label[for="nav-trigger"] {
       display: none;
@@ -145,7 +165,11 @@
         margin-right: $spacing-unit;
       }
       margin-left: auto;
-      color: $page-white;
+      color: $light-white;
+    }
+
+    .active-tab {
+      background: none;
     }
     
   }
@@ -158,7 +182,6 @@
  */
 .site-footer {
   margin-bottom: $spacing-unit / 2;
-  margin-top: $spacing-unit;
 }
 
 .contact-list,
@@ -168,10 +191,10 @@
 }
 
 .footer-col-wrapper {
-  border-top: 2px solid $sea-grey;
   font-size: $small-font-size;
   color: $dark-ink;
   padding-top: $spacing-unit / 2;
+  padding-left: 1rem;
   @extend %clearfix;
 }
 .footer-col-wrapper div:first-child {
@@ -180,7 +203,7 @@
 }
 .footer-col-wrapper div:last-child {
   @media screen and (min-width: $on-medium) {
-    max-width: 300px;
+    max-width: 420px;
   }
 }
 
@@ -191,6 +214,7 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1 0 auto;
+  position: relative;
 }
 
 .page-heading {
@@ -231,11 +255,15 @@
 
 .post-title,
 .post-content h1 {
+  padding-left: 1rem;
   letter-spacing: 1.3px;
   line-height: 1;
 
   @media screen and (min-width: $on-large) {
   }
+}
+.post-content h2 {
+  padding-left: 1rem;
 }
 
 .post-content {
@@ -286,7 +314,7 @@
   //flex-wrap: wrap;
   //justify-content: center;
   margin: $spacing-unit/2 auto;
-  background: $page-white;
+  background: $light-white;
 }
 .ghost {
   visibility: hidden;
@@ -307,7 +335,7 @@
   //border-spacing: 0 $spacing-unit/4;
   
    tr {
-     background: $page-white;
+     background: $light-white;
    }
   
    th:nth-child(1), td:nth-child(1) {
@@ -345,6 +373,9 @@
 .leftText {
   max-width: 600px;
   margin-right: auto;
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: rgba(204, 204, 204, .7);
 }
 
 ul.imgContainer {
@@ -370,25 +401,34 @@ ul.imgContainer li {
 
 .projectOverview summary {
   padding: .5em;
-  border: 2px solid #000;
+  //border: 2px solid #000;
+  border-radius: 1rem;
+  border-radius: 1rem 1rem 2px 1rem ;
+  //background: $light-white;
+  background: $peach;
+  color: $light-white;
+
+  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
 }
 
 .projectOverview details > p {
   margin: 0;
   padding: 1em;
-  border: 2px solid #000;
   border-top: none;
+  background: #f1eeee;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
+
 }
 
 .projectOverview details[open] summary {
   text-decoration: none; 
-  background: #aa5090;
-  color: #fff;
+  border-radius: 1rem 1rem 0 0 ;
 }
 
 .projectOverview summary:hover, .projectOverview summary:active {
   text-decoration: none; 
-  background: #aa5090;
-  color: #fff;
+  filter: brightness(115%);
+  cursor: pointer;
 }
 
