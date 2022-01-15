@@ -34,6 +34,7 @@ svg#waves {
   //background: $lot-pink;
   border: 2px solid rgba(0,0,0,0);
   text-shadow: 1px 1px 5px rgba(.3, .3, .3, .3);
+  border-radius: 1rem;
 
   @include media-query($on-palm) {
   }
@@ -114,6 +115,7 @@ svg#waves {
     font-size: $large-font-size;
     font-weight: 500;
     font-family: $fancy-font-family;
+    border-radius: 1rem;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
