@@ -40,5 +40,7 @@ permalink: /about/
 </div>
 
 <h2>Resume</h2>
-<a href="/assets/WynNelsonResume.pdf">Wyn Nelson Resume (PDF)</a>
+<div class="leftText">
+  <a href="/assets/WynNelsonResume.pdf">Wyn Nelson Resume (PDF)</a>
+</div>
 
