@@ -31,7 +31,6 @@ svg#waves {
   //color: $text-color;
   color: $light-white;
   padding: 8px 12px;
-  //background: $lot-pink;
   border: 2px solid rgba(0,0,0,0);
   text-shadow: 1px 1px 5px rgba(.3, .3, .3, .3);
   border-radius: 1rem;
@@ -59,13 +58,12 @@ svg#waves {
   z-index: 1;
   top: $spacing-unit;
   right: $spacing-unit / 2;
-  //background-color: $page-white-2;
   box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
   border-radius: 5px;
   text-align: right;
   border: 2px solid $light-white;
-  color: $page-white;
-  background: #AE6A7F;
+  color: $light-white;
+  background: $peach;
 
   .nav-trigger {
       display: none;
@@ -81,7 +79,7 @@ svg#waves {
     text-align: center;
 
     > svg path {
-      fill: $page-white;
+      fill: $light-white;
     }
   }
 
@@ -107,7 +105,7 @@ svg#waves {
   }
 
   .page-link {
-    color: $page-white;
+    color: $light-white;
     border: 2px solid rgba(0,0,0,0);
     line-height: $base-line-height;
     display: block;
@@ -128,10 +126,6 @@ svg#waves {
 
   }
   .active-tab {
-    //background: $sea-grey;
-    //border-bottom: 2px solid $light-white;
-    //box-shadow: 0px 2px 2px -1px rgba(.3,.3, .3,.3);
-    //background: $page-white-2;
     text-decoration: underline;
   }
   a.active-tab:hover, .active-tab:active {
@@ -171,14 +165,11 @@ svg#waves {
         margin-right: $spacing-unit;
       }
       margin-left: auto;
-      color: $page-white;
+      color: $light-white;
     }
 
     .active-tab {
-      //background: $sea-grey;
       background: none;
-      //border-bottom: 2px solid $light-white;
-      //box-shadow: 0px 2px 2px -1px rgba(.3,.3, .3,.3);
     }
     
   }
@@ -200,10 +191,10 @@ svg#waves {
 }
 
 .footer-col-wrapper {
-  border-top: 2px solid $sea-grey;
   font-size: $small-font-size;
   color: $dark-ink;
   padding-top: $spacing-unit / 2;
+  padding-left: 1rem;
   @extend %clearfix;
 }
 .footer-col-wrapper div:first-child {
@@ -212,7 +203,7 @@ svg#waves {
 }
 .footer-col-wrapper div:last-child {
   @media screen and (min-width: $on-medium) {
-    max-width: 300px;
+    max-width: 420px;
   }
 }
 
@@ -264,11 +255,15 @@ svg#waves {
 
 .post-title,
 .post-content h1 {
+  padding-left: 1rem;
   letter-spacing: 1.3px;
   line-height: 1;
 
   @media screen and (min-width: $on-large) {
   }
+}
+.post-content h2 {
+  padding-left: 1rem;
 }
 
 .post-content {
@@ -319,7 +314,7 @@ svg#waves {
   //flex-wrap: wrap;
   //justify-content: center;
   margin: $spacing-unit/2 auto;
-  background: $page-white;
+  background: $light-white;
 }
 .ghost {
   visibility: hidden;
@@ -340,7 +335,7 @@ svg#waves {
   //border-spacing: 0 $spacing-unit/4;
   
    tr {
-     background: $page-white;
+     background: $light-white;
    }
   
    th:nth-child(1), td:nth-child(1) {
@@ -406,25 +401,34 @@ ul.imgContainer li {
 
 .projectOverview summary {
   padding: .5em;
-  border: 2px solid #000;
+  //border: 2px solid #000;
+  border-radius: 1rem;
+  border-radius: 1rem 1rem 2px 1rem ;
+  //background: $light-white;
+  background: $peach;
+  color: $light-white;
+
+  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
 }
 
 .projectOverview details > p {
   margin: 0;
   padding: 1em;
-  border: 2px solid #000;
   border-top: none;
+  background: #f1eeee;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
+
 }
 
 .projectOverview details[open] summary {
   text-decoration: none; 
-  background: #aa5090;
-  color: #fff;
+  border-radius: 1rem 1rem 0 0 ;
 }
 
 .projectOverview summary:hover, .projectOverview summary:active {
   text-decoration: none; 
-  background: #aa5090;
-  color: #fff;
+  filter: brightness(115%);
+  cursor: pointer;
 }
 
