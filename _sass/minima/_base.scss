@@ -181,7 +181,7 @@ body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
   //font: $base-font-weight #{$base-font-size} $base-font-family;
   color: $text-color;
-  background-color: $page-white-2;
+  background-color: $background-color;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
      -moz-font-feature-settings: "kern" 1;
@@ -299,7 +299,6 @@ a {
   }
 
   &:hover {
-    color: $text-color;
     text-decoration: underline;
   }
 
@@ -414,7 +413,6 @@ pre {
 }
 
 .book-wrapper {
-  //background: $page-white;
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
   max-width:         calc(#{$content-width} - (#{$spacing-unit}));
   margin-right: auto;
@@ -471,10 +469,6 @@ pre {
   color: $orange-color;
 }
 
-.grey {
-  color: $sea-grey;
-}
-
 .svg-icon {
   width: 16px;
   height: 16px;
@@ -482,8 +476,8 @@ pre {
   fill: currentColor;
   padding: 5px 3px 2px 5px;
   vertical-align: text-bottom;
+  color: $grey-color-dark;
 }
-
 
 /**
  * Tables

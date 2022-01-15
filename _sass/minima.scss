@@ -18,16 +18,16 @@ $base-line-height: 1.5 !default;
 $spacing-unit:     20px !default;
 
 $lot-pink:         #AA5090 !default;
-$page-white:       #FCFEFC !default;
-$light-white:       #FCFEFC !default;
-$page-white-2:     #CCCCCC !default;
+$peach:            #A9606F !default;
+$page-white:       #CCCCCC !default;
+$light-white:      #FCFEFC !default;
 $sea-grey:         #60757B !default;
 $dark-ink:         #0C0804 !default;
 
 
 $text-color:       $dark-ink !default;
 $background-color: $page-white !default;
-$brand-color:      $lot-pink !default;
+$brand-color:      darken($lot-pink, 12%) !default;
 
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
