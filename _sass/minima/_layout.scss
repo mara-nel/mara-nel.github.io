@@ -2,17 +2,10 @@
  * Site header
  */
 .site-header {
-  //min-height: $spacing-unit * 1.865;
   min-height: min(15vw, 200px);
-  //line-height: $base-line-height * $base-font-size * 2.25;
   padding: $spacing-unit 0;
   // Positioning context for the mobile navigation icon
   position: relative;
-  
-  //border-bottom-style: solid;
-  //border-width: 2px;
-  //background-image: linear-gradient(12deg, $background-color, #99D3DF);
-  //background: $dark-ink;
 }
 
 svg#waves {
@@ -21,14 +14,9 @@ svg#waves {
 }
 
 .site-title {
-  font-size: $title-font-size;
   font-size: 52px;
   font-family: $fancy-font-family;
-  font-weight: 400;
   font-weight: 600;
-  //letter-spacing: -1px;
-  //background-color: inherit;
-  //color: $text-color;
   color: $light-white;
   padding: 8px 12px;
   border: 2px solid rgba(0,0,0,0);
@@ -40,14 +28,12 @@ svg#waves {
 
   &,
   &:visited {
-     //color: $text-color;
     color: $light-white;
   }
 
   &:hover {
     text-decoration: none; 
     border: 2px solid $light-white;
-    //box-shadow: 2px 2px 2px;
   }
 
 }
@@ -184,12 +170,6 @@ svg#waves {
   margin-bottom: $spacing-unit / 2;
 }
 
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
-}
-
 .footer-col-wrapper {
   font-size: $small-font-size;
   color: $dark-ink;
@@ -217,35 +197,6 @@ svg#waves {
   position: relative;
 }
 
-.page-heading {
-  @include relative-font-size(2);
-}
-
-.post-list-heading {
-  @include relative-font-size(1.75);
-}
-
-.post-list {
-  margin-left: 0;
-  list-style: none;
-
-  > li {
-    margin-bottom: $spacing-unit;
-  }
-}
-
-.post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
-}
-
-.post-link {
-  display: block;
-  @include relative-font-size(1.5);
-}
-
-
-
 /**
  * Posts
  */
@@ -270,8 +221,9 @@ svg#waves {
   margin-bottom: $spacing-unit;
 }
 
-
 .social-media-list {
+  list-style: none;
+  margin-left: 0;
   display: table;
   li {
     float: left;
@@ -288,37 +240,17 @@ svg#waves {
 
 
 /**
- * Grid helpers
- */
-.one-half {
-  width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-  width:         calc(50% - (#{$spacing-unit} / 2));
-}
-
-
-
-/**
- * Landing page
- */
-
-.bio {
-}
-
-
-/**
  * Reading logs
  */
 
 .log-header {
-  //display: flex;
-  //flex-wrap: wrap;
-  //justify-content: center;
   margin: $spacing-unit/2 auto;
-  //background: $light-white;
 }
+
 .ghost {
   visibility: hidden;
 }
+
 .log-title {
   display: inline;
   font-size: $title-font-size;
@@ -330,16 +262,11 @@ svg#waves {
   padding: 0 $spacing-unit/2 0 $spacing-unit/2;
   font-size: $large-font-size;
 }
+
 .books-read {
   table-layout: fixed;
   font-size: $book-font-size;
-  //border-collapse: separate;
-  //border-spacing: 0 $spacing-unit/4;
   margin: 0;
-  
-   tr {
-     //background: $light-white;
-   }
   
    th:nth-child(1), td:nth-child(1) {
      white-space: nowrap;
@@ -362,9 +289,8 @@ svg#waves {
         border: 0 transparent;
         padding: $spacing-unit/2;
         vertical-align: top;
-     }
-
     }
+  }
 }
 
 div.books-table-wrapper {
@@ -374,7 +300,6 @@ div.books-table-wrapper {
   margin-bottom: 2rem;
   box-shadow: 2px 2px 4px rgba(.3, .3, .3, .3);
 }
-
 
 .flex-wrapper {
   display: flex;
@@ -404,7 +329,7 @@ ul.imgContainer li {
   margin: 2px;
 }
 
-.projectOverview details {
+section.projectOverview details {
   @media screen and (min-width: $on-medium) {
     margin-left: 1em;
   }
@@ -412,19 +337,17 @@ ul.imgContainer li {
   margin-bottom: 1em;
 }
 
-.projectOverview summary {
+section.projectOverview summary {
   padding: .5em;
-  //border: 2px solid #000;
   border-radius: 1rem;
   border-radius: 1rem 1rem 2px 1rem ;
-  //background: $light-white;
   background: $peach;
   color: $light-white;
 
   box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
 }
 
-.projectOverview details > p {
+section.projectOverview details > p {
   margin: 0;
   padding: 1em;
   border-top: none;
@@ -434,12 +357,13 @@ ul.imgContainer li {
 
 }
 
-.projectOverview details[open] summary {
+section.projectOverview details[open] summary {
   text-decoration: none; 
   border-radius: 1rem 1rem 0 0 ;
 }
 
-.projectOverview summary:hover, .projectOverview summary:active {
+section.projectOverview summary:hover,
+section.projectOverview summary:active {
   text-decoration: none; 
   filter: brightness(115%);
   cursor: pointer;
