@@ -314,13 +314,16 @@ svg#waves {
   //flex-wrap: wrap;
   //justify-content: center;
   margin: $spacing-unit/2 auto;
-  background: $light-white;
+  //background: $light-white;
 }
 .ghost {
   visibility: hidden;
 }
 .log-title {
   display: inline;
+  font-size: $title-font-size;
+  color: $light-white;
+
 }
 
 .log-nav {
@@ -329,13 +332,13 @@ svg#waves {
 }
 .books-read {
   table-layout: fixed;
-  margin-bottom: $spacing-unit;
   font-size: $book-font-size;
   //border-collapse: separate;
   //border-spacing: 0 $spacing-unit/4;
+  margin: 0;
   
    tr {
-     background: $light-white;
+     //background: $light-white;
    }
   
    th:nth-child(1), td:nth-child(1) {
@@ -364,6 +367,14 @@ svg#waves {
     }
 }
 
+div.books-table-wrapper {
+  background: #F1EEEE; 
+  border-radius: 1rem; 
+  padding: 1rem 0; 
+  margin-bottom: 2rem;
+  box-shadow: 2px 2px 4px rgba(.3, .3, .3, .3);
+}
+
 
 .flex-wrapper {
   display: flex;
@@ -375,7 +386,9 @@ svg#waves {
   margin-right: auto;
   padding: 1rem;
   border-radius: 2rem;
-  background-color: rgba(204, 204, 204, .7);
+  //background-color: rgba(204, 204, 204, .7);
+  background-color: #F1EEEE;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 ul.imgContainer {
