@@ -1,0 +1,362 @@
+[
+  {
+    "date"  : "2 Jan",
+    "title" : "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "length": 5
+  },
+  {
+    "date"  : "3 Jan",
+    "title" : "The Two Towers",
+    "author": "J.R.R. Tolkien",
+    "length": 5
+  },
+  {
+    "date"  :"6 Jan",
+    "title" : "The Return of the King",
+    "author": "J.R.R. Tolkien",
+    "length": 4
+  },
+  {
+    "date"  : "12 Jan",
+    "title" : "Madame Bovary",
+    "author": "Gustave Flaubert",
+    "length": 4
+  },
+  {
+    "date"  : "28 Jan",
+    "title" : "The Count of Monte Cristo",
+    "author": "Alexandre Dumas",
+    "length": 13
+  },
+  {
+    "date"  : "3 Feb",
+    "title" : "What Men Live By",
+    "author": "Leo Tolstoy",
+    "length": 1
+  },
+  {
+    "date"  : "20 Feb",
+    "title" : "Dubliners",
+    "author": "James Joyce",
+    "length": 3
+  },
+  {
+    "date"  : "27 Feb",
+    "title" : "The Red and the Black",
+    "author": "Stendhal",
+    "length": 5
+  },
+  {
+    "date"  : "28 Feb",
+    "title" : "The Open Boat",
+    "author": "Stephen Crane",
+    "length": 1
+  },
+  {
+    "date"  : "3 Mar",
+    "title" : "All Quiet on the Western Front",
+    "author": "Erich Maria Remarque",
+    "length": 3
+  },
+  {
+    "date"  : "8 Mar",
+    "title" : "Ceremony",
+    "author": "Leslie Marmon Silko",
+    "length": 3
+  },
+  {
+    "date"  : "15 Mar",
+    "title" : "Wuthering Heights",
+    "author": "Emily Bront&euml;",
+    "length": 4
+  },
+  {
+    "date"  : "18 Mar",
+    "title" : "Far Away and Long Ago",
+    "author": "W.H. Hudson",
+    "length": 4
+  },
+  {
+    "date"  : "25 Mar",
+    "title" : "The Blue Hotel",
+    "author": "Stephen Crane",
+    "length": 1
+  },
+  {
+    "date"  : "27 Mar",
+    "title" : "Sh&omacr;gun Vol. 1",
+    "author": "James Clavell",
+    "length": 6
+  },
+  {
+    "date"  : "6 Apr",
+    "title" : "Sh&omacr;gun Vol. 2",
+    "author": "James Clavell",
+    "length": 4
+  },
+  {
+    "date"  : "12 Apr",
+    "title" : "Siddhartha",
+    "author": "Hermann Hesse",
+    "length": 2
+  },
+  {
+    "date"  : "14 May",
+    "title" : "The Valkyries",
+    "author": "Paulo Coelho",
+    "length": 3
+  },
+  {
+    "date"  : "15 May",
+    "title" : "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "19 May",
+    "title" : "Anna Karenina",
+    "author": "Leo Tolstoy",
+    "length": 9
+  },
+  {
+    "date"  : "28 May",
+    "title" : "Hail and Farewell Vol. 1",
+    "author": "George Moore",
+    "length": 5
+  },
+  {
+    "date"  : "8 Jun",
+    "title" : "The Oxford Book of English Verse",
+    "author": "ed. Arthur Quiller-Couch",
+    "length": 9
+  },
+  {
+    "date"  : "8 Jun",
+    "title" : "Animal Farm",
+    "author": "George Orwell",
+    "length": 1
+  },
+  {
+    "date"  : "12 Jun",
+    "title" : "Hail and Farewell Vol. 2",
+    "author": "George Moore",
+    "length": 5
+  },
+  {
+    "date"  : "13 Jun",
+    "title" : "Just Ride",
+    "author": "Grant Petersen",
+    "length": 3
+  },
+  {
+    "date"  : "16 Jun",
+    "title" : "Zen and the Art of Motorcycle Maintenance",
+    "author": "Robert M. Pirsig",
+    "length": 6
+  },
+  {
+    "date"  : "24 Jun",
+    "title" : "O Pioneers!",
+    "author": "Willa Cather",
+    "length": 3
+  },
+  {
+    "date"  : "27 Jun",
+    "title" : "We",
+    "author": "Yevgeny Zamyatin",
+    "length": 3
+  },
+  {
+    "date"  : "3 Jul",
+    "title" : "Ubik",
+    "author": "Philip K. Dick",
+    "length": 3
+  },
+  {
+    "date"  : "8 Jul",
+    "title" : "The Prince",
+    "author": "Niccol&ograve; Machiavelli",
+    "length": 1
+  },
+  {
+    "date"  : "21 Jul",
+    "title" : "YOU & A BIKE & A ROAD",
+    "author": "Eleanor Davis",
+    "length": 2
+  },
+  {
+    "date"  : "27 Jul",
+    "title" : "Of Human Bondage",
+    "author": "W. Somerset Maugham",
+    "length": 7
+  },
+  {
+    "date"  : "3 Aug",
+    "title" : "The Legend of Korra: Turf Wars",
+    "author": "Irene Koh, Michael Dante DiMartino",
+    "length": 2
+  },
+  {
+    "date"  : "4 Aug",
+    "title" : "Iliad",
+    "author": "Homer",
+    "length": 6
+  },
+  {
+    "date"  : "7 Aug",
+    "title" : "The Design of Everyday Things",
+    "author": "Donald A. Norman",
+    "length": 3
+  },
+  {
+    "date"  : "13 Aug",
+    "title" : "The Elements of Typographic Style",
+    "author": "Robert Bringhurst",
+    "length": 3
+  },
+  {
+    "date"  : "25 Aug",
+    "title" : "Buddenbrooks",
+    "author": "Thomas Mann",
+    "length": 7
+  },
+  {
+    "date"  : "27 Aug",
+    "title" : "The Ultimate Exodus",
+    "author": "Danielle Strickland",
+    "length": 2
+  },
+  {
+    "date"  : "31 Aug",
+    "title" : "One Flew Over the Cuckoo's Nest",
+    "author": "Ken Kesey",
+    "length": 3
+  },
+  {
+    "date"  : "8 Sep",
+    "title" : "Kuunmong: The Nine Cloud Dream",
+    "author": "Kim Man-Jung",
+    "length": 3
+  },
+  {
+    "date"  : "11 Sep",
+    "title" : "Monkey Beach",
+    "author": "Eden Robinson",
+    "length": 4
+  },
+  {
+    "date"  : "20 Sep",
+    "title" : "The Rise of Kyoshi",
+    "author": "F.C. Yee, Michael Dante DiMartino",
+    "length": 5
+  },
+  {
+    "date"  : "26 Sep",
+    "title" : "Moby Dick",
+    "author": "Herman Melville",
+    "length": 6
+  },
+  {
+    "date"  : "29 Sep",
+    "title" : "A Wizard of Earthsea",
+    "author": "Ursula K. Le Guin",
+    "length": 3
+  },
+  {
+    "date"  : "30 Sep",
+    "title" : "Rule of Saint Benedict",
+    "author": "Benedict of Nursia",
+    "length": 1
+  },
+  {
+    "date"  : "2 Oct",
+    "title" : "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "length": 4
+  },
+  {
+    "date"  : "5 Oct",
+    "title" : "Harry Potter and the Chamber of Secrets",
+    "author": "J.K. Rowling",
+    "length": 4
+  },
+  {
+    "date"  : "8 Oct",
+    "title" : "Harry Potter and the Prisoner of Azkaban",
+    "author": "J.K. Rowling",
+    "length": 5
+  },
+  {
+    "date"  : "11 Oct",
+    "title" : "Harry Potter and the Goblet of Fire",
+    "author": "J.K. Rowling",
+    "length": 8
+  },
+  {
+    "date"  : "14 Oct",
+    "title" : "Harry Potter and the Order of the Phoenix",
+    "author": "J.K. Rowling",
+    "length": 9
+  },
+  {
+    "date"  : "18 Oct",
+    "title" : "Harry Potter and the Half-Blood Prince",
+    "author": "J.K. Rowling",
+    "length": 7
+  },
+  {
+    "date"  : "21 Oct",
+    "title" : "Harry Potter and the Deathly Hallows",
+    "author": "J.K. Rowling",
+    "length": 8
+  },
+  {
+    "date"  : "26 Oct",
+    "title" : "Ubik",
+    "author": "Philip K. Dick",
+    "length": 3
+  },
+  {
+    "date"  : "5 Nov",
+    "title" : "The American",
+    "author": "Henry James",
+    "length": 3
+  },
+  {
+    "date"  : "8 Nov",
+    "title" : "Rubyfruit Jungle",
+    "author": "Rita Mae Brown",
+    "length": 3
+  },
+  {
+    "date"  : "9 Nov",
+    "title" : "Oryx and Crake",
+    "author": "Margaret Atwood",
+    "length": 5
+  },
+  {
+    "date"  : "5 Dec",
+    "title" : "War and Peace",
+    "author": "Leo Tolstoy",
+    "length": 14
+  },
+  {
+    "date"  : "8 Dec",
+    "title" : "The Enormous Room",
+    "author": "E.E. Cummings",
+    "length": 3
+  },
+  {
+    "date"  : "29 Dec",
+    "title" : "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "length": 8
+  },
+  {
+    "date"  : "30 Dec",
+    "title" : "2001: A Space Odyssey",
+    "author": "Arthur C. Clarke",
+    "length": 3
+  }
+]

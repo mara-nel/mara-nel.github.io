@@ -1,0 +1,314 @@
+[    
+  {
+    "date"  : "4 Jan",
+    "title" : "The Princess Bride",
+    "author": "William Goldman",
+    "length": 4
+  },
+  {
+    "date"  : "7 Jan",
+    "title" : "At the Mountains of Madness",
+    "author": "H.P. Lovecraft",
+    "length": 1
+  },
+  {
+    "date"  : "9 Jan",
+    "title" : "Letter from Birmingham Jail",
+    "author": "Martin Luther King Jr",
+    "length": 1
+  },
+  {
+    "date"  : "13 Jan",
+    "title" : "The Colour Out of Space",
+    "author": "H.P. Lovecraft",
+    "length": 1
+  },
+  {
+    "date"  : "31 Jan",
+    "title" : "The Delight Makers",
+    "author": "Adolf Bandelier",
+    "length": 5
+  },
+  {
+    "date"  : "16 Feb",
+    "title" : "Dune",
+    "author": "Frank Herbert",
+    "length": 5
+  },
+  {
+    "date"  : "25 Feb",
+    "title" : "Dune Messiah", 
+    "author": "Frank Herbert",
+    "length": 4
+  },
+  {
+    "date"  : "1 Mar",
+    "title" : "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "length": 2
+  },
+  {
+    "date"  : "10 Mar",
+    "title" : "Children of Dune",
+    "author": "Frank Herbert",
+    "length": 5
+  },
+  {
+    "date"  : "13 Mar",
+    "title" : "Lolita",
+    "author": "Vladimir Nabokov",
+    "length": 4
+  },
+  {
+    "date"  : "29 Mar",
+    "title" : "Departing at Dawn",
+    "author": "Gloria Lis&eacute;",
+    "length": 2
+  },
+  {
+    "date"  : "3 Apr",
+    "title" : "God Emperor of Dune",
+    "author": "Frank Herbert",
+    "length": 5
+  },
+  {
+    "date"  : "8 Apr",
+    "title" : "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "length": 4
+  },
+  {
+    "date"  : "10 Apr",
+    "title" : "The Stranger",
+    "author": "Albert Camus",
+    "length": 2
+  },
+  {
+    "date"  : "15 Apr",
+    "title" : "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "16 Apr",
+    "title" : "The Alchemist",
+    "author": "Paulo Coelho",
+    "length": 2
+  },
+  {
+    "date"  : "24 Apr",
+    "title" : "Odyssey",
+    "author": "Homer",
+    "length": 4
+  },
+  {
+    "date"  : "30 Apr",
+    "title" : "The Antidote",
+    "author": "Oliver Burkeman",
+    "length": 3
+  },
+  {
+    "date"  : "5 May",
+    "title" : "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "length": 4
+  },
+  {
+    "date"  : "16 May",
+    "title" : "Lord of the Flies",
+    "author": "William Golding",
+    "length": 3
+  },
+  {
+    "date"  : "17 May",
+    "title" : "The Fall",
+    "author": "Albert Camus",
+    "length": 2
+  },
+  {
+    "date"  : "22 May",
+    "title" : "Siddhartha",
+    "author": "Hermann Hesse",
+    "length": 2
+  },
+  {
+    "date"  : "30 May",
+    "title" : "One Flew Over the Cuckoo's Nest",
+    "author": "Ken Kasey",
+    "length": 3
+  },
+  {
+    "date"  : "11 Jun",
+    "title" : "The Hitchhiker's Guide to the Galaxy",
+    "author": "Douglas Adams",
+    "length": 3
+  },
+  {
+    "date"  : "26 Jun",
+    "title" : "Flowers for Algernon",
+    "author": "Daniel Keyes",
+    "length": 3
+  },
+  {
+    "date"  : "3 Jul",
+    "title" : "The Song of Hiawatha",
+    "author": "Henry Wadsworth Longfellow",
+    "length": 2
+  },
+  {
+    "date"  : "11 Jul",
+    "title" : "A Good Scent from a Strange Mountain",
+    "author": "Robert Olen Butler",
+    "length": 3
+  },
+  {
+    "date"  : "19 Jul",
+    "title" : "Ceremony",
+    "author": "Leslie Marmon Silko",
+    "length": 3
+  },
+  {
+    "date"  : "21 Jul",
+    "title" : "The Restaurant at the End of the Universe",
+    "author": "Douglas Adams",
+    "length": 3
+  },
+  {
+    "date"  : "30 Jul",
+    "title" : "Steppenwolf",
+    "author": "Hermann Hesse",
+    "length": 2
+  },
+  {
+    "date"  : "4 Aug",
+    "title" : "Stone Butch Blues",
+    "author": "Leslie Feinberg",
+    "length": 3
+  },
+  {
+    "date"  : "5 Aug",
+    "title" : "Nevada",
+    "author": "Imogen Binnie",
+    "length": 3
+  },
+  {
+    "date"  : "11 Aug",
+    "title" : "The Bell Jar",
+    "author": "Sylvia Plath",
+    "length": 3
+  },
+  {
+    "date"  : "20 Aug",
+    "title" : "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "length": 7
+  },
+  {
+    "date"  : "2 Sep",
+    "title" : "Cat's Cradle",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "9 Sep",
+    "title" : "The Brothers Karamazov",
+    "author": "Fyodor Dostoevsky",
+    "length": 5
+  },
+  {
+    "date"  : "22 Sep",
+    "title" : "Whipping Girl",
+    "author": "Julia Serano",
+    "length": 4
+  },
+  {
+    "date"  : "26 Sep",
+    "title" : "The Dharma Bums",
+    "author": "Jack Kerouac",
+    "length": 2
+  },
+  {
+    "date"  : "3 Oct",
+    "title" : "Therapy",
+    "author": "David Lodge",
+    "length": 4
+  },
+  {
+    "date"  : "8 Oct",
+    "title" : "The Blind Assassin",
+    "author": "Margaret Atwood",
+    "length": 6
+  },
+  {
+    "date"  : "17 Oct",
+    "title" : "Dracula",
+    "author": "Bram Stoker",
+    "length": 5
+  },
+  {
+    "date"  : "25 Oct",
+    "title" : "A Farewell to Arms",
+    "author": "Ernest Hemingway",
+    "length": 4
+  },
+  {
+    "date"  : "27 Oct",
+    "title" : "Breakfast of Champions",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "11 Nov",
+    "title" : "Jailbird",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "13 Nov",
+    "title" : "Mother Night",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "18 Nov",
+    "title" : "The Story of the Stone",
+    "author": "Cao Xueqin",
+    "length": 4
+  },
+  {
+    "date"  : "25 Nov",
+    "title" : "The Sirens of Titan",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 4
+  },
+  {
+    "date"  : "10 Dec",
+    "title" : "Don Quixote",
+    "author": "Miguel de Cervantes",
+    "length": 10
+  },
+  {
+    "date"  : "14 Dec",
+    "title" : "God Bless You, Mr. Rosewater",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "19 Dec",
+    "title" : "Narziss and Goldmund",
+    "author": "Hermann Hesse",
+    "length": 3
+  },
+  {
+    "date"  : "24 Dec",
+    "title" : "Do Androids Dream of Electric Sheep?",
+    "author": "Philip K. Dick",
+    "length": 2
+  },
+  {
+    "date"  : "27 Dec",
+    "title" : "The Great Divorce",
+    "author": "C.S. Lewis",
+    "length": 2
+  }
+]

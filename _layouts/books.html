@@ -6,7 +6,54 @@
       {%- include waves.html -%}
     </header>
     <div class="book-wrapper">
-        {{ content }}
+      {% assign pageCount=0 %}
+      {% assign year = page.year | append: ""%}
+      {% assign prevYear = page.year | minus: '1' | append: ""%}
+      {% assign nextYear = page.year | plus: '1'  | append: ""%}
+      <div class="content">
+        <div class="flex-wrapper">
+          <div class="log-header">
+            {% if site.data.reading[prevYear] %}
+              <a class="log-nav" href="/reading/{{ prevYear }}" title="Previous Log">&lsaquo;</a>
+            {% else %}
+              <span class="ghost log-nav">&lsaquo;</span>
+            {% endif %}
+            <h1 class="log-title">{{page.year}}</h1>
+            {% if site.data.reading[nextYear] %}
+              <a class="log-nav" href="/reading/{{ nextYear }}" title="Next Log">&rsaquo;</a>
+            {% else %}
+              <span class="ghost log-nav">&rsaquo;</span>
+            {% endif %}
+          </div>
+        </div>
+        <div class="books-table-wrapper">
+          <table class="books-read">
+            <tr>
+              <th>read</th>
+              <th>title</th>
+              <th>author</th>
+              <th>length</th>
+            </tr>
+            {% for book in site.data.reading[year] %}
+              {% assign pageCount=pageCount | plus:book.length | minus:1 %}
+              <tr>
+                <td>{{book.date}}</td>
+                <td>{{book.title}}</td>
+                <td>{{book.author}}</td>
+                <td>{% for _ in (1..book.length) %} &bull; {% endfor %}</td>
+              </tr>
+            {% endfor %}
+          <tr id="summary">
+            <th colspan="2">books read: 
+              {{site.data.reading[year].size}}
+            </th>
+            <th colspan="2">pages read: &gt;
+              {{ pageCount | times: 100}}
+            </th>
+          </tr>
+        </table>
+        </div>
+      </div>
     </div>
   </body>
 

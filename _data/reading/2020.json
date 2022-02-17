@@ -1,0 +1,524 @@
+[  
+  {
+    "date"  : "1 Jan",
+    "title" : "Georgia O'Keeffe",
+    "author": "Georgia O'Keeffe",
+    "length": 2
+  },
+  {
+    "date"  : "4 Jan",
+    "title" : "Lila",
+    "author": "Robert M. Pirsig",
+    "length": 5
+  },
+  {
+    "date"  : "5 Jan",
+    "title" : "The Death of Ivan Ilych",
+    "author": "Leo Tolstoy",
+    "length": 1
+  },
+  {
+    "date"  : "9 Jan",
+    "title" : "Starting from Scratch",
+    "author": "Rita Mae Brown",
+    "length": 3
+  },
+  {
+    "date"  : "15 Jan",
+    "title" : "Little Women",
+    "author": "Louisa May Alcott",
+    "length": 6
+  },
+  {
+    "date"  : "19 Jan",
+    "title" : "Adult Onset",
+    "author": "Ann-Marie MacDonald",
+    "length": 4
+  },
+  {
+    "date"  : "22 Jan",
+    "title" : "The Last Wish",
+    "author": "Andrzej Sapkowski",
+    "length": 4
+  },
+  {
+    "date"  : "26 Jan",
+    "title" : "Sword of Destiny",
+    "author": "Andrzej Sapkowski",
+    "length": 4
+  },
+  {
+    "date"  : "28 Jan",
+    "title" : "The Color Purple",
+    "author": "Alice Walker",
+    "length": 3
+  },
+  {
+    "date"  : "31 Jan",
+    "title" : "Blood of Elves",
+    "author": "Andrzej Sapkowski",
+    "length": 4
+  },
+  {
+    "date"  : "2 Feb",
+    "title" : "The Professor Is In",
+    "author": "Karen Kelsky",
+    "length": 5
+  },
+  {
+    "date"  : "4 Feb",
+    "title" : "The Left Hand of Darkness",
+    "author": "Ursula K. Le Guin",
+    "length": 3
+  },
+  {
+    "date"  : "7 Feb",
+    "title" : "The Time of Contempt",
+    "author": "Andrzej Sapkowski",
+    "length": 4
+  },
+  {
+    "date"  : "13 Feb",
+    "title" : "Baptism of Fire",
+    "author": "Andrzej Sapkowski",
+    "length": 4
+  },
+  {
+    "date"  : "14 Feb",
+    "title" : "Beowulf",
+    "author": "tr. Seamus Heaney",
+    "length": 2
+  },
+  {
+    "date"  : "20 Feb",
+    "title" : "Maus",
+    "author": "Art Spiegelman",
+    "length": 3
+  },
+  {
+    "date"  : "22 Feb",
+    "title" : "Passing",
+    "author": "Nella Larsen",
+    "length": 2
+  },
+  {
+    "date"  : "23 Feb",
+    "title" : "The Death and Life of Great American Cities",
+    "author": "Jane Jacobs",
+    "length": 5
+  },
+  {
+    "date"  : "6 Mar",
+    "title" : "Social Justice and the City",
+    "author": "David Harvey",
+    "length": 4
+  },
+  {
+    "date"  : "6 Mar",
+    "title" : "Love Wins",
+    "author": "Rob Bell",
+    "length": 2
+  },
+  {
+    "date"  : "7 Mar",
+    "title" : "The Screwtape Letters",
+    "author": "C.S. Lewis",
+    "length": 2
+  },
+  {
+    "date"  : "8 Mar",
+    "title" : "The Log from the Sea of Cortez",
+    "author": "John Steinbeck",
+    "length": 3
+  },
+  {
+    "date"  : "9 Mar",
+    "title" : "Saint Maybe",
+    "author": "Anne Tyler",
+    "length": 4
+  },
+  {
+    "date"  : "13 Mar",
+    "title" : "The Lathe of Heaven",
+    "author": "Ursula K. Le Guin",
+    "length": 2
+  },
+  {
+    "date"  : "17 Mar",
+    "title" : "Reach Everyone, Teach Everyone",
+    "author": "Thomas J. Tobin, Kirsten T. Behling",
+    "length": 3
+  },
+  {
+    "date"  : "19 Mar",
+    "title" : "Jailbird",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "25 Mar",
+    "title" : "The Tombs of Atuan",
+    "author": "Ursula K. Le Guin",
+    "length": 2
+  },
+  {
+    "date"  : "30 Mar",
+    "title" : "The Chosen",
+    "author": "Chaim Potok",
+    "length": 3
+  },
+  {
+    "date"  : "16 Apr",
+    "title" : "The Once and Future King",
+    "author": "T.H. White",
+    "length": 7
+  },
+  {
+    "date"  : "19 Apr",
+    "title" : "Adopting the Racing Greyhound",
+    "author": "Cynthia A. Branigan",
+    "length": 2
+  },
+  {
+    "date"  : "26 Apr",
+    "title" : "The Grapes of Wrath",
+    "author": "John Steinbeck",
+    "length": 7
+  },
+  {
+    "date"  : "28 Apr",
+    "title" : "Oranges Are Not the Only Fruit",
+    "author": "Jeanette Winterson",
+    "length": 2
+  },
+  {
+    "date"  : "29 Apr",
+    "title" : "The Story of Hong Gildong",
+    "author": "tr. Minsoo Kang",
+    "length": 1
+  },
+  {
+    "date"  : "30 Apr",
+    "title" : "Nevada",
+    "author": "Imogen Binnie",
+    "length": 3
+  },
+  {
+    "date"  : "3 May",
+    "title" : "Neuromancer",
+    "author": "William Gibson",
+    "length": 3
+  },
+  {
+    "date"  : "6 May",
+    "title" : "The User Experience Team of One",
+    "author": "Leah Buley",
+    "length": 3
+  },
+  {
+    "date"  : "9 May",
+    "title" : "The Dispossessed",
+    "author": "Ursula K. Le Guin",
+    "length": 4
+  },
+  {
+    "date"  : "13 May",
+    "title" : "Practical Empathy",
+    "author": "Indi Young",
+    "length": 2
+  },
+  {
+    "date"  : "17 May",
+    "title" : "A Confederacy of Dunces",
+    "author": "John Kennedy Toole",
+    "length": 4
+  },
+  {
+    "date"  : "18 May",
+    "title" : "No Exit",
+    "author": "Jean-Paul Sartre",
+    "length": 1
+  },
+  {
+    "date"  : "27 May",
+    "title" : "The Great Influenza",
+    "author": "John M. Barry",
+    "length": 5
+  },
+  {
+    "date"  : "3 Jun",
+    "title" : "Paradise of the Blind",
+    "author": "D&#432;&#417;ng Thu H&#432;&#417;ng",
+    "length": 3
+  },
+  {
+    "date"  : "4 Jun",
+    "title" : "The Cybernetic Tea Shop",
+    "author": "Meredith Katz",
+    "length": 1
+  },
+  {
+    "date"  : "7 Jun",
+    "title" : "Solaris",
+    "author": "Stanis&#322;aw Lem",
+    "length": 2
+  },
+  {
+    "date"  : "10 Jun",
+    "title" : "Little Fish",
+    "author": "Casey Plett",
+    "length": 3
+  },
+  {
+    "date"  : "13 Jun",
+    "title" : "Freedom is a Constant Struggle",
+    "author": "Angela Y. Davis",
+    "length": 2
+  },
+  {
+    "date"  : "17 Jun",
+    "title" : "The Ethical Slut",
+    "author": "Dossie Easton, Janet W. Hardy",
+    "length": 4
+  },
+  {
+    "date"  : "22 Jun",
+    "title" : "Ceremony",
+    "author": "Leslie Marmon Silko",
+    "length": 3
+  },
+  {
+    "date"  : "26 Jun",
+    "title" : "Brother, I'm Dying",
+    "author": "Edwidge Danticat",
+    "length": 3
+  },
+  {
+    "date"  : "30 Jun",
+    "title" : "A Safe Girl to Love",
+    "author": "Casey Plett",
+    "length": 3
+  },
+  {
+    "date"  : "7 Jul",
+    "title" : "The Heart is a Lonely Hunter",
+    "author": "Carson McCullers",
+    "length": 4
+  },
+  {
+    "date"  : "12 Jul",
+    "title" : "The Tower of the Swallow",
+    "author": "Andrzej Sapkowski",
+    "length": 5
+  },
+  {
+    "date"  : "19 Jul",
+    "title" : "Lady of the Lake",
+    "author": "Andrzej Sapkowski",
+    "length": 6
+  },
+  {
+    "date"  : "22 Jul",
+    "title" : "Little Fish",
+    "author": "Casey Plett",
+    "length": 3
+  },
+  {
+    "date"  : "23 Jul",
+    "title" : "The Shadow of Kyoshi",
+    "author": "F.C. Yee, Michael Dante DiMartino",
+    "length": 4
+  },
+  {
+    "date"  : "27 Jul",
+    "title" : "Are Prisons Obsolete?",
+    "author": "Angela Y. Davis",
+    "length": 2
+  },
+  {
+    "date"  : "31 Jul",
+    "title" : "Sum",
+    "author": "David Eagleman",
+    "length": 2
+  },
+  {
+    "date"  : "12 Aug",
+    "title" : "Things Fall Apart",
+    "author": "Chinua Achebe",
+    "length": 3
+  },
+  {
+    "date"  : "15 Aug",
+    "title" : "No Longer at Ease",
+    "author": "Chinua Achebe",
+    "length": 2
+  },
+  {
+    "date"  : "25 Aug",
+    "title" : "Arrow of God",
+    "author": "Chinua Achebe",
+    "length": 3
+  },
+  {
+    "date"  : "29 Aug",
+    "title" : "How to Make Sense of Any Mess",
+    "author": "Abby Covert",
+    "length": 2
+  },
+  {
+    "date"  : "30 Aug",
+    "title" : "Carmilla",
+    "author": "J. Sheridan Le Fanu",
+    "length": 2
+  },
+  {
+    "date"  : "31 Aug",
+    "title" : "Roadside Picnic",
+    "author": "Arkady & Boris Strugatsky",
+    "length": 2
+  },
+  {
+    "date"  : "4 Sep",
+    "title" : "The Metamorphosis",
+    "author": "Franz Kafka",
+    "length": 2
+  },
+  {
+    "date"  : "8 Sep",
+    "title" : "The Testaments",
+    "author": "Margaret Atwood",
+    "length": 5
+  },
+  {
+    "date"  : "10 Sep",
+    "title" : "Walkable City",
+    "author": "Jeff Speck",
+    "length": 4
+  },
+  {
+    "date"  : "13 Sep",
+    "title" : "The Man in the High Castle",
+    "author": "Philip K. Dick",
+    "length": 3
+  },
+  {
+    "date"  : "16 Sep",
+    "title" : "Fascism",
+    "author": "Madeleine Albright",
+    "length": 4
+  },
+  {
+    "date"  : "18 Sep",
+    "title" : "Ice",
+    "author": "Anna Kavan",
+    "length": 2
+  },
+  {
+    "date"  : "21 Sep",
+    "title" : "Dark Age Ahead",
+    "author": "Jane Jacobs",
+    "length": 3
+  },
+  {
+    "date"  : "29 Sep",
+    "title" : "Miss Lonelyhearts",
+    "author": "Nathanael West",
+    "length": 1
+  },
+  {
+    "date"  : "7 Oct",
+    "title" : "A People's History of the United States",
+    "author": "Howard Zinn",
+    "length": 8
+  },
+  {
+    "date"  : "22 Oct",
+    "title" : "Suburban Nation",
+    "author": "Andr&eacute;s Duany, Elizabeth Plater-Zybeck, Jeff Speck",
+    "length": 4
+  },
+  {
+    "date"  : "26 Oct",
+    "title" : "The Haunting of Hill House",
+    "author": "Shirley Jackson",
+    "length": 2
+  },
+  {
+    "date"  : "28 Oct",
+    "title" : "Giovanni's Room",
+    "author": "James Baldwin",
+    "length": 2
+  },
+  {
+    "date"  : "31 Oct",
+    "title" : "The Turn of the Screw",
+    "author": "Henry James",
+    "length": 2
+  },
+  {
+    "date"  : "4 Nov",
+    "title" : "The Dog of the South",
+    "author": "Charles Portis",
+    "length": 3
+  },
+  {
+    "date"  : "8 Nov",
+    "title" : "Till We Have Faces",
+    "author": "C.S. Lewis",
+    "length": 4
+  },
+  {
+    "date"  : "10 Nov",
+    "title" : "Paul Takes the Form of a Mortal Girl",
+    "author": "Andrea Lawlor",
+    "length": 4
+  },
+  {
+    "date"  : "23 Nov",
+    "title" : "Happy City",
+    "author": "Charles Montgomery",
+    "length": 4
+  },
+  {
+    "date"  : "25 Nov",
+    "title" : "The Argonauts",
+    "author": "Maggie Nelson",
+    "length": 2
+  },
+  {
+    "date"  : "26 Nov",
+    "title" : "Saving Montgomery Sole",
+    "author": "Mariko Tamaki",
+    "length": 3
+  },
+  {
+    "date"  : "11 Dec",
+    "title" : "Moby Dick or, the Whale",
+    "author": "Herman Melville",
+    "length": 7
+  },
+  {
+    "date"  : "16 Dec",
+    "title" : "Word Freak",
+    "author": "Stefan Fatsis",
+    "length": 4
+  },
+  {
+    "date"  : "19 Dec",
+    "title" : "Letters to a Young Poet",
+    "author": "Rainer Maria Rilke",
+    "length": 1
+  },
+  {
+    "date"  : "27 Dec",
+    "title" : "Go Tell It on the Mountain",
+    "author": "James Baldwin",
+    "length": 3
+  },
+  {
+    "date"  : "30 Dec",
+    "title" : "The Fire Next Time",
+    "author": "James Baldwin",
+    "length": 2
+  }
+]
