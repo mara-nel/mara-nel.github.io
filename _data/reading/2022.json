@@ -1,0 +1,32 @@
+[
+  {
+    "date"  : "23 Jan",
+    "title" : "Almanac of the Dead",
+    "author": "Leslie Marmon Silko",
+    "length": 8
+  },
+  {
+    "date"  : "27 Jan",
+    "title" : "A Man Called Ove",
+    "author": "Fredrik Backman",
+    "length": 4
+  },
+  {
+    "date"  : "31 Jan",
+    "title" : "Manywhere: Stories",
+    "author": "Morgan Thomas",
+    "length": 3
+  },
+  {
+    "date"  : "3 Feb",
+    "title" : "Atomic Design",
+    "author": "Brad Frost",
+    "length": 2
+  },
+  {
+    "date"  : "10 Feb",
+    "title" : "The Box Man",
+    "author": "K&omacr;b&omacr; Abe",
+    "length": 2
+  }
+]

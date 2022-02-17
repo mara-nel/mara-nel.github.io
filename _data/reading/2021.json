@@ -1,0 +1,254 @@
+[ 
+  {
+    "date"  : "8 Jan",
+    "title" : "The New Jim Crow",
+    "author": "Michelle Alexander",
+    "length": 4
+  },
+  {
+    "date"  : "10 Jan",
+    "title" : "Mutual Aid",
+    "author": "Dean Spade",
+    "length": 2
+  },
+  {
+    "date"  : "31 Jan",
+    "title" : "The Idiot",
+    "author": "Fyodor Dostoyevsky",
+    "length": 7
+  },
+  {
+    "date"  : "8 Feb",
+    "title" : "Ceremony",
+    "author": "Leslie Marmon Silko",
+    "length": 3
+  },
+  {
+    "date"  : "13 Feb",
+    "title" : "Desert of the Heart",
+    "author": "Jane Rule",
+    "length": 2
+  },
+  {
+    "date"  : "20 Feb",
+    "title" : "Excluded",
+    "author": "Julia Serano",
+    "length": 4
+  },
+  {
+    "date"  : "27 Feb",
+    "title" : "A World Between",
+    "author": "Emily Hashimoto",
+    "length": 4
+  },
+  {
+    "date"  : "3 Mar",
+    "title" : "Little Blue Encyclopedia (for Vivian)",
+    "author": "Hazel Jane Plante",
+    "length": 2
+  },
+  {
+    "date"  : "14 Mar",
+    "title" : "The Importance of Being Earnest",
+    "author": "Oscar Wilde",
+    "length": 1
+  },
+  {
+    "date"  : "24 Mar",
+    "title" : "Detransition, Baby",
+    "author": "Torrey Peters",
+    "length": 4
+  },
+  {
+    "date"  : "29 Mar",
+    "title" : "1491",
+    "author": "Charles C. Mann",
+    "length": 6
+  },
+  {
+    "date"  : "4 Apr",
+    "title" : "Ace",
+    "author": "Angela Chen",
+    "length": 3
+  },
+  {
+    "date"  : "10 Apr",
+    "title" : "The Three-Body Problem",
+    "author": "Liu Cixin",
+    "length": 4
+  },
+  {
+    "date"  : "13 Apr",
+    "title" : "The Dark Forest",
+    "author": "Liu Cixin",
+    "length": 6
+  },
+  {
+    "date"  : "22 Apr",
+    "title" : "Death's End",
+    "author": "Liu Cixin",
+    "length": 7
+  },
+  {
+    "date"  : "25 Apr",
+    "title" : "Transgender History",
+    "author": "Susan Stryker",
+    "length": 3
+  },
+  {
+    "date"  : "6 May",
+    "title" : "Understanding Power",
+    "author": "Noam Chomsky, ed. Peter R. Mitchell, ed. John Schoeffel",
+    "length": 5
+  },
+  {
+    "date"  : "12 May",
+    "title" : "Polysecure",
+    "author": "Jessica Fern",
+    "length": 3
+  },
+  {
+    "date"  : "15 May",
+    "title" : "She of the Mountains",
+    "author": "Vivek Shraya",
+    "length": 2
+  },
+  {
+    "date"  : "17 May",
+    "title" : "Democracy at Work",
+    "author": "Richard D. Wolff",
+    "length": 3
+  },
+  {
+    "date"  : "27 May",
+    "title" : "Small Beauty",
+    "author": "Jia Qing Wilson-Yang",
+    "length": 2
+  },
+  {
+    "date"  : "29 May",
+    "title" : "Government in the Future",
+    "author": "Noam Chomsky",
+    "length": 1
+  },
+  {
+    "date"  : "14 Jun",
+    "title" : "The Paper Menagerie and Other Stories",
+    "author": "Ken Liu",
+    "length": 5
+  },
+  {
+    "date"  : "26 Jun",
+    "title" : "The Subtweet",
+    "author": "Vivek Shraya",
+    "length": 3
+  },
+  {
+    "date"  : "6 Jul",
+    "title" : "The Color of Law",
+    "author": "Richard Rothstein",
+    "length": 4
+  },
+  {
+    "date"  : "11 Jul",
+    "title" : "Foundation",
+    "author": "Isaac Asimov",
+    "length": 3
+  },
+  {
+    "date"  : "19 Jul",
+    "title" : "Winning the Green New Deal",
+    "author": "ed. Varshini Prakash and Guido Girgenti",
+    "length": 3
+  },
+  {
+    "date"  : "28 Jul",
+    "title" : "Foundation and Empire",
+    "author": "Isaac Asimov",
+    "length": 3
+  },
+  {
+    "date"  : "19 Aug",
+    "title" : "Crabgrass Frontier",
+    "author": "Kenneth T. Jackson",
+    "length": 5
+  },
+  {
+    "date"  : "26 Aug",
+    "title" : "On the Genealogy of Morals",
+    "author": "Friedrich Nietzsche",
+    "length": 3
+  },
+  {
+    "date"  : "20 Sep",
+    "title" : "Rebel Cities",
+    "author": "David Harvey",
+    "length": 3
+  },
+  {
+    "date"  : "24 Sep",
+    "title" : "Second Foundation",
+    "author": "Isaac Asimov",
+    "length": 3
+  },
+  {
+    "date"  : "6 Oct",
+    "title" : "Evicted",
+    "author": "Matthew Desmond",
+    "length": 5
+  },
+  {
+    "date"  : "21 Oct",
+    "title" : "The Palace of Illusions",
+    "author": "Chitra Banerjee Divakaruni",
+    "length": 4
+  },
+  {
+    "date"  : "30 Oct",
+    "title" : "The Thirty Names of Night",
+    "author": "Zeyn Joukhadar",
+    "length": 4
+  },
+  {
+    "date"  : "1 Nov",
+    "title" : "Slaughterhouse-Five",
+    "author": "Kurt Vonnegut, Jr",
+    "length": 3
+  },
+  {
+    "date"  : "11 Nov",
+    "title" : "The Tech Resume Inside Out",
+    "author": "Gergely Orosz",
+    "length": 3
+  },
+  {
+    "date"  : "28 Nov",
+    "title" : "A Dream of a Woman",
+    "author": "Casey Plett",
+    "length": 3
+  },
+  {
+    "date"  : "5 Dec",
+    "title" : "East of Eden",
+    "author": "John Steinbeck",
+    "length": 7
+  },
+  {
+    "date"  : "8 Dec",
+    "title" : "Anxious People",
+    "author": "Fredrik Backman",
+    "length": 4
+  },
+  {
+    "date"  : "10 Dec",
+    "title" : "The Andromeda Strain",
+    "author": "Michael Crichton",
+    "length": 4
+  },
+  {
+    "date"  : "11 Dec",
+    "title" : "We Are Okay",
+    "author": "Nina LaCour",
+    "length": 3
+  }
+]
