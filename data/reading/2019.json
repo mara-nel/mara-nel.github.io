@@ -1,5 +1,0 @@
----
-layout: null
----
-
-{{ site.data.reading['2019'] | jsonify }}
