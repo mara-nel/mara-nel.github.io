@@ -297,7 +297,7 @@ div.books-table-wrapper {
   background: #F1EEEE; 
   border-radius: 1rem; 
   padding: 1rem 0; 
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   box-shadow: 2px 2px 4px rgba(.3, .3, .3, .3);
 }
 
@@ -368,4 +368,42 @@ section.projectOverview summary:active {
   filter: brightness(115%);
   cursor: pointer;
 }
+
+/**
+ * BAN
+ *
+ * currently BAN-list is optimized for lists of 2 elements
+ */
+
+div.BAN {
+  width: min(32vw, 240px);
+  height: min(20vw, 146px);
+  padding: 1rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+  //background-color: rgba(204, 204, 204, .7);
+  background-color: #F1EEEE;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+div.BAN:last-child {
+  margin-right: 0;
+}
+
+div.BAN-title {
+  font-size: min(calc(1rem + 1vw), 1.4rem);
+}
+div.BAN-value {
+  margin: auto;
+  font-size: min(calc(1.2rem + 4vw), 3rem);
+}
+
+div.BAN-list {
+  display: flex; 
+  flex-direction: row; 
+  margin-bottom: 6rem;
+  justify-content: center;
+}
+
 

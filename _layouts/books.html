@@ -43,15 +43,15 @@
                 <td>{% for _ in (1..book.length) %} &bull; {% endfor %}</td>
               </tr>
             {% endfor %}
-          <tr id="summary">
-            <th colspan="2">books read: 
-              {{site.data.reading[year].size}}
-            </th>
-            <th colspan="2">pages read: &gt;
-              {{ pageCount | times: 100}}
-            </th>
-          </tr>
         </table>
+        </div>
+        <div class="BAN-list">
+          {% assign bookCount = site.data.reading[year].size %}
+          {% capture pageCount %}
+            &gt; {{ pageCount | times: 100 }} 
+          {% endcapture %}
+          {% include BAN.html title="Books Read" value=bookCount %}
+          {% include BAN.html title="Pages Read" value=pageCount %}
         </div>
       </div>
     </div>
