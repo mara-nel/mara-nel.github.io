@@ -406,4 +406,13 @@ div.BAN-list {
   justify-content: center;
 }
 
+/*
+* Clipped Image
+*
+*/
+
+svg.clippedImage {
+  width: 320px;
+  filter: drop-shadow(2px 2px 2px rgb(0 0 0 / 0.4));
+}
 
