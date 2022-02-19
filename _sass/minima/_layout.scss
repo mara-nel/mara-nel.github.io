@@ -311,59 +311,100 @@ div.books-table-wrapper {
   margin-right: auto;
   padding: 1rem;
   border-radius: 2rem;
-  //background-color: rgba(204, 204, 204, .7);
   background-color: #F1EEEE;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/**
+ * projectCard
+ *
+ */
+section.projectCard {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+h2.projectCard-title {
+  display: inline-block; 
+  background: #F1EEEE; 
+  border-radius: 1rem 1rem 0 0;
+  margin: 0;
+  padding: .5rem 1.5rem;
+  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
+  position: relative;
+  z-index: 0;
+}
+
+h2.projectCard-title::after {
+  content: "";
+  position: absolute;
+  
+  background-color: transparent;
+  bottom: 0;
+  right: -2rem;
+  height: 1rem;
+  width: 2rem;
+  border-bottom-left-radius: .5rem;
+  box-shadow: -1rem 0 0 0 #F1EEEE; 
+}
+
+div.projectCard-content {
+  position: relative;
+  z-index: 1;
+  @media screen and (min-width: $on-medium) {
+    padding-top: 2rem;
+  }
+  background-color: #F1EEEE;
+  padding-top: 1rem;
+  border-radius: 0 1rem 1rem 1rem;
+  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
+}
+
 ul.imgContainer {
   @media screen and (min-width: $on-medium) {
-    margin-left: 1em;
+    margin: 0 2rem; 
   }
   display: flex; 
   list-style: none;
   margin-left: 0;
+  border-radius: 1rem 1rem 0 0; 
+  margin: 0 1rem; 
+  overflow: hidden;
+  background-color: #FFFFFF; /* only because 1 section has photos of different height*/
 }
+
 ul.imgContainer li {
   flex-grow: 1;
-  margin: 2px;
 }
 
-section.projectOverview details {
-  @media screen and (min-width: $on-medium) {
-    margin-left: 1em;
-  }
-  max-width: 720px;
-  margin-bottom: 1em;
-}
-
-section.projectOverview summary {
+details.projectCard-details summary {
   padding: .5em;
-  border-radius: 1rem;
-  border-radius: 1rem 1rem 2px 1rem ;
   background: $peach;
   color: $light-white;
-
-  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
 }
 
-section.projectOverview details > p {
+details.projectCard-details > p {
   margin: 0;
   padding: 1em;
   border-top: none;
   background: #f1eeee;
-  border-radius: 0 0 1rem 1rem;
-  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
-
+  max-width: 720px;
 }
 
-section.projectOverview details[open] summary {
+details.projectCard-details[open] summary {
   text-decoration: none; 
-  border-radius: 1rem 1rem 0 0 ;
 }
 
-section.projectOverview summary:hover,
-section.projectOverview summary:active {
+details.projectCard-details:last-child summary,
+details.projectCard-details:last-child > p {
+  border-radius: 0 0 1rem 1rem;
+}
+details.projectCard-details:last-child[open] summary {
+  border-radius: 0;
+}
+
+details.projectCard-details summary:hover,
+details.projectCard-details summary:active {
   text-decoration: none; 
   filter: brightness(115%);
   cursor: pointer;
@@ -381,7 +422,6 @@ div.BAN {
   padding: 1rem;
   margin-right: 1rem;
   border-radius: 1rem;
-  //background-color: rgba(204, 204, 204, .7);
   background-color: #F1EEEE;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   display: flex;
