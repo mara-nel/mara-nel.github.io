@@ -1,0 +1,28 @@
+<section class="projectOverview">
+    <h2>{{include.title}} 
+        {%- if include.title == 'Combo Mambo' -%}
+            <a style="margin-left: .5em" href="https://wynnelson.com/dbm/comboMambo.html" target="_blank">(play in new tab)</a>
+        {%- endif -%}
+    </h2>
+    {%- if include.images -%}
+        <ul class="imgContainer">
+            {% for image in include.images %}
+                <li>
+                    <img src='/assets/projects/{{image.src}}' alt='{{image.alt}}'>
+                </li>
+            {% endfor %}
+        </ul>
+    {%- endif -%}
+    <details>
+        <summary>Elevator Pitch</summary>
+        <p>{{include.description.summary}}</p>
+    </details>
+    <details>
+        <summary>Technology Used</summary>
+        <p>{{include.description.tech}}</p>
+    </details>
+    <details>
+        <summary>Unique Hurdle</summary>
+        <p>{{include.description.challenge}}</p>
+    </details>
+</section>
