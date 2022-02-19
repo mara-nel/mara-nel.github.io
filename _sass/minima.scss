@@ -5,27 +5,29 @@
 //$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $base-font-family:  "Open Sans", sans-serif;
 $fancy-font-family: "Raleway", sans-serif;
-$small-font-size:  16px !default;
-$book-font-size:   18px !default;
-$base-font-size:   20px !default;
-$medium-font-size: 26px !default;
-$large-font-size:  32px !default;
-$title-font-size:  36px !default;
-$base-font-weight: 400 !default;
-$base-head-weight: 600 !default;
-$base-line-height: 1.5 !default;
+$small-font-size:   16px !default;
+$book-font-size:    18px !default;
+$base-font-size:    20px !default;
+$medium-font-size:  26px !default;
+$large-font-size:   32px !default;
+$title-font-size:   36px !default;
+$base-font-weight:  400 !default;
+$base-head-weight:  600 !default;
+$base-line-height:  1.5 !default;
 
-$spacing-unit:     20px !default;
+$spacing-unit:      20px !default;
+$radius-unit:       1rem !default;
 
 $lot-pink:         #AA5090 !default;
 $peach:            #A9606F !default;
 $page-white:       #CCCCCC !default;
-$light-white:      #FCFEFC !default;
+$light-white:      #FAF8F8 !default;
 $sea-grey:         #60757B !default;
 $dark-ink:         #0C0804 !default;
 
 
 $text-color:       $dark-ink !default;
+$text-color-light: #FCFEFC !default;
 $background-color: $page-white !default;
 $brand-color:      darken($lot-pink, 12%) !default;
 
@@ -43,6 +45,10 @@ $on-laptop:        800px !default;
 
 $on-medium:        $on-palm !default;
 $on-large:         $on-laptop !default;
+
+@mixin default-box-shadow() {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
 
 // Use media queries like this:
 // @include media-query($on-palm) {

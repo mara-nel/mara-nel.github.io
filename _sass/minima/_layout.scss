@@ -17,18 +17,18 @@ svg#waves {
   font-size: 52px;
   font-family: $fancy-font-family;
   font-weight: 600;
-  color: $light-white;
+  color: $text-color-light;
   padding: 8px 12px;
   border: 2px solid rgba(0,0,0,0);
   text-shadow: 1px 1px 5px rgba(.3, .3, .3, .3);
-  border-radius: 1rem;
+  border-radius: $radius-unit;
 
   @include media-query($on-palm) {
   }
 
   &,
   &:visited {
-    color: $light-white;
+    color: $text-color-light;
   }
 
   &:hover {
@@ -44,11 +44,11 @@ svg#waves {
   z-index: 1;
   top: $spacing-unit;
   right: $spacing-unit / 2;
-  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
-  border-radius: 5px;
+  @include default-box-shadow;
+  border-radius: $radius-unit / 2;
   text-align: right;
   border: 2px solid $light-white;
-  color: $light-white;
+  color: $text-color-light;
   background: $peach;
 
   .nav-trigger {
@@ -91,7 +91,7 @@ svg#waves {
   }
 
   .page-link {
-    color: $light-white;
+    color: $text-color-light;
     border: 2px solid rgba(0,0,0,0);
     line-height: $base-line-height;
     display: block;
@@ -99,7 +99,7 @@ svg#waves {
     font-size: $large-font-size;
     font-weight: 500;
     font-family: $fancy-font-family;
-    border-radius: 1rem;
+    border-radius: $radius-unit;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -151,7 +151,7 @@ svg#waves {
         margin-right: $spacing-unit;
       }
       margin-left: auto;
-      color: $light-white;
+      color: $text-color-light;
     }
 
     .active-tab {
@@ -254,7 +254,7 @@ svg#waves {
 .log-title {
   display: inline;
   font-size: $title-font-size;
-  color: $light-white;
+  color: $text-color-light;
 
 }
 
@@ -294,11 +294,11 @@ svg#waves {
 }
 
 div.books-table-wrapper {
-  background: #F1EEEE; 
-  border-radius: 1rem; 
+  background: $light-white; 
+  border-radius: $radius-unit; 
   padding: 1rem 0; 
   margin-bottom: 1rem;
-  box-shadow: 2px 2px 4px rgba(.3, .3, .3, .3);
+  @include default-box-shadow;
 }
 
 .flex-wrapper {
@@ -310,9 +310,9 @@ div.books-table-wrapper {
   max-width: 600px;
   margin-right: auto;
   padding: 1rem;
-  border-radius: 2rem;
-  background-color: #F1EEEE;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: $radius-unit;
+  background-color: $light-white;
+  @include default-box-shadow;
 }
 
 /**
@@ -326,11 +326,11 @@ section.projectCard {
 
 h2.projectCard-title {
   display: inline-block; 
-  background: #F1EEEE; 
-  border-radius: 1rem 1rem 0 0;
+  background: $light-white; 
+  border-radius: $radius-unit $radius-unit 0 0;
   margin: 0;
   padding: .5rem 1.5rem;
-  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
+  @include default-box-shadow;
   position: relative;
   z-index: 0;
 }
@@ -344,8 +344,8 @@ h2.projectCard-title::after {
   right: -2rem;
   height: 1rem;
   width: 2rem;
-  border-bottom-left-radius: .5rem;
-  box-shadow: -1rem 0 0 0 #F1EEEE; 
+  border-bottom-left-radius: $radius-unit / 2;
+  box-shadow: -1rem 0 0 0 $light-white; 
 }
 
 div.projectCard-content {
@@ -354,10 +354,10 @@ div.projectCard-content {
   @media screen and (min-width: $on-medium) {
     padding-top: 2rem;
   }
-  background-color: #F1EEEE;
+  background-color: $light-white;
   padding-top: 1rem;
-  border-radius: 0 1rem 1rem 1rem;
-  box-shadow: 2px 2px 2px rgba(.3, .3, .3, .3);
+  border-radius: 0 $radius-unit $radius-unit*1.05   $radius-unit*1.05;
+  @include default-box-shadow;
 }
 
 ul.imgContainer {
@@ -367,7 +367,7 @@ ul.imgContainer {
   display: flex; 
   list-style: none;
   margin-left: 0;
-  border-radius: 1rem 1rem 0 0; 
+  border-radius: $radius-unit $radius-unit 0 0; 
   margin: 0 1rem; 
   overflow: hidden;
   background-color: #FFFFFF; /* only because 1 section has photos of different height*/
@@ -380,14 +380,14 @@ ul.imgContainer li {
 details.projectCard-details summary {
   padding: .5em;
   background: $peach;
-  color: $light-white;
+  color: $text-color-light;
 }
 
 details.projectCard-details > p {
   margin: 0;
   padding: 1em;
   border-top: none;
-  background: #f1eeee;
+  background: $light-white;
   max-width: 720px;
 }
 
@@ -397,7 +397,7 @@ details.projectCard-details[open] summary {
 
 details.projectCard-details:last-child summary,
 details.projectCard-details:last-child > p {
-  border-radius: 0 0 1rem 1rem;
+  border-radius: 0 0 $radius-unit $radius-unit;
 }
 details.projectCard-details:last-child[open] summary {
   border-radius: 0;
@@ -421,9 +421,9 @@ div.BAN {
   height: min(20vw, 146px);
   padding: 1rem;
   margin-right: 1rem;
-  border-radius: 1rem;
-  background-color: #F1EEEE;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: $radius-unit;
+  background-color: $light-white;
+  @include default-box-shadow;
   display: flex;
   flex-direction: column;
 }
@@ -453,6 +453,6 @@ div.BAN-list {
 
 svg.clippedImage {
   width: 320px;
-  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
 }
 
