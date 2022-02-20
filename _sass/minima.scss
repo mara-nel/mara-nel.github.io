@@ -50,6 +50,22 @@ $on-large:         $on-laptop !default;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
+@mixin squareish-background($padding) {
+  background-image: url( '/assets/squareish.svg' );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: $padding; 
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+}
+
+@mixin squircle-background($padding) {
+  background-image: url( '/assets/squircle.svg' );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: $padding; 
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+}
+
 // Use media queries like this:
 // @include media-query($on-palm) {
 //   .wrapper {
