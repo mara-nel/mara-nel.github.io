@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Reading Logs
+title: Reading 
 permalink: /reading/
 ---
 
-<div class="leftText">
+<div class="text-card">
   <ul>
     <li><a href="/reading/2018">2018</a></li>
     <li><a href="/reading/2019">2019</a></li>

@@ -1,9 +1,10 @@
 ---
 layout: home
+title: Home
 ---
 
 <div class="flex-wrapper">
-  <div class="leftText">
+  <div class="leftText text-card">
   <p>
   My name is Wyn Nelson and I am a web application developer.
   </p>
