@@ -192,7 +192,6 @@ svg#waves {
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
   flex: 1 0 auto;
   position: relative;
 }
@@ -201,7 +200,8 @@ svg#waves {
  * Posts
  */
 .post-header {
-  margin-bottom: $spacing-unit;
+//  margin-bottom: $spacing-unit;
+  margin-bottom: 1rem;
 }
 
 .post-title,
@@ -210,11 +210,20 @@ svg#waves {
   letter-spacing: 1.3px;
   line-height: 1;
 
-  @media screen and (min-width: $on-large) {
-  }
+  background-image: url( '/assets/squareish.svg' );
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 1.5rem;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
 }
 .post-content h2 {
-  padding-left: 1rem;
+  background-image: url( '/assets/squareish.svg' );
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 1rem;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
 }
 
 .post-content {
@@ -307,12 +316,35 @@ div.books-table-wrapper {
 }
 
 .leftText {
-  max-width: 600px;
+  max-width: calc(600px - 2rem);
   margin-right: auto;
-  padding: 1rem;
-  border-radius: $radius-unit;
-  background-color: $light-white;
-  @include default-box-shadow;
+}
+
+div.text-card {
+  min-width: 160px;
+  min-height: 160px;
+  display: inline-block;
+
+  background-image: url( '/assets/squircle.svg' );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 0rem 2rem;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+}
+
+div.text-card *:first-child {
+  margin-top: 2.5rem;
+
+  @media screen and (min-width: $on-medium) {
+    margin-top: 3.5rem;
+  }
+}
+div.text-card *:last-child {
+  margin-bottom: 2.5rem;
+
+  @media screen and (min-width: $on-medium) {
+    margin-bottom: 3.5rem;
+  }
 }
 
 /**
@@ -320,7 +352,6 @@ div.books-table-wrapper {
  *
  */
 section.projectCard {
-  margin-top: 2rem;
   margin-bottom: 4rem;
 }
 
@@ -421,11 +452,13 @@ div.BAN {
   height: min(20vw, 146px);
   padding: 1rem;
   margin-right: 1rem;
-  border-radius: $radius-unit;
-  background-color: $light-white;
-  @include default-box-shadow;
   display: flex;
   flex-direction: column;
+
+  background-image: url( '/assets/squircle.svg' );
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
 }
 div.BAN:last-child {
   margin-right: 0;
@@ -444,6 +477,7 @@ div.BAN-list {
   flex-direction: row; 
   margin-bottom: 6rem;
   justify-content: center;
+
 }
 
 /*
@@ -453,6 +487,7 @@ div.BAN-list {
 
 svg.clippedImage {
   width: 320px;
+  margin-top: 1rem;
   filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
 }
 

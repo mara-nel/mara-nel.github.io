@@ -1,0 +1,17 @@
+<svg 
+    viewBox="0 0 200 200" 
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+>
+    <path 
+        d="
+            M 0, 100
+            C 0, 0 0, 0 100, 0
+            S 200, 0 200, 100
+                200, 200 100, 200
+                0, 200 0, 100
+        " 
+        fill="#FAF8F8" 
+    >
+    </path>
+</svg>
