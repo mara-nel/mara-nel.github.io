@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 <div class="flex-wrapper">
-  <div class="leftText">
+  <div class="leftText text-card">
     <p>My current position involves me working with many facets of transportation.
       I develop applications that monitor bicycle and pedestrian counts, manage community transportation systems, and improve enforcement of commercial vehicle regulations.
       I enjoy working in many different groups and how many of them relate to urban planning.
@@ -35,8 +35,12 @@ permalink: /about/
 
 </div>
 
+<div>
 <h2>Resume</h2>
-<div class="leftText">
-  <a href="/assets/WynNelsonResume.pdf">Wyn Nelson Resume (PDF)</a>
+</div>
+<div class="text-card">
+  <div>
+    <a href="/assets/WynNelsonResume.pdf">Wyn Nelson Resume (PDF)</a>
+  </div>
 </div>
 
