@@ -245,7 +245,7 @@ svg#waves {
  */
 
 .log-header {
-  margin: $spacing-unit/2 auto;
+  text-align: center;
 }
 
 .ghost {
@@ -256,6 +256,7 @@ svg#waves {
   display: inline;
   font-size: $title-font-size;
   color: $text-color-light;
+  font-variant-numeric: tabular-nums;
 
 }
 
@@ -266,7 +267,7 @@ svg#waves {
 
 .books-read {
   table-layout: fixed;
-  font-size: $book-font-size;
+  font-size: $small-font-size;
   margin: 0;
   
    th:nth-child(1), td:nth-child(1) {
@@ -454,7 +455,7 @@ div.BAN-title {
 }
 div.BAN-value {
   margin: auto;
-  font-size: min(calc(1.2rem + 4vw), 3rem);
+  font-size: min(calc(1.2rem + 3vw), 3rem);
 }
 
 div.BAN-list {

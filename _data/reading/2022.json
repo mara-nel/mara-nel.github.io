@@ -34,5 +34,47 @@
     "title" : "There There",
     "author": "Tommy Orange",
     "length": 3
+  },
+  {
+    "date"  : "27 Feb",
+    "title" : "Nightmare Alley",
+    "author": "William Lindsay Gresham",
+    "length": 3
+  },
+  {
+    "date"  : "3 Mar",
+    "title" : "Manhunt",
+    "author": "Gretchen Felker-Martin",
+    "length": 4
+  },
+  {
+    "date"  : "5 Mar",
+    "title" : "Infect Your Friends and Loved Ones",
+    "author": "Torrey Peters",
+    "length": 1
+  },
+  {
+    "date"  : "26 Mar",
+    "title" : "Why Design Matters",
+    "author": "Debbie Millman",
+    "length": 4
+  },
+  {
+    "date"  : "26 Mar",
+    "title" : "The Whole United States is Southern",
+    "author": "Charles M. Payne",
+    "length": 1
+  },
+  {
+    "date"  : "29 Mar",
+    "title" : "The End of White World Supremacy",
+    "author": "Malcolm X, Benjamin Karim",
+    "length": 2
+  },
+  {
+    "date"  : "9 Apr",
+    "title" : "Digital Minimalism",
+    "author": "Cal Newport",
+    "length": 3
   }
 ]

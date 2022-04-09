@@ -1,8 +1,7 @@
 function setActiveTab() {
   let path = window.location.pathname;
-  console.log(path);
   let parts = path.split('/');
-  var id;
+  let id;
   switch(parts[1]) {
     case '':
       id = 'home-link';
@@ -14,7 +13,9 @@ function setActiveTab() {
       id = 'projects-link';
       break;
   }
-  document.getElementById(id).classList.add('active-tab');
+  if (id) {
+    document.getElementById(id).classList.add('active-tab');
+  }
 }
 
 setActiveTab();
