@@ -11,7 +11,8 @@
       {% assign prevYear = page.year | minus: '1' | append: ""%}
       {% assign nextYear = page.year | plus: '1'  | append: ""%}
       <div class="content">
-        <div class="flex-wrapper">
+        <div>
+          <a href="/reading/">&lsaquo; reading</a>
           <div class="log-header">
             {% if site.data.reading[prevYear] %}
               <a class="log-nav" href="/reading/{{ prevYear }}" title="Previous Log">&lsaquo;</a>
