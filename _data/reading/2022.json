@@ -82,5 +82,29 @@
     "title" : "Tai-Pan",
     "author": "James Clavell",
     "length": 8
+  },
+  {
+    "date"  : "17 Apr",
+    "title" : "Lakelore",
+    "author": "Anna-Marie McLemore",
+    "length": 4
+  },
+  {
+    "date"  : "23 Apr",
+    "title" : "Confessions of the Fox",
+    "author": "Jordy Rosenberg",
+    "length": 4
+  },
+  {
+    "date"  : "29 Apr",
+    "title" : "Salt",
+    "author": "Mark Kurlansky",
+    "length": 5
+  },
+  {
+    "date"  : "5 May",
+    "title" : "Everyday Woodworking",
+    "author": "Rex Krueger",
+    "length": 3
   }
 ]
