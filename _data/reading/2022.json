@@ -106,5 +106,35 @@
     "title" : "Everyday Woodworking",
     "author": "Rex Krueger",
     "length": 3
+  },
+  {
+    "date"  : "15 May",
+    "title" : "Vanishing Monuments",
+    "author": "John Elizabeth Stintzi",
+    "length": 4
+  },
+  {
+    "date"  : "20 May",
+    "title" : "Talking to Strangers",
+    "author": "Malcolm Gladwell",
+    "length": 4
+  },
+  {
+    "date"  : "26 May",
+    "title" : "The House in the Cerulean Sea",
+    "author": "T.J. Klune",
+    "length": 4
+  },
+  {
+    "date"  : "2 Jun",
+    "title" : "Tenth of December",
+    "author": "George Saunders",
+    "length": 3
+  },
+  {
+    "date"  : "11 Jun",
+    "title" : "Kuksa",
+    "author": "Paul Adamson",
+    "length": 1
   }
 ]
