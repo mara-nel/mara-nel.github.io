@@ -136,5 +136,23 @@
     "title" : "Kuksa",
     "author": "Paul Adamson",
     "length": 1
+  },
+  {
+    "date"  : "12 Jun",
+    "title" : "A Psalm for the Wild-Built",
+    "author": "Becky Chambers",
+    "length": 2
+  },
+  {
+    "date"  : "19 Jun",
+    "title" : "Fated Love",
+    "author": "Radclyffe",
+    "length": 4
+  },
+  {
+    "date"  : "22 Jun",
+    "title" : "Lifespan",
+    "author": "David A. Sinclair",
+    "length": 5
   }
 ]
