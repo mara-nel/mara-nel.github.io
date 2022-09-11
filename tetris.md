@@ -26,7 +26,7 @@ NullpoMino</a>.
    </ul>
 </li>
 <li><a class="external" href="http://jstris.jezevec10.com/">Jstris</a> (Browser, very good multiplayer along with everything else)</li>
-<li><a href="http://wynnelson.com/dbm/">one of my own, be warned, they are very early in development</a></li>
+<li><a href="http://maranelson.com/dbm/">one of my own, be warned, they are very early in development</a></li>
 </ul>
 
 

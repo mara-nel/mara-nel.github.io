@@ -1,7 +1,7 @@
 ---
 title: Combo Mambo
 order_number: 3
-link: https://wynnelson.com/dbm/comboMambo.html
+link: https://maranelson.com/dbm/comboMambo.html
 linkTitle: (play in new tab)
 images: 
     -

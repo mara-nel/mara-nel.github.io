@@ -6,11 +6,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-author: Wyn Nelson
-title: Wyn Nelson
-email: wynlnelson@gmail.com
+author: Mara Nelson
+title: Mara Nelson
+email: mara@maranelson.com
 description: >- # this means to ignore newlines until "baseurl:"
-   Wyn Nelson is a web developer who designs and develops. She enjoys wireframing and working with HTML/CSS and Javascript.
+   Mara Nelson is a web developer who designs and develops. She enjoys wireframing and working with HTML/CSS and Javascript.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 collections:
@@ -20,7 +20,7 @@ minima:
 # generate social links in footer
   social_links:
     linkedin: wynnelson
-    github:   wynnelson
+    github:   mara-nel
 
 
 # Build settings
