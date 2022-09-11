@@ -178,5 +178,35 @@
     "title" : "The Secret to Superhuman Strength",
     "author": "Alison Bechdel",
     "length": 3
+  },
+  {
+    "date"  : "15 Aug",
+    "title" : "The Snow Leopard",
+    "author": "Peter Matthiessen",
+    "length": 4
+  },
+  {
+    "date"  : "19 Aug",
+    "title" : "99 Erics",
+    "author": "Julia Serano",
+    "length": 3
+  },
+  {
+    "date"  : "22 Aug",
+    "title" : "The Dawn of Yangchen",
+    "author": "F.C. Yee",
+    "length": 4
+  },
+  {
+    "date"  : "27 Aug",
+    "title" : "Patricia Wants to Cuddle",
+    "author": "Samantha Allen",
+    "length": 3
+  },
+  {
+    "date"  : "30 Aug",
+    "title" : "Nonviolent Communication",
+    "author": "Marshall B. Rosenberg",
+    "length": 3
   }
 ]
