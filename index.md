@@ -6,7 +6,7 @@ title: Home
 <div class="flex-wrapper">
   <div class="leftText text-card">
   <p>
-  My name is Wyn Nelson and I am a web application developer.
+  My name is Mara Nelson and I am a web application developer.
   </p>
   <p>
   Currently, I am a full-stack developer at the 
@@ -26,8 +26,8 @@ title: Home
   </div>
 
   {% include clippedImage.html 
-    description="A headshot of Wyn wearing glasses and smiling. She has long brown hair and a dusty rose shirt."
-    source="/assets/headShotOfWyn.jpg" 
+    description="A headshot of Mara wearing glasses and smiling. She has long brown hair and a dusty rose shirt."
+    source="/assets/headShotOfMara.jpg" 
   %}
 
 </div>

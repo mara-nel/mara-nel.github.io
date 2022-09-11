@@ -29,7 +29,7 @@ permalink: /about/
   </div>
 
   {% include clippedImage.html 
-    description="Wyn smiling so large her eyes are scrunched up. She sits on a stone wall in front of the ocean."
+    description="Mara smiling so large her eyes are scrunched up. She sits on a stone wall in front of the ocean."
     source="/assets/scrunchedSmileInFrontOfOcean.jpg" 
   %}
 
@@ -40,7 +40,7 @@ permalink: /about/
 </div>
 <div class="text-card">
   <div>
-    <a href="/assets/WynNelsonResume.pdf">Wyn Nelson Resume (PDF)</a>
+    <a href="/assets/MaraNelsonResume.pdf">Mara Nelson Resume (PDF)</a>
   </div>
 </div>
 
