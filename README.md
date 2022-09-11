@@ -1,3 +1,3 @@
-# wynnelson.github.io
+# mara-nel.github.io
 
 Playing around with github pages.
