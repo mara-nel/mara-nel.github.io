@@ -76,5 +76,107 @@
     "title" : "Digital Minimalism",
     "author": "Cal Newport",
     "length": 3
+  },
+  {
+    "date"  : "11 Apr",
+    "title" : "Tai-Pan",
+    "author": "James Clavell",
+    "length": 8
+  },
+  {
+    "date"  : "17 Apr",
+    "title" : "Lakelore",
+    "author": "Anna-Marie McLemore",
+    "length": 4
+  },
+  {
+    "date"  : "23 Apr",
+    "title" : "Confessions of the Fox",
+    "author": "Jordy Rosenberg",
+    "length": 4
+  },
+  {
+    "date"  : "29 Apr",
+    "title" : "Salt",
+    "author": "Mark Kurlansky",
+    "length": 5
+  },
+  {
+    "date"  : "5 May",
+    "title" : "Everyday Woodworking",
+    "author": "Rex Krueger",
+    "length": 3
+  },
+  {
+    "date"  : "15 May",
+    "title" : "Vanishing Monuments",
+    "author": "John Elizabeth Stintzi",
+    "length": 4
+  },
+  {
+    "date"  : "20 May",
+    "title" : "Talking to Strangers",
+    "author": "Malcolm Gladwell",
+    "length": 4
+  },
+  {
+    "date"  : "26 May",
+    "title" : "The House in the Cerulean Sea",
+    "author": "T.J. Klune",
+    "length": 4
+  },
+  {
+    "date"  : "2 Jun",
+    "title" : "Tenth of December",
+    "author": "George Saunders",
+    "length": 3
+  },
+  {
+    "date"  : "11 Jun",
+    "title" : "Kuksa",
+    "author": "Paul Adamson",
+    "length": 1
+  },
+  {
+    "date"  : "12 Jun",
+    "title" : "A Psalm for the Wild-Built",
+    "author": "Becky Chambers",
+    "length": 2
+  },
+  {
+    "date"  : "19 Jun",
+    "title" : "Fated Love",
+    "author": "Radclyffe",
+    "length": 4
+  },
+  {
+    "date"  : "22 Jun",
+    "title" : "Lifespan",
+    "author": "David A. Sinclair",
+    "length": 5
+  },
+  {
+    "date"  : "24 Jun",
+    "title" : "Light from Uncommon Stars",
+    "author": "Ryka Aoki",
+    "length": 4
+  },
+  {
+    "date"  : "4 Jul",
+    "title" : "Summer Fun",
+    "author": "Jeanne Thornton",
+    "length": 5
+  },
+  {
+    "date"  : "9 Jul",
+    "title" : "Starburst",
+    "author": "Frederik Pohl",
+    "length": 3
+  },
+  {
+    "date"  : "10 Jul",
+    "title" : "The Secret to Superhuman Strength",
+    "author": "Alison Bechdel",
+    "length": 3
   }
 ]
