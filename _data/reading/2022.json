@@ -208,5 +208,35 @@
     "title" : "Nonviolent Communication",
     "author": "Marshall B. Rosenberg",
     "length": 3
+  },
+  {
+    "date"  : "17 Sep",
+    "title" : "Our Wives Under the Sea",
+    "author": "Julia Armfield",
+    "length": 3
+  },
+  {
+    "date"  : "26 Oct",
+    "title" : "Twilight",
+    "author": "Stephenie Meyer",
+    "length": 5
+  },
+  {
+    "date"  : "31 Oct",
+    "title" : "New Moon",
+    "author": "Stephenie Meyer",
+    "length": 6
+  },
+  {
+    "date"  : "5 Nov",
+    "title" : "Eclipse",
+    "author": "Stephenie Meyer",
+    "length": 7  
+  },
+  {
+    "date"  : "14 Nov",
+    "title" : "Breaking Dawn",
+    "author": "Stephenie Meyer",
+    "length": 8
   }
 ]
