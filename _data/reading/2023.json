@@ -1,0 +1,44 @@
+[
+    {
+        "date"  : "19 Jan",
+        "title" : "Cermony",
+        "author": "Leslie Marmon Silko",
+        "length": "3"
+    },
+    {
+        "date"  : "21 Jan",
+        "title" : "Tell Me I'm Worthless",
+        "author": "Alison Rumfitt",
+        "length": "3"
+    },
+    {
+        "date"  : "23 Jan",
+        "title" : "The Golden Compass",
+        "author": "Philip Pullman",
+        "length": "4"
+    },
+    {
+        "date"  : "26 Jan",
+        "title" : "The Subtle Knife",
+        "author": "Philip Pullman",
+        "length": "4"
+    },
+    {
+        "date"  : "1 Feb",
+        "title" : "The Amber Spyglass",
+        "author": "Philip Pullman",
+        "length": "5"
+    },
+    {
+        "date"  : "6 Feb",
+        "title" : "Strong Towns",
+        "author": "Charles L. Marohn, Jr",
+        "length": "3"
+    },
+    {
+        "date"  : "22 Feb",
+        "title" : "Walden",
+        "author": "Henry David Thoreau",
+        "length": "4"
+    }
+]

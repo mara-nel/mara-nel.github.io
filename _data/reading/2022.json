@@ -238,5 +238,35 @@
     "title" : "Breaking Dawn",
     "author": "Stephenie Meyer",
     "length": 8
+  },
+  {
+    "date"  : "16 Nov",
+    "title" : "The Call Out",
+    "author": "Cat Fitzpatrick",
+    "length": 2
+  },
+  {
+    "date"  : "15 Dec",
+    "title" : "Burning Chrome",
+    "author": "William Gibson",
+    "length": 3
+  },
+  {
+    "date"  : "16 Dec",
+    "title" : "No One Is Too Small to Make a Difference",
+    "author": "Greta Thunberg",
+    "length": 2
+  },
+  {
+    "date"  : "28 Dec",
+    "title" : "Mindfulness in Plain English",
+    "author": "Henpola Gunaratana",
+    "length": 3
+  },
+  {
+    "date"  : "31 Dec",
+    "title" : "Nevada",
+    "author": "Imogen Binnie",
+    "length": 3
   }
 ]
