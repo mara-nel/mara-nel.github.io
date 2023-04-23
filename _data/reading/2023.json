@@ -40,5 +40,29 @@
         "title" : "Walden",
         "author": "Henry David Thoreau",
         "length": "4"
+    },
+    {
+        "date"  : "19 Mar",
+        "title" : "Cities and the Wealth of Nations",
+        "author": "Jane Jacobs",
+        "length": "3"
+    },
+    {
+        "date"  : "27 Mar",
+        "title" : "The Hot Zone",
+        "author": "Richard Preston",
+        "length": "4"
+    },
+    {
+        "date"  : "28 Mar",
+        "title" : "Sorry, Bro",
+        "author": "Taleen Voskuni",
+        "length": "4"
+    },
+    {
+        "date"  : "23 Apr",
+        "title" : "How the South Won the Civil War",
+        "author": "Heather Cox Richardson",
+        "length": "3"
     }
 ]
