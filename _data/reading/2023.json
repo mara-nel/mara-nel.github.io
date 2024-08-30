@@ -64,5 +64,77 @@
         "title" : "How the South Won the Civil War",
         "author": "Heather Cox Richardson",
         "length": "3"
+    },
+    {
+        "date"  : "24 Apr",
+        "title" : "Scum Manifesto",
+        "author": "Valerie Solanas",
+        "length": "1"
+    },
+    {
+        "date"  : "1 May",
+        "title" : "Gideon the Ninth",
+        "author": "Tamsyn Muir",
+        "length": "5"
+    },
+    {
+        "date"  : "2 May",
+        "title" : "Females",
+        "author": "Andrea Long Chu",
+        "length": "2"
+    },
+    {
+        "date"  : "6 May",
+        "title" : "Sensory: Life on the Spectrum",
+        "author": "ed. Bex Ollerton, ed. Schnumn",
+        "length": "2"
+    },
+    {
+        "date"  : "25 May",
+        "title" : "Any Other City",
+        "author": "Hazel Jane Plante",
+        "length": "3"
+    },
+    {
+        "date"  : "9 Jun",
+        "title" : "Love Without Emergency",
+        "author": "Clementine Morrigan",
+        "length": "1"
+    },
+    {
+        "date"  : "4 Jul",
+        "title" : "Children of Time",
+        "author": "Adrian Tchaikovsky",
+        "length": "7"
+    },
+    {
+        "date"  : "6 Aug",
+        "title" : "Turtles All the Way Down",
+        "author": "John Green",
+        "length": "3"
+    },
+    {
+        "date"  : "13 Aug",
+        "title" : "Heartbreak Bakery",
+        "author": "A.R. Capetta",
+        "length": "4"
+    },
+    {
+        "date"  : "28 Aug",
+        "title" : "The Only Good Indians",
+        "author": "Stephen Graham Jones",
+        "length": "4"
+    },
+    {
+        "date"  : "12 Sep",
+        "title" : "The Life-Changing Manga of Tidying Up",
+        "author": "Marie Kond&#333;",
+        "length": "2"
+    },
+    {
+        "date"  : "21 Sep",
+        "title" : "Unmasking Autism",
+        "author": "Devon Price",
+        "length": "4"
     }
 ]
