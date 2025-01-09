@@ -28,5 +28,53 @@
         "title" : "Wild Geese",
         "author": "Soula Emmanuel",
         "length": "3"
+    },
+    {
+        "date"  : "12 Sep",
+        "title" : "Annihilation",
+        "author": "Jeff VanderMeer",
+        "length": "2"
+    },
+    {
+        "date"  : "27 Sep",
+        "title" : "Authority",
+        "author": "Jeff VanderMeer",
+        "length": "4"
+    },
+    {
+        "date"  : "5 Oct",
+        "title" : "Acceptance",
+        "author": "Jeff VanderMeer",
+        "length": "4"
+    },
+    {
+        "date"  : "18 Oct",
+        "title" : "Ancillary Justice",
+        "author": "Ann Leckie",
+        "length": "4"
+    },
+    {
+        "date"  : "28 Oct",
+        "title" : "Ancillary Sword",
+        "author": "Ann Leckie",
+        "length": "4"
+    },
+    {
+        "date"  : "18 Nov",
+        "title" : "Ancillary Mercy",
+        "author": "Ann Leckie",
+        "length": "4"
+    },
+    {
+        "date"  : "5 Dec",
+        "title" : "The Psychology of Money",
+        "author": "Morgan Housel",
+        "length": "3"
+    },
+    {
+        "date"  : "14 Dec",
+        "title" : "Slaughterhouse-Five",
+        "author": "Kurt Vonneget, Jr",
+        "length": "3"
     }
 ]
