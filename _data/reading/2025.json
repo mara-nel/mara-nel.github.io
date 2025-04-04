@@ -1,0 +1,56 @@
+[
+    {
+        "date"  : "6 Jan",
+        "title" : "A Girlhood",
+        "author": "Carolyn Hays",
+        "length": "3"
+    },
+    {
+        "date"  : "10 Jan",
+        "title" : "Card College, Volume 1",
+        "author": "Roberto Giobbi",
+        "length": "3"
+    },
+    {
+        "date"  : "18 Jan",
+        "title" : "Prokaryote Season",
+        "author": "Leo Fox",
+        "length": "2"
+    },
+    {
+        "date"  : "27 Jan",
+        "title" : "Sophie's World",
+        "author": "Jostein Gaarder",
+        "length": "5"
+    },
+    {
+        "date"  : "9 Feb",
+        "title" : "Giovanni's Room",
+        "author": "James Baldwin",
+        "length": "2"
+    },
+    {
+        "date"  : "22 Feb",
+        "title" : "The Algebra of Wealth",
+        "author": "Scott Galloway",
+        "length": "4"
+    },
+    {
+        "date"  : "24 Feb",
+        "title" : "Tepp&#363;",
+        "author": "Moare &#332;ta",
+        "length": "6"
+    },
+    {
+        "date"  : "27 Feb",
+        "title" : "The Good Man Jesus and the Scoundrel Christ",
+        "author": "Philip Pullman",
+        "length": "3"
+    },
+    {
+        "date"  : "12 Mar",
+        "title" : "The Penelopiad",
+        "author": "Margaret Atwood",
+        "length": "2"
+    }
+]
