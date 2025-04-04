@@ -6,13 +6,13 @@ permalink: /about/
 
 <div class="flex-wrapper">
   <div class="leftText text-card">
-    <p>My current position involves me working with many facets of transportation.
-      I develop applications that monitor bicycle and pedestrian counts, manage community transportation systems, and improve enforcement of commercial vehicle regulations.
-      I enjoy working in many different groups and how many of them relate to urban planning.
+    <p>Before my current position I was involved with many facets of transportation.
+      I developed applications that monitor bicycle and pedestrian counts, manage community transportation systems, and improved enforcement of commercial vehicle regulations.
+      I work with fewer groups now and I'm far from transportation, but a love for 'having my fingers in many pies' and urban planning still lingers.
     </p>
-    <p>Before this, I was in a PhD program in mathematics (where in my spare time I fiddled with 
+    <p>Before being a software engineer, I was in a PhD program in mathematics (where in my spare time I fiddled with 
     <a href="https://godotengine.org/">Godot</a>
-    and taught myself Javascript).
+    and little Javascript web games).
     Part of my role as a graduate student was lecturing and in my pursuit of being a better educator, I learned about 
     <a href="https://en.wikipedia.org/wiki/Universal_Design_for_Learning">Universal Design for Learning</a>.
     Eventually, this led to my discovery of 
@@ -20,7 +20,6 @@ permalink: /about/
     and my realization that I wanted to develop applications that centered the people that use them.
     So I left with a master's degree to do exactly that.
     </p>
-
     <p>
     Also, I read a lot.
     You can see what through my 

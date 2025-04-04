@@ -3,6 +3,7 @@ _site/
 .jekyll-cache
 .jekyll-metadata
 .sass-cache
+vendor
 
 # Ruby
 .bundle/

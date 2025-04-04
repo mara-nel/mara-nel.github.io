@@ -1,6 +1,7 @@
 ---
 title: Trip Maker
 order_number: 2
+hidden: true
 images: 
     -
         src: tripMakerRuns.png
