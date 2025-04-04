@@ -1,8 +1,8 @@
 <section class="projectCard">
     <h2 class="projectCard-title">{{include.title}} </h2>
     <div class="projectCard-content">
-        {%- if include.title == 'Combo Mambo' -%}
-            <a style="margin-left: 2rem" href="https://maranelson.com/dbm/comboMambo.html" target="_blank">(play in new tab)</a>
+        {%- if include.link  -%}
+            <a style="margin-left: 2rem" href="{{include.link}}" target="_blank">(play in new tab)</a>
         {%- endif -%}
         {%- if include.images -%}
             <ul class="imgContainer">
