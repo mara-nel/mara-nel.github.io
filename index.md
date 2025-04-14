@@ -9,7 +9,7 @@ title: Home
   My name is Mara Nelson and I am a Software Engineer / Full Stack Web Developer / UI Designer (this field gives us lots of titles to choose from).
   </p>
   <p>
-  Currently I am contracting with Apple's Wallets and Payments division as an internal tooling engineer where I am a principal developer of its Incident Management ecosystem.
+  Currently I am contracting with Apple's Wallet and Payments division as an internal tooling engineer where I am a principal developer of its Incident Management ecosystem.
   In my current position, I regularly work in Javascript (React and Node), Java, and MySQL. I regularly collaborate with stakeholders to review designs and ideate new features.
   </p>
   <p>
