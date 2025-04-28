@@ -211,6 +211,10 @@ ul, ol, dl, figure,
  */
 main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
+
+  &.redesign {
+    width: calc(100% - 96px);
+  }
 }
 
 
@@ -351,7 +355,7 @@ p.blocktext {
 .wrapper {
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
   max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-  max-width: 960px;
+  max-width: 1028px;
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit / 2;
@@ -361,7 +365,7 @@ p.blocktext {
   @media screen and (min-width: $on-large) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width: 960px;
+    max-width: 1028px;
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
  }

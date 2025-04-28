@@ -2,9 +2,6 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html -%}
   <body>
-    <header>
-      {%- include waves.html -%}
-    </header>
     <div class="book-wrapper">
       {% assign pageCount=0 %}
       {% assign year = page.year | append: ""%}

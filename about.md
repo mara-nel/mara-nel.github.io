@@ -25,12 +25,9 @@ permalink: /about/
     You can see what through my 
     <a href="/reading/">reading logs</a>.
     </p>
+  </section>
+  <img width="50%" class="right-photo" src="/assets/krikkoPencilDrawing.jpg" />
   </div>
-
-  {% include clippedImage.html 
-    description="Mara smiling so large her eyes are scrunched up. She sits on a stone wall in front of the ocean."
-    source="/assets/scrunchedSmileInFrontOfOcean.jpg" 
-  %}
 
 </div>
 
