@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Bayes' Theorem
 section: Counting and Probability
 section-slug: copr 

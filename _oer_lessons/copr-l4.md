@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Conditional Probability
 section: Counting and Probability
 section-slug: copr 

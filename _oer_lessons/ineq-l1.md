@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Graphing Linear Inequalites
 section: Inequalities
 section-slug: ineq

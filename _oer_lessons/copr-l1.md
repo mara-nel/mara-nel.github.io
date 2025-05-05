@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: The Decision Algorithm
 section: Counting and Probability
 section-slug: copr 

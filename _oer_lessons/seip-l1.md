@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Sets, Set Operations, and Cardinality
 section: Sets and Intro Probability
 section-slug: seip

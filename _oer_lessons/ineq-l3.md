@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: The Simplex Method
 section: Inequalities
 section-slug: ineq

@@ -14,7 +14,25 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 collections:
-  - projects
+  projects:
+  oer_sections:
+    output: true
+  oer_lessons:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: "_oer_lessons"
+    values:
+      layout: "oer_lesson"
+      oer_type: "lesson"
+  -
+    scope:
+      path: "_oer_sections"
+    values:
+      layout: "oer_section"
+      oer_type: "section"
 
 minima:
 # generate social links in footer

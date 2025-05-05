@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Linear Functions
 section: Equalities and Matrices
 section-slug: eqma

@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Matrix Algebra
 section: Equalities and Matrices
 section-slug: eqma

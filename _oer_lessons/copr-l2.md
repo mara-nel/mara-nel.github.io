@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Permutations and Combinations
 section: Counting and Probability
 section-slug: copr 

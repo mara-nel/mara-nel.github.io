@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Probability via Counting
 section: Counting and Probability
 section-slug: copr 

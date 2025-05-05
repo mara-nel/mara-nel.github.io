@@ -1,0 +1,21 @@
+---
+layout: oer_page
+---
+  
+  <div class="post-content">
+     {{ content }}
+  </div>
+
+  {% if page.has-next-lesson and page.lesson-num %}
+  <a href="/oer/{{page.section-slug | escape }}/{{page.lesson-num | plus: 1 | to_string}}"
+    >
+    Next Lesson &#8594;
+  </a>
+  </br>
+  </br>
+  {% endif %}
+  {% if page.lesson-num > 1 %}
+  <a href="/oer/{{page.section-slug | escape }}/{{page.lesson-num | minus: 1 | to_string}}">
+    &#8592; Previous Lesson
+  </a>
+  {% endif %}

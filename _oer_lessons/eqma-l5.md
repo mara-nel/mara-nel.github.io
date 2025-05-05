@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Matrix Inversion
 section: Equalities and Matrices
 section-slug: eqma

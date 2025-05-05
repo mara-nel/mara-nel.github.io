@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Linear Programming Problems Graphically
 section: Inequalities
 section-slug: ineq

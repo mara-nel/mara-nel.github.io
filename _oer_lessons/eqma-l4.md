@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Using Matrices to Solve Systems of Equations
 section: Equalities and Matrices
 section-slug: eqma

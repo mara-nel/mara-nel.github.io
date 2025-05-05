@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Intro Probability
 section: Sets and Intro Probability
 section-slug: seip

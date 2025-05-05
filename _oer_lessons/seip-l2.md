@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Sample Spaces and Events
 section: Sets and Intro Probability
 section-slug: seip

@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="post">
+  <div class="post-content">
+    <nav style="font-size: var(--body-text); border-top: 2px solid; border-bottom: 2px solid;">
+        <a href="/oer/">OER</a>>
+        {% if page.oer_type == "section" %}
+          <span>{{ page.title | escape }}</span>
+        {% endif %}
+        {% if page.section and page.section-slug %}
+          <a href="/oer/{{page.section-slug | escape }}">
+            {{ page.section | escape }}
+          </a>>
+          <span>Lesson {{page.lesson-num}}: {{ page.title }}</span>
+        {% endif %}
+    </nav>
+    </nav>
+    {%- if page.title -%} 
+      <h1 class="page-title">
+        {% if page.lesson-num %}
+          Lesson {{page.lesson-num}}:
+        {% endif %}
+        {{ page.title }}
+      </h1>
+    {%- endif -%} 
+    {{ content }}
+  </div>
+</article>

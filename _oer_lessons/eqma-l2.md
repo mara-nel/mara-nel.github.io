@@ -1,5 +1,4 @@
 ---
-layout: lesson
 title: Systems of Two Equations
 section: Equalities and Matrices
 section-slug: eqma
