@@ -3,7 +3,9 @@
         <h2>{{ include.title }}</h2>
     {% endif %}
     <div class="split-column">
-        <div class="primary">{{ include.primary }}</div>
-        <div class="secondary">{{ include.secondary }}</div>
+        <div class="primary">
+            {{ include.primary | markdownify }}
+        </div>
+        <div class="secondary">{{ include.secondary | markdownify }}</div>
     </div>
 </section>

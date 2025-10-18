@@ -1,0 +1,20 @@
+<section class="page-block">
+    <div class="split-column">
+        <div class="primary">
+    <h2>{{include.title}}</h2>
+    {%- if include.link  -%}
+        <a style="margin-left: 2rem" href="{{include.link}}" target="_blank">(play in new tab)</a>
+    {%- endif -%}
+            <p>{{include.description.summary}}</p>
+            <p>{{include.description.tech}}</p>
+            <p>{{include.description.challenge}}</p>
+        </div>
+        <div class="secondary">
+            {%- if include.images -%}
+                {% for image in include.images %}
+                    <img style="max-height: 40vh" src='/assets/projects/{{image.src}}' alt='{{image.alt}}'>
+                {% endfor %}
+            {%- endif -%}
+        </div>
+    </div>
+</section>

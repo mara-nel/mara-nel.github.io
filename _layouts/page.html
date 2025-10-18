@@ -1,13 +1,11 @@
 ---
-layout: defaultB
+layout: default
 ---
 <article class="post">
-  {% include mathjax.html %}
-
   <div class="post-content">
+    {%- if page.title -%} 
+      <h1 class="page-title">{{ page.title }}</h1>
+    {%- endif -%} 
     {{ content }}
   </div>
-
-
-
 </article>
