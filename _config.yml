@@ -19,6 +19,8 @@ collections:
     output: true
   oer_lessons:
     output: true
+  reading_logs:
+    output: true
 
 defaults:
   -
@@ -33,6 +35,11 @@ defaults:
     values:
       layout: "oer_section"
       oer_type: "section"
+  -
+    scope:
+      path: "_reading_logs"
+    values:
+      layout: "books"
 
 minima:
 # generate social links in footer

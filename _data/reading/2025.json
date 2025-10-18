@@ -7,7 +7,7 @@
     },
     {
         "date"  : "10 Jan",
-        "title" : "Card College, Volume 1",
+        "title" : "Card College, Vol. 1",
         "author": "Roberto Giobbi",
         "length": "3"
     },
@@ -52,5 +52,35 @@
         "title" : "The Penelopiad",
         "author": "Margaret Atwood",
         "length": "2"
+    },
+    {
+        "date"  : "12 Apr",
+        "title" : "Gal&aacute;pagos",
+        "author": "Kurt Vonnegut Jr",
+        "length": "4"
+    },
+    {
+        "date"  : "16 Apr",
+        "title" : "Very Far Away from Anywhere Else",
+        "author": "Ursula K. Le Guin",
+        "length": "1"
+    },
+    {
+        "date"  : "22 Apr",
+        "title" : "Homage to Catalonia",
+        "author": "George Orwell",
+        "length": "3"
+    },
+    {
+        "date"  : "23 Apr",
+        "title" : "The Stepford Wives",
+        "author": "Ira Levin",
+        "length": "2"
+    },
+    {
+        "date"  : "28 Apr",
+        "title" : "Lyra's Oxford",
+        "author": "Philip Pullman",
+        "length": "1"
     }
 ]
