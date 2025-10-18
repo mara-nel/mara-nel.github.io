@@ -177,6 +177,10 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
+
+ html {
+  background-color: var(--snow);
+ }
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
   color: $text-color;
@@ -189,7 +193,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-image: linear-gradient(-10deg, #bbb, #ccc);
+  // background-image: linear-gradient(-10deg, #bbb, #ccc);
 }
 
 
@@ -213,7 +217,6 @@ main {
   display: block; /* Default value of `display` of `main` element is 'inline' in IE 11. */
 
   &.redesign {
-    width: calc(100% - 96px);
   }
 }
 
@@ -257,17 +260,19 @@ h1 {
   font-size: $large-font-size;
   font-family: $fancy-font-family;
   font-weight: 500;
+  font-size: var(--title-text);
 }
 
 h2 {
   font-family: $base-font-family;
   font-size: $medium-font-size;
-  margin-top: 2em;
+  font-size: var(--title-text);
 }
 
 h3 {
   font-family: $base-font-family;
   font-size: $base-font-size;
+  font-size: var(--body-text);
 }
 
 
@@ -348,6 +353,10 @@ p.blocktext {
   word-wrap: break-word;
 }
 
+p {
+  margin-block: 1lh;
+}
+
 
 /**
  * Wrapper
@@ -356,6 +365,9 @@ p.blocktext {
   max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
   max-width:         calc(#{$content-width} - (#{$spacing-unit}));
   max-width: 1028px;
+  max-width: 1140px;
+    max-width: min(1140px, 100% - calc(var(--spacing-unit) * 2));
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-right: $spacing-unit / 2;
@@ -366,6 +378,7 @@ p.blocktext {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
     max-width: 1028px;
+    max-width: min(1140px, 100% - calc(var(--spacing-unit) * 2));
     padding-right: $spacing-unit;
     padding-left: $spacing-unit;
  }

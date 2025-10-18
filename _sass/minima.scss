@@ -1,5 +1,38 @@
 @charset "utf-8";
 
+:root {
+  --spacing-unit: 20px;
+  --radius-unit: .8rem;
+
+  
+  --jumbo-1: 72px;
+  --jumbo-2: 45px;
+  --jumbo-3: 28px;
+  --large-1: 64px;
+  --large-2: 45px;
+  --large-3: 28px;
+  --medium-1: 24px;
+  --medium-2: 20px;
+  --medium-3: 17px;
+  --small-1: 24px;
+  --small-2: 20px;
+  --small-3: 17px;
+
+  --title-text: var(--large-3);
+  --body-text: var(--medium-3);
+  @media screen and (min-width: 780px) {
+    --title-text: var(--large-2);
+    --body-text: var(--medium-2);
+  }
+  @media screen and (min-width: 1092px) {
+    --title-text: var(--large-1);
+    --body-text: var(--medium-1);
+  }
+
+  --fleece: #f7f5f0;
+  --snow: oklch(98.5% 0.001 106.423)
+}
+
 // Define defaults for each variable.
 
 //$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;

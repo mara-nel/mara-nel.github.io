@@ -3,24 +3,24 @@ layout: oer_page
 ---
 
 {% capture primary %}
-    {{page.content}}
-    <a href="/oer/#sections">Return to Sections</a>
-    {% if page.playlist %}
-        <br />
-        <a class="external" href="{{page.playlist}}">
-        {{page.title}} full playlist
-        </a>
-    {% endif %}
+{{page.content}}
+<a href="/oer/#sections">Return to Sections</a>
+{% if page.playlist %}
+<br />
+<a class="external" href="{{page.playlist}}">
+{{page.title}} full playlist
+</a>
+{% endif %}
 {% endcapture %}
 
 {% capture lessons %}
-    <h3>Lessons</h3>
-    <ul>
-        {% assign section-lessons = site.oer_lessons | where: 'section', page.title %}
-        {% for lesson in section-lessons %}
-            <li><a href="{{lesson.lesson-num}}">{{ lesson.title }}</a></li>
-        {% endfor %}
-    </ul>
+<h3>Lessons</h3>
+<ul>
+{% assign section-lessons = site.oer_lessons | where: 'section', page.title %}
+    {% for lesson in section-lessons %}
+    <li><a href="{{lesson.lesson-num}}">{{ lesson.title }}</a></li>
+    {% endfor %}
+</ul>
 {% endcapture %}
 
 {% include pageBlock.html

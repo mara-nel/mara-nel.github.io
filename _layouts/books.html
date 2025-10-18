@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
   {%- include head.html -%}
-  <body>
+  <body class="books-body">
     <div class="book-wrapper">
       {% assign pageCount=0 %}
       {% assign year = page.year | append: ""%}
       {% assign prevYear = page.year | minus: '1' | append: ""%}
       {% assign nextYear = page.year | plus: '1'  | append: ""%}
-      <div class="content">
+      <div class="book-content">
         <div>
           <a href="/reading/">&lsaquo; reading</a>
           <div class="log-header">
